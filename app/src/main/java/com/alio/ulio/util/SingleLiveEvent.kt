@@ -1,0 +1,46 @@
+package com.alio.ulio.util
+
+import android.util.Log
+import androidx.annotation.MainThread
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Observer
+import java.util.concurrent.atomic.AtomicBoolean
+
+/**
+ * @author Ha Jin Seok
+ * @email seok270@dahami.com
+ * @created 2022-01-13
+ * @desc
+ */
+class SingleLiveEvent<T> : MutableLiveData<T>() {
+
+    private val mPending = AtomicBoolean(false)
+
+    @MainThread
+    override fun observe(owner: LifecycleOwner, observer: Observer<in T>) {
+        if (hasActiveObservers()) {
+            Log.w(TAG, "Multiple observers registered but only one will be notified of changes.")
+        }
+
+        super.observe(owner, Observer { t ->
+            if (mPending.compareAndSet(true, false)) {
+                observer.onChanged(t)
+            }
+        })
+    }
+
+    @MainThread
+    override fun setValue(value: T?) {
+        mPending.set(true)
+        super.setValue(value)
+    }
+    @MainThread
+    fun call() {
+        value = null
+    }
+
+    companion object {
+        private val TAG = "SingleLiveEvent"
+    }
+}

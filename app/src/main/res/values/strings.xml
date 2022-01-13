@@ -1,3 +1,27 @@
 <resources>
     <string name="app_name">alioulio</string>
+
+    <!-- 권한제공 동의팝업 -->
+    <string name="dialog_access_denied_title">접근권한 제공 동의</string>
+    <string name="dialog_access_denied_content">알리오울리오는\n카카오 소셜 계정 로그인으로\n카톡에 저장된 친구들에게, 쉽게\n알람을 만들어 보낼 수 있어요.\n\n알람메시지 녹음을 위해,\n마이크 접근을 허용해 주세요!</string>
+
+    <string name="agree">동의</string>
+    <string name="not_agree">비동의</string>
+
+    <!-- 최초가입_약관동의 -->
+    <string name="info_agree">먼저, 이용약관에\n동의해주세요.</string>
+    <string name="social_login">소셜 로그인</string>
+    <string name="info_social_login">[필수] 카카오 개인정보 제3자 제공 동의</string>
+
+    <string name="service">서비스 이용</string>
+    <string name="info_service">[필수] 서비스 이용약관 동의</string>
+    <string name="info_personal_service">[필수] 개인정보 수집 및 이용 동의</string>
+
+    <string name="join_age">가입자 연령</string>
+    <string name="info_join_age">[필수] 만 14세 이상입니다.</string>
+
+    <string name="info_check_agree">나는 연령정보를 사실대로 기재하였으며,\n약관의 모든 내용을 확인하고 이에 동의합니다.</string>
+    <string name="info_check">동의하고 계속하기</string>
+
+
 </resources>

@@ -25,6 +25,10 @@ buildscript {
         sandwichVersion = '1.2.0'
         gsonVersion = '2.8.5'
 
+        rxkotlin = "3.0.0"
+        rxandroid = "3.0.0"
+        rxjavaAdapter = "2.9.0"
+
         // debugging
         stethoVersion = '1.5.1'
 
