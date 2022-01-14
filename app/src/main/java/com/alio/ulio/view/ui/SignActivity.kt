@@ -1,7 +1,11 @@
 package com.alio.ulio.view.ui
 
+import android.Manifest
+import android.content.Intent
+import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import com.alio.ulio.R
@@ -11,14 +15,20 @@ import com.alio.ulio.databinding.DialogAccessDeniedBinding
 import com.alio.ulio.util.EventObserver
 import com.alio.ulio.view.dialog.DialogAccessDeniedDialog
 import com.alio.ulio.view.ui.viewmodel.SignViewModel
+import com.kakao.sdk.auth.LoginClient
+import com.kakao.sdk.auth.model.OAuthToken
+import com.kakao.sdk.common.model.AuthErrorCause
 import java.util.*
 
 class SignActivity : BaseActivity<ActivitySignBinding, SignViewModel>(R.layout.activity_sign) {
+
+    private val requiredPermissions = arrayOf(Manifest.permission.RECORD_AUDIO)
 
     override fun initStartView() {
         viewModel = SignViewModel(application)
         binding.viewmodel = viewModel
 
+        viewModel.autoLoginCheck()
     }
 
     override fun initDataBinding() {
@@ -27,6 +37,8 @@ class SignActivity : BaseActivity<ActivitySignBinding, SignViewModel>(R.layout.a
             dialog.setDialogListener(object : DialogAccessDeniedDialog.DialogClickListener {
                 override fun onAgreeClicked() {
                     // 동의
+                    // TODO : 권한 체크 창 출력 필요
+                    requestPermissions(requiredPermissions, REQUEST_RECORD_AUDIO_PERMISSION)
                 }
 
                 override fun onNotAgreeClick() {
@@ -41,10 +53,95 @@ class SignActivity : BaseActivity<ActivitySignBinding, SignViewModel>(R.layout.a
         viewModel.memberInfoRule.observe(this, EventObserver {
 
         })
+
+
+        // 자동 로그인 체크
+        viewModel.autoCheckLogin.observe(this, { success ->
+            if (success) {
+                // 자동로그인 성공
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                finish()
+            } else {
+                // 자동로그인 실패
+                toast(getString(R.string.error_auto_login))
+            }
+        })
     }
 
     override fun initAfterBinding() {
 
     }
 
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+
+        //권한이 부여받은게 맞는지 check 권한부여받았으면 true 아니면 false
+        val audioRequestPermissionGranted =
+            requestCode == REQUEST_RECORD_AUDIO_PERMISSION &&
+                    grantResults.firstOrNull() == PackageManager.PERMISSION_GRANTED
+
+        if (audioRequestPermissionGranted) {
+            // 권한 부여 완료
+            if (LoginClient.instance.isKakaoTalkLoginAvailable(this)) {
+                LoginClient.instance.loginWithKakaoTalk(this, callback = callback)
+            } else {
+                LoginClient.instance.loginWithKakaoAccount(this, callback = callback)
+            }
+        } else {
+            // 권한 부여 X
+
+        }
+    }
+
+    val callback : (OAuthToken?, Throwable?) -> Unit = { token, error ->
+        if (error != null) {
+            when {
+                error.toString() == AuthErrorCause.AccessDenied.toString() ->
+                    toast(getString(R.string.access_denied))
+
+                error.toString() == AuthErrorCause.InvalidClient.toString() ->
+                    toast(getString(R.string.invalid_client))
+
+                error.toString() == AuthErrorCause.InvalidGrant.toString() ->
+                    toast(getString(R.string.invalid_grant))
+
+                error.toString() == AuthErrorCause.InvalidRequest.toString() ->
+                    toast(getString(R.string.invalid_request))
+
+                error.toString() == AuthErrorCause.InvalidScope.toString() ->
+                    toast(getString(R.string.invalid_scope))
+
+                error.toString() == AuthErrorCause.Misconfigured.toString() ->
+                    toast(getString(R.string.mis_configured))
+
+                error.toString() == AuthErrorCause.ServerError.toString() ->
+                    toast(getString(R.string.server_error))
+
+                error.toString() == AuthErrorCause.Unauthorized.toString() ->
+                    toast(getString(R.string.unauthorized))
+
+                else ->
+                    toast(getString(R.string.etc_error))
+            }
+        } else if (token != null) {
+            toast(getString(R.string.success_login))
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+            finish()
+        }
+    }
+
+    fun toast(msg : String) {
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+    }
+
+    companion object{
+        //permission code 선언
+        private const val REQUEST_RECORD_AUDIO_PERMISSION =201
+    }
 }

@@ -39,6 +39,9 @@ buildscript {
         archCompomentVersion = '2.0.0'
         lifecycleVersion = '2.2.0'
         roomVersion = '2.2.6'
+
+        // kakao api
+        kakaoSDKVersion = "2.0.1"
     }
 
     dependencies {
