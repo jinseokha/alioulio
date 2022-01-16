@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/tab_home"
+        android:id="@+id/alarm_list_fragment"
 
         android:title="home" />
     <item
-        android:id="@+id/tab_alarm"
+        android:id="@+id/alarm_send_fragment"
 
         android:title="alarm" />
     <item
-        android:id="@+id/tab_bread"
+        android:id="@+id/profile_fragment"
 
         android:title="bread" />
 </menu>

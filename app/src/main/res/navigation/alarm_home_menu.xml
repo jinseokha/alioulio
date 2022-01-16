@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/alarm_home_menu"
+    app:startDestination="@id/alarm_list_fragment">
+
+    <fragment
+        android:id="@+id/alarm_list_fragment"
+        android:name="com.alio.ulio.view.ui.fragment.AlarmListFragment"
+        android:label="AlarmListFragment"/>
+
+    <fragment
+        android:id="@+id/alarm_send_fragment"
+        android:name="com.alio.ulio.view.ui.fragment.AlarmSendFragment"
+        android:label="AlarmListFragment"/>
+
+    <fragment
+        android:id="@+id/profile_fragment"
+        android:name="com.alio.ulio.view.ui.fragment.ProfileFragment"
+        android:label="ProfileFragment"/>
+</navigation>
