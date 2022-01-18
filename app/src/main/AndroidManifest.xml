@@ -15,17 +15,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Alioulio">
         <activity
-            android:name=".view.ui.FirstSignAgreeActivity"
+            android:name=".view.ui.sign.FirstSignAgreeActivity"
             android:exported="true" >
 
         </activity>
         <activity
-            android:name=".view.ui.SignActivity"
+            android:name=".view.ui.sign.SignActivity"
             android:exported="true">
 
         </activity>
         <activity
-            android:name=".view.ui.MainActivity"
+            android:name=".view.ui.main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

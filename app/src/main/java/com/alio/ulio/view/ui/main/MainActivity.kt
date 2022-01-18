@@ -1,4 +1,4 @@
-package com.alio.ulio.view.ui
+package com.alio.ulio.view.ui.main
 
 
 import android.util.DisplayMetrics
@@ -11,7 +11,6 @@ import androidx.navigation.ui.setupWithNavController
 import com.alio.ulio.R
 import com.alio.ulio.base.BaseActivity
 import com.alio.ulio.databinding.ActivityMainBinding
-import com.alio.ulio.view.ui.viewmodel.MainViewModel
 import kotlin.math.roundToInt
 
 class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(R.layout.activity_main) {

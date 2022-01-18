@@ -1,4 +1,4 @@
-package com.alio.ulio.view.ui.fragment
+package com.alio.ulio.view.ui.main
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.alio.ulio.R
-import com.alio.ulio.view.ui.viewmodel.ProfileViewModel
 
 class ProfileFragment : Fragment() {
 

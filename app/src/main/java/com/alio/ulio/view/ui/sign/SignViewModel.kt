@@ -1,4 +1,4 @@
-package com.alio.ulio.view.ui.viewmodel
+package com.alio.ulio.view.ui.sign
 
 import android.app.Application
 import androidx.lifecycle.LiveData

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.ui.fragment.AlarmListFragment">
+    tools:context=".view.ui.main.AlarmListFragment">
 
     <TextView
         android:layout_width="match_parent"

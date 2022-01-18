@@ -6,16 +6,16 @@
 
     <fragment
         android:id="@+id/alarm_list_fragment"
-        android:name="com.alio.ulio.view.ui.fragment.AlarmListFragment"
+        android:name="com.alio.ulio.view.ui.main.AlarmListFragment"
         android:label="AlarmListFragment"/>
 
     <fragment
         android:id="@+id/alarm_send_fragment"
-        android:name="com.alio.ulio.view.ui.fragment.AlarmSendFragment"
+        android:name="com.alio.ulio.view.ui.main.AlarmSendFragment"
         android:label="AlarmListFragment"/>
 
     <fragment
         android:id="@+id/profile_fragment"
-        android:name="com.alio.ulio.view.ui.fragment.ProfileFragment"
+        android:name="com.alio.ulio.view.ui.main.ProfileFragment"
         android:label="ProfileFragment"/>
 </navigation>

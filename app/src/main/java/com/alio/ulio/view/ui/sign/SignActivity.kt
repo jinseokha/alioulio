@@ -1,24 +1,18 @@
-package com.alio.ulio.view.ui
+package com.alio.ulio.view.ui.sign
 
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import android.widget.Toast
-import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Observer
 import com.alio.ulio.R
 import com.alio.ulio.base.BaseActivity
 import com.alio.ulio.databinding.ActivitySignBinding
-import com.alio.ulio.databinding.DialogAccessDeniedBinding
 import com.alio.ulio.util.EventObserver
 import com.alio.ulio.view.dialog.DialogAccessDeniedDialog
-import com.alio.ulio.view.ui.viewmodel.SignViewModel
+import com.alio.ulio.view.ui.main.MainActivity
 import com.kakao.sdk.auth.LoginClient
 import com.kakao.sdk.auth.model.OAuthToken
 import com.kakao.sdk.common.model.AuthErrorCause
-import java.util.*
 
 class SignActivity : BaseActivity<ActivitySignBinding, SignViewModel>(R.layout.activity_sign) {
 

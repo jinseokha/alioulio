@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewmodel"
-            type="com.alio.ulio.view.ui.viewmodel.FirstSignAgreeViewModel" />
+            type="com.alio.ulio.view.ui.sign.FirstSignAgreeViewModel" />
     </data>
 
     <RelativeLayout
@@ -17,7 +17,7 @@
         android:layout_marginRight="20dp"
         android:layout_marginBottom="16dp"
         android:orientation="vertical"
-        tools:context=".view.ui.FirstSignAgreeActivity">
+        tools:context=".view.ui.sign.FirstSignAgreeActivity">
 
         <TextView
             android:id="@+id/text_agree"
