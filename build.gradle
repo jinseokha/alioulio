@@ -32,6 +32,9 @@ buildscript {
         rxandroid = "3.0.0"
         rxjavaAdapter = "2.9.0"
 
+        // adapter
+        baseAdapterVersion = '1.0.4'
+
         // debugging
         stethoVersion = '1.5.1'
 

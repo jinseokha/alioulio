@@ -80,6 +80,8 @@ dependencies {
     implementation "io.reactivex.rxjava3:rxandroid:$rxandroid"
     implementation "com.squareup.retrofit2:adapter-rxjava3:$rxjavaAdapter"
 
+    // adapter
+    implementation "com.github.skydoves:baserecyclerviewadapter:$baseAdapterVersion"
 
     // kakao
     implementation "com.kakao.sdk:v2-user:2.0.1"

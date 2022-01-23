@@ -10,5 +10,6 @@ import com.alio.ulio.base.BaseViewModel
  * @desc
  */
 
-class MainViewModel (application: Application) : BaseViewModel(application){
+class MainViewModel (application: Application) : BaseViewModel(application) {
+
 }

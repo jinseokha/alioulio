@@ -13,7 +13,6 @@ class MyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        //.init(this, "a44dbbde821cc4ee30bbd9bb029f6c6f")
-        KakaoSdk.init(this, "appKey")
+        KakaoSdk.init(this, "97b4bfe24482572fdafb0039db83b2cb")
     }
 }

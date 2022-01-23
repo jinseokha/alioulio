@@ -2,14 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/alarm_list_fragment"
-
-        android:title="home" />
+        android:icon="@drawable/ic_bottom_alarm"
+        android:title="알람 목록" />
     <item
         android:id="@+id/alarm_send_fragment"
-
-        android:title="alarm" />
+        android:icon="@drawable/ic_bottom_send"
+        android:title="알람 보내기" />
     <item
         android:id="@+id/profile_fragment"
-
-        android:title="bread" />
+        android:icon="@drawable/ic_bottom_profile"
+        android:title="계정관리" />
 </menu>

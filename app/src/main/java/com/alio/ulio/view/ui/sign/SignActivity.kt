@@ -5,7 +5,8 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.widget.Toast
 import com.alio.ulio.R
-import com.alio.ulio.base.BaseActivity
+import com.alio.ulio.base.BaseAppCompatActivity
+import com.alio.ulio.databinding.ActivityMainBinding
 import com.alio.ulio.databinding.ActivitySignBinding
 import com.alio.ulio.util.EventObserver
 import com.alio.ulio.view.dialog.DialogAccessDeniedDialog
@@ -14,18 +15,20 @@ import com.kakao.sdk.auth.LoginClient
 import com.kakao.sdk.auth.model.OAuthToken
 import com.kakao.sdk.common.model.AuthErrorCause
 
-class SignActivity : BaseActivity<ActivitySignBinding, SignViewModel>(R.layout.activity_sign) {
+class SignActivity : BaseAppCompatActivity<ActivitySignBinding, SignViewModel>(R.layout.activity_sign) {
 
     private val requiredPermissions = arrayOf(Manifest.permission.RECORD_AUDIO)
 
-    override fun initStartView() {
+    override fun ActivitySignBinding.onCreate() {
         viewModel = SignViewModel(application)
         binding.viewmodel = viewModel
 
         viewModel.autoLoginCheck()
+
+        observable()
     }
 
-    override fun initDataBinding() {
+    private fun observable() {
         viewModel.kakaoLoginClick.observe(this, EventObserver {
             var dialog = DialogAccessDeniedDialog()
             dialog.setDialogListener(object : DialogAccessDeniedDialog.DialogClickListener {
@@ -61,10 +64,6 @@ class SignActivity : BaseActivity<ActivitySignBinding, SignViewModel>(R.layout.a
                 toast(getString(R.string.error_auto_login))
             }
         })
-    }
-
-    override fun initAfterBinding() {
-
     }
 
     override fun onRequestPermissionsResult(

@@ -2,6 +2,7 @@ package com.alio.ulio.view.ui.main
 
 
 import android.util.DisplayMetrics
+import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -9,26 +10,20 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.ui.setupWithNavController
 import com.alio.ulio.R
-import com.alio.ulio.base.BaseActivity
+import com.alio.ulio.base.BaseAppCompatActivity
 import com.alio.ulio.databinding.ActivityMainBinding
+import com.kakao.sdk.common.util.Utility
 import kotlin.math.roundToInt
 
-class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(R.layout.activity_main) {
+class MainActivity : BaseAppCompatActivity<ActivityMainBinding,
+        MainViewModel>(R.layout.activity_main) {
     private lateinit var navController: NavController
 
-    override fun initStartView() {
+    override fun ActivityMainBinding.onCreate() {
         viewModel = MainViewModel(application)
         binding.viewmodel = viewModel
 
         initViews()
-    }
-
-    override fun initDataBinding() {
-
-    }
-
-    override fun initAfterBinding() {
-
     }
 
     private fun initViews() {

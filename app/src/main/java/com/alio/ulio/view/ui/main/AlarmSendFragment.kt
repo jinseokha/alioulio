@@ -7,26 +7,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.alio.ulio.R
+import com.alio.ulio.base.BaseFragment
+import com.alio.ulio.databinding.AlarmSendFragmentBinding
 
-class AlarmSendFragment : Fragment() {
+class AlarmSendFragment : BaseFragment<AlarmSendFragmentBinding,
+        AlarmSendViewModel>(R.layout.alarm_send_fragment) {
 
-    companion object {
-        fun newInstance() = AlarmSendFragment()
+    override fun AlarmSendFragmentBinding.onCreateView() {
+        viewmodel = ViewModelProvider(this@AlarmSendFragment).get(AlarmSendViewModel::class.java)
+        binding.viewmodel = viewmodel
+
     }
 
-    private lateinit var viewModel: AlarmSendViewModel
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.alarm_send_fragment, container, false)
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(AlarmSendViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
 
 }
