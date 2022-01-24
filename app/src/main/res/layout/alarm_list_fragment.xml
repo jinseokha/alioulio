@@ -39,7 +39,7 @@
                 <View
                     android:layout_width="12dp"
                     android:layout_height="3dp"
-                    android:background="@drawable/rectangle_2" />
+                    android:background="@drawable/bar" />
             </LinearLayout>
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -66,7 +66,7 @@
                 <View
                     android:layout_width="12dp"
                     android:layout_height="3dp"
-                    android:background="@drawable/rectangle_2" />
+                    android:background="@drawable/bar" />
             </LinearLayout>
         </androidx.appcompat.widget.LinearLayoutCompat>
 

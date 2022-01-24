@@ -8,15 +8,46 @@
             type="com.alio.ulio.view.ui.main.ProfileViewModel" />
     </data>
 
-    <FrameLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="23dp"
         tools:context=".view.ui.main.ProfileFragment">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Hello" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/info_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lineHeight="30dp"
+            android:textSize="24sp"
+            android:textColor="@color/black_3d3d3d"
+            android:text="나, 그리고\n순간을 함께하는\n나의 사람들"/>
 
-    </FrameLayout>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btn_fab"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@id/view_fab"
+            android:src="@drawable/ic_btn_fab"/>
+
+        <View
+            android:id="@+id/view_fab"
+            android:layout_width="1dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@id/btn_agr"
+            android:background="@drawable/view_bar" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btn_agr"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_btn_agr"/>
+
+    </RelativeLayout>
 </layout>
