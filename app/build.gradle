@@ -84,7 +84,7 @@ dependencies {
     implementation "com.github.skydoves:baserecyclerviewadapter:$baseAdapterVersion"
 
     // kakao
-    implementation "com.kakao.sdk:v2-user:2.0.1"
+    implementation "com.kakao.sdk:v2-user:2.8.4"
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

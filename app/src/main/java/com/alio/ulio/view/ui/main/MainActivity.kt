@@ -23,6 +23,9 @@ class MainActivity : BaseAppCompatActivity<ActivityMainBinding,
         viewModel = MainViewModel(application)
         binding.viewmodel = viewModel
 
+        /*val keyHash = Utility.getKeyHash(this@MainActivity)
+        Log.d("Hash", keyHash)*/
+
         initViews()
     }
 

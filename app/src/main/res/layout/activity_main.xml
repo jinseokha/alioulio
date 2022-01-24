@@ -37,7 +37,7 @@
             android:soundEffectsEnabled="true"
             app:itemTextAppearanceActive="@style/BottomSheetActive"
             app:itemTextAppearanceInactive="@style/BottomSheetInActive"
-            android:paddingBottom="12dp"/>
+            android:paddingBottom="5dp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -11,9 +11,9 @@ import com.alio.ulio.databinding.ActivitySignBinding
 import com.alio.ulio.util.EventObserver
 import com.alio.ulio.view.dialog.DialogAccessDeniedDialog
 import com.alio.ulio.view.ui.main.MainActivity
-import com.kakao.sdk.auth.LoginClient
 import com.kakao.sdk.auth.model.OAuthToken
 import com.kakao.sdk.common.model.AuthErrorCause
+import com.kakao.sdk.user.UserApiClient
 
 class SignActivity : BaseAppCompatActivity<ActivitySignBinding, SignViewModel>(R.layout.activity_sign) {
 
@@ -80,10 +80,10 @@ class SignActivity : BaseAppCompatActivity<ActivitySignBinding, SignViewModel>(R
 
         if (audioRequestPermissionGranted) {
             // 권한 부여 완료
-            if (LoginClient.instance.isKakaoTalkLoginAvailable(this)) {
-                LoginClient.instance.loginWithKakaoTalk(this, callback = callback)
+            if (UserApiClient.instance.isKakaoTalkLoginAvailable(this)) {
+                UserApiClient.instance.loginWithKakaoTalk(this, callback = callback)
             } else {
-                LoginClient.instance.loginWithKakaoAccount(this, callback = callback)
+                UserApiClient.instance.loginWithKakaoAccount(this, callback = callback)
             }
         } else {
             // 권한 부여 X
