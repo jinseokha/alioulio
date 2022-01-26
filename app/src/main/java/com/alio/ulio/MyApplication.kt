@@ -1,6 +1,7 @@
 package com.alio.ulio
 
 import android.app.Application
+import com.alio.ulio.db.Preferences
 import com.kakao.sdk.common.KakaoSdk
 
 /**
@@ -14,5 +15,6 @@ class MyApplication : Application() {
         super.onCreate()
 
         KakaoSdk.init(this, "97b4bfe24482572fdafb0039db83b2cb")
+        Preferences.init(this)
     }
 }

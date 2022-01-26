@@ -3,8 +3,7 @@
     package="com.alio.ulio">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <application
         android:name=".MyApplication"
@@ -15,13 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Alioulio">
         <activity
-            android:name=".view.ui.sign.FirstSignAgreeActivity"
+            android:name=".view.ui.sign.SplashActivity"
             android:exported="true" >
-
-        </activity>
-        <activity
-            android:name=".view.ui.sign.SignActivity"
-            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,14 +23,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.ui.main.MainActivity"
+            android:name=".view.ui.sign.FirstSignAgreeActivity"
+            android:exported="true"></activity>
+        <activity
+            android:name=".view.ui.sign.SignActivity"
             android:exported="true">
 
         </activity>
         <activity
+            android:name=".view.ui.main.MainActivity"
+            android:exported="true"></activity>
+        <activity
             android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 

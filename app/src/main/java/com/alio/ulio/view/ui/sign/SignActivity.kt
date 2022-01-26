@@ -23,8 +23,6 @@ class SignActivity : BaseAppCompatActivity<ActivitySignBinding, SignViewModel>(R
         viewModel = SignViewModel(application)
         binding.viewmodel = viewModel
 
-        viewModel.autoLoginCheck()
-
         observable()
     }
 
@@ -49,20 +47,6 @@ class SignActivity : BaseAppCompatActivity<ActivitySignBinding, SignViewModel>(R
 
         viewModel.memberInfoRule.observe(this, EventObserver {
 
-        })
-
-
-        // 자동 로그인 체크
-        viewModel.autoCheckLogin.observe(this, { success ->
-            if (success) {
-                // 자동로그인 성공
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-                finish()
-            } else {
-                // 자동로그인 실패
-                toast(getString(R.string.error_auto_login))
-            }
         })
     }
 

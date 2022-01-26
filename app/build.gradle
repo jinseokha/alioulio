@@ -68,6 +68,10 @@ dependencies {
     testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
     testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesVersion"
 
+    // glide
+    implementation "com.github.bumptech.glide:glide:$glideVersion"
+    kapt "com.github.bumptech.glide:compiler:$glideVersion"
+
     // network
     implementation "com.github.skydoves:sandwich:$sandwichVersion"
     implementation "com.squareup.okhttp3:logging-interceptor:$okhttpVersion"
@@ -84,8 +88,8 @@ dependencies {
     implementation "com.github.skydoves:baserecyclerviewadapter:$baseAdapterVersion"
 
     // kakao
-    implementation "com.kakao.sdk:v2-user:2.8.5" // 카카오 로그인
-    implementation "com.kakao.sdk:v2-talk:2.8.5" // 친구, 메시지(카카오톡)
+    implementation "com.kakao.sdk:v2-user:$kakaoSDKVersion" // 카카오 로그인
+    implementation "com.kakao.sdk:v2-talk:$kakaoSDKVersion" // 친구, 메시지(카카오톡)
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

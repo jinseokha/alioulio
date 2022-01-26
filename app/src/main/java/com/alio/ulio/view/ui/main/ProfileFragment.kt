@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import com.alio.ulio.R
 import com.alio.ulio.base.BaseFragment
 import com.alio.ulio.databinding.ProfileFragmentBinding
+import com.alio.ulio.db.Preferences
 import com.kakao.sdk.talk.TalkApiClient
 import com.kakao.sdk.user.UserApi
 import com.kakao.sdk.user.UserApiClient
@@ -17,29 +18,20 @@ import com.kakao.sdk.user.UserApiClient
 class ProfileFragment : BaseFragment<ProfileFragmentBinding,
         ProfileViewModel>(R.layout.profile_fragment) {
 
+    var TAG = "test"
+
     override fun ProfileFragmentBinding.onCreateView() {
         viewModel = ViewModelProvider(this@ProfileFragment).get(ProfileViewModel::class.java)
         binding.viewmodel = viewmodel
 
-        // 내 정보 보기
-        UserApiClient.instance.me { user, error ->
-            Log.d("test", "닉네임 : ${user?.kakaoAccount?.profile?.nickname}")
-        }
+/*        var profile : String? = Preferences.profile?.properties?.get("profile_image")
+
+        Log.d("test", "Daata : ${profile}")*/
 
 
-        // 카카오톡 프로필 가져오기
-        TalkApiClient.instance.profile { profile, error ->
-            if (error != null) {
-                Log.e("test", "카카오톡 프로필 가져오기 실패", error)
-            } else if (profile != null) {
-                Log.i("test", "카카오톡 프로필 가져오기 성공" +
-                        "\n닉네임: ${profile.nickname}" +
-                        "\n프로필사진: ${profile.thumbnailUrl}")
-            }
-        }
-
+        //Log.d(TAG, "data : ${Preferences.profile.properties.}")
         // 카카오톡 친구 목록 가져오기 (기본)
-        TalkApiClient.instance.friends { friends, error ->
+       /* TalkApiClient.instance.friends { friends, error ->
             if (error != null) {
                 Log.e("test", "카카오톡 친구 목록 가져오기 실패", error)
             }
@@ -49,6 +41,19 @@ class ProfileFragment : BaseFragment<ProfileFragmentBinding,
                 // 친구의 UUID 로 메시지 보내기 가능
             }
         }
+
+        binding.btnFab.setOnClickListener {
+            // 연결끊기
+            UserApiClient.instance.unlink { error ->
+                if (error != null) {
+                    Log.e("test", "연결 끊기 실패", error)
+                }
+                else {
+                    Log.i("test", "연결 끊기 성공. SDK에서 토큰 삭제 됨")
+                    requireActivity().finish()
+                }
+            }
+        }*/
 
     }
 }

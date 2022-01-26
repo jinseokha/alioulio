@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+
+        <import type="com.alio.ulio.api.Api"/>
+
         <variable
             name="viewmodel"
             type="com.alio.ulio.view.ui.main.ProfileViewModel" />
+
+        <variable
+            name="preference"
+            type="com.alio.ulio.db.Preferences" />
+
+        <variable
+            name="user"
+            type="com.alio.ulio.db.entity.User" />
+
     </data>
 
     <RelativeLayout
@@ -31,7 +44,7 @@
             android:layout_height="30dp"
             android:layout_marginRight="20dp"
             android:layout_toLeftOf="@id/view_fab"
-            android:src="@drawable/ic_btn_fab"/>
+            android:src="@drawable/ic_btn_fab" />
 
         <View
             android:id="@+id/view_fab"
@@ -48,6 +61,24 @@
             android:layout_height="30dp"
             android:layout_alignParentRight="true"
             android:src="@drawable/ic_btn_agr"/>
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_marginTop="30dp"
+            android:layout_below="@id/info_profile"
+            android:orientation="horizontal">
+
+            <!--<androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="fitXY"
+                app:loadProfileImage="@{user.profile}"
+                tools:src="@drawable/ic_launcher_foreground"
+                tools:targetApi="LOLLIPOP"/>-->
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
     </RelativeLayout>
 </layout>

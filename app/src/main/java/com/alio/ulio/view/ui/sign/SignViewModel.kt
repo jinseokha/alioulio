@@ -16,9 +16,6 @@ import com.kakao.sdk.user.UserApiClient
  */
 class SignViewModel(application: Application) : BaseViewModel(application) {
 
-    private val _autoCheckLogin : MutableLiveData<Boolean> = MutableLiveData<Boolean>()
-    val autoCheckLogin : LiveData<Boolean>
-        get() = _autoCheckLogin
 
     private val _kakaoLoginClick = SingleLiveEvent<Event<Boolean>>()
     val kakaoLoginClick : LiveData<Event<Boolean>>
@@ -37,19 +34,4 @@ class SignViewModel(application: Application) : BaseViewModel(application) {
         _memberInfoRule.value = Event(true)
     }
 
-
-    fun autoLoginCheck() {
-        UserApiClient.instance.accessTokenInfo { tokenInfo, error ->
-            if (error != null) {
-                _autoCheckLogin.value = false
-                //toast(getString(R.string.token_info_error))
-            } else if (tokenInfo != null) {
-                _autoCheckLogin.value = true
-                /*toast(getString(R.string.token_info_success))
-                val intent = Intent(this, SecondActivity::class.java)
-                startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-                finish()*/
-            }
-        }
-    }
 }
