@@ -25,9 +25,13 @@ class MyTransformation (context: Context?, radius: Int, cornerType: CornerType?)
         NONE, ALL, TOP, BOTTOM
     }
 
-    private var radius = 0
+    var radius : Int
     private var cornerType: CornerType? = null
 
+    init {
+        this.radius = radius
+        this.cornerType = cornerType
+    }
 
 
     override fun updateDiskCacheKey(messageDigest: MessageDigest) {

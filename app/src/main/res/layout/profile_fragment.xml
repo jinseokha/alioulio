@@ -11,74 +11,127 @@
             name="viewmodel"
             type="com.alio.ulio.view.ui.main.ProfileViewModel" />
 
-        <variable
-            name="preference"
-            type="com.alio.ulio.db.Preferences" />
-
-        <variable
-            name="user"
-            type="com.alio.ulio.db.entity.User" />
-
     </data>
 
-    <RelativeLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="23dp"
-        tools:context=".view.ui.main.ProfileFragment">
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/info_profile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:lineHeight="30dp"
-            android:textSize="24sp"
-            android:textColor="@color/black_3d3d3d"
-            android:text="나, 그리고\n순간을 함께하는\n나의 사람들"/>
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/btn_fab"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginRight="20dp"
-            android:layout_toLeftOf="@id/view_fab"
-            android:src="@drawable/ic_btn_fab" />
-
-        <View
-            android:id="@+id/view_fab"
-            android:layout_width="1dp"
-            android:layout_height="15dp"
-            android:layout_marginTop="7dp"
-            android:layout_marginRight="20dp"
-            android:layout_toLeftOf="@id/btn_agr"
-            android:background="@drawable/view_bar" />
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/btn_agr"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_alignParentRight="true"
-            android:src="@drawable/ic_btn_agr"/>
-
+        android:layout_height="match_parent">
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
-            android:layout_height="130dp"
-            android:layout_marginTop="30dp"
-            android:layout_below="@id/info_profile"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/profile_bottom_radius"
+                android:paddingLeft="20dp"
+                android:paddingRight="23dp"
+                android:paddingTop="25dp"
+                android:paddingBottom="25dp"
+                tools:context=".view.ui.main.ProfileFragment">
 
-            <!--<androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:scaleType="fitXY"
-                app:loadProfileImage="@{user.profile}"
-                tools:src="@drawable/ic_launcher_foreground"
-                tools:targetApi="LOLLIPOP"/>-->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/info_profile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lineHeight="30dp"
+                    android:text="나, 그리고\n순간을 함께하는\n나의 사람들"
+                    android:textColor="@color/black_3d3d3d"
+                    android:textSize="24sp" />
 
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/btn_fab"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_toLeftOf="@id/view_fab"
+                    android:src="@drawable/ic_btn_fab" />
+
+                <View
+                    android:id="@+id/view_fab"
+                    android:layout_width="1dp"
+                    android:layout_height="15dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_toLeftOf="@id/btn_agr"
+                    android:background="@drawable/view_bar" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/btn_agr"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_btn_agr"/>
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_below="@id/info_profile"
+                    android:layout_marginTop="30dp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/img_profile"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        tools:src="@drawable/ic_launcher_foreground"
+                        tools:targetApi="LOLLIPOP" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_profile_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="3dp"
+                            android:textColor="@color/black_3d3d3d"
+                            android:textSize="16sp"
+                            tools:text="profile name"/>
+
+                        <TextView
+                            android:id="@+id/tv_email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/gray_B2B2B2"
+                            android:textSize="16sp"
+                            tools:text="profile email"/>
+
+                    </LinearLayout>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="20dp"
+                android:paddingRight="23dp"
+                android:paddingTop="36dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/black_3d3d3d"
+                    android:textStyle="bold"
+                    android:text="친구목록"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
         </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.core.widget.NestedScrollView>
 
-    </RelativeLayout>
 </layout>

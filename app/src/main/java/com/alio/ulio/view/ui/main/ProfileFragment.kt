@@ -9,8 +9,11 @@ import android.view.View
 import android.view.ViewGroup
 import com.alio.ulio.R
 import com.alio.ulio.base.BaseFragment
+import com.alio.ulio.binding.MyTransformation
 import com.alio.ulio.databinding.ProfileFragmentBinding
 import com.alio.ulio.db.Preferences
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.kakao.sdk.talk.TalkApiClient
 import com.kakao.sdk.user.UserApi
 import com.kakao.sdk.user.UserApiClient
@@ -24,10 +27,7 @@ class ProfileFragment : BaseFragment<ProfileFragmentBinding,
         viewModel = ViewModelProvider(this@ProfileFragment).get(ProfileViewModel::class.java)
         binding.viewmodel = viewmodel
 
-/*        var profile : String? = Preferences.profile?.properties?.get("profile_image")
-
-        Log.d("test", "Daata : ${profile}")*/
-
+        profileImageLoad()
 
         //Log.d(TAG, "data : ${Preferences.profile.properties.}")
         // 카카오톡 친구 목록 가져오기 (기본)
@@ -55,5 +55,24 @@ class ProfileFragment : BaseFragment<ProfileFragmentBinding,
             }
         }*/
 
+    }
+
+    private fun profileImageLoad() {
+
+        var profileImage : String? = Preferences.profile?.properties?.get("profile_image")
+
+        Glide.with(requireActivity())
+            .load(profileImage)
+            .apply(RequestOptions().transform(MyTransformation(requireActivity(), 80, MyTransformation.CornerType.ALL)))
+            .into(binding.imgProfile)
+
+        binding.tvProfileName.text = Preferences.profile?.properties?.get("nickname")
+
+        if (Preferences?.profile?.kakaoAccount?.email == null) {
+            binding.tvEmail.visibility = View.GONE
+        } else {
+            binding.tvEmail.visibility = View.VISIBLE
+            binding.tvEmail.text = Preferences?.profile?.kakaoAccount?.email
+        }
     }
 }
