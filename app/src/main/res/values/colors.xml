@@ -27,6 +27,7 @@
     <color name="gray_FAFAFA">#FAFAFA</color>
     <color name="gray_B2B2B2">#B2B2B2</color>
     <color name="gray_F5F5F5">#F5F5F5</color>
+    <color name="gray_F7F8FA">#F7F8FA</color>
 
     <color name="receiver_alarm_color">#FF8A78</color>
     <color name="send_alarm_color">#CDCDCD</color>
