@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewmodel"
-            type="com.alio.ulio.view.ui.main.AlarmSendViewModel" />
+            type="com.alio.ulio.view.ui.main.alarmsend.AlarmSendViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -16,7 +16,7 @@
         android:paddingRight="23dp"
         android:paddingTop="25dp"
         android:paddingBottom="25dp"
-        tools:context=".view.ui.main.AlarmSendFragment">
+        tools:context=".view.ui.main.alarmsend.AlarmSendFragment">
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/info_profile"
@@ -24,9 +24,9 @@
             android:layout_height="wrap_content"
             android:lineHeight="30dp"
             android:text="어떤 알람을\n보내실건가요?"
-            android:textColor="@color/black_3d3d3d"
+            android:textColor="@color/black_222222"
             android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/layout_solo"
+            app:layout_constraintBottom_toTopOf="@+id/layout_some"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -34,7 +34,7 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <RelativeLayout
-            android:id="@+id/layout_solo"
+            android:id="@+id/layout_some"
             android:layout_width="match_parent"
             android:layout_height="180dp"
             android:background="@drawable/send_layout_background"
@@ -45,13 +45,36 @@
             app:layout_constraintHorizontal_bias="0.465"
             app:layout_constraintStart_toStartOf="parent" >
 
+            <TextView
+                android:id="@+id/some_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:gravity="top"
+                android:lineSpacingExtra="2sp"
+                android:text="오직,\n그 순간을 위한\n모멘트 알림"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:translationY="-1sp" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="27dp"
+                android:layout_marginBottom="20dp"
+                android:src="@drawable/ic_some"/>
         </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/layout_couple"
             android:layout_width="match_parent"
             android:layout_height="180dp"
-            android:layout_below="@id/layout_solo"
+            android:layout_below="@id/layout_some"
             android:layout_centerVertical="true"
             android:layout_marginBottom="96dp"
             android:background="@drawable/send_layout_background"
@@ -59,6 +82,30 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.488"
             app:layout_constraintStart_toStartOf="parent" >
+
+            <TextView
+                android:id="@+id/couple_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:gravity="top"
+                android:lineSpacingExtra="2sp"
+                android:text="항상,\n곁에서 챙겨주는\n일상 알림"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:translationY="-1sp" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="27dp"
+                android:layout_marginBottom="20dp"
+                android:src="@drawable/ic_couple"/>
 
         </RelativeLayout>
 

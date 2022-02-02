@@ -1,11 +1,6 @@
-package com.alio.ulio.view.ui.main
+package com.alio.ulio.view.ui.main.alarmlist
 
 import androidx.lifecycle.ViewModelProvider
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import com.alio.ulio.R
 import com.alio.ulio.base.BaseFragment
 import com.alio.ulio.databinding.AlarmListFragmentBinding

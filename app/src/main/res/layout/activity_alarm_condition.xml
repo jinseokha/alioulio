@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.alio.ulio.view.ui.main.alarmsend.AlarmConditionViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="25dp"
+        tools:context=".view.ui.main.alarmsend.AlarmConditionActivity">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back"/>
+
+        <TextView
+            android:id="@+id/setting_condition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_below="@id/back_button"
+            android:textColor="@color/black_222222"
+            android:textSize="24sp"
+            android:lineHeight="30dp"
+            android:text="알람의 조건을\n설정하세요"/>
+
+        <View
+            android:id="@+id/line_8"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginBottom="35dp"
+            android:layout_below="@id/setting_condition"
+            android:background="@drawable/line_8" />
+
+        <TextView
+            android:id="@+id/tv_alarm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/line_8"
+            android:textColor="@color/black_222222"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="언제 울리는 알림인가요?"/>
+
+        <RelativeLayout
+            android:id="@+id/layout_select_day"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_alarm"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="36dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black_222222"
+                android:textSize="16sp"
+                android:hint="날짜를 선택해주세요."/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_btn_datepickr"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/alarm_what"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layout_select_day"
+            android:textColor="@color/black_222222"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="몇시에 울리는 알람인가요?"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/alarm_what"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/test1_button"
+                android:layout_width="52dp"
+                android:layout_height="54dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_btn_am"
+                android:text="AM"
+                android:textColor="@color/gray_A3A3A3" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/test2_button"
+                android:layout_width="52dp"
+                android:layout_height="54dp"
+                android:layout_toRightOf="@id/test1_button"
+                android:textColor="@color/gray_A3A3A3"
+                android:background="@drawable/selector_btn_pm"
+                android:text="PM"
+                android:layout_weight="1"/>
+
+            <RelativeLayout
+                android:id="@+id/layout_clock"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/selector_btn_clock"
+                android:gravity="center_vertical"
+                android:layout_toRightOf="@id/test2_button">
+
+                <EditText
+                    android:id="@+id/edit_hour"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:paddingLeft="12dp"
+                    android:textSize="16sp"
+                    android:hint="00" />
+
+                <TextView
+                    android:id="@+id/tv_hour"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="16sp"
+                    android:text="시 / "/>
+
+                <EditText
+                    android:id="@+id/edit_minute"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:layout_toRightOf="@id/tv_hour"
+                    android:textSize="16sp"
+                    android:hint="00" />
+
+                <TextView
+                    android:id="@+id/tv_minute"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:paddingRight="12dp"
+                    android:textSize="16sp"
+                    android:text="분"/>
+            </RelativeLayout>
+        </RelativeLayout>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_next"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/selector_btn_next"
+            android:text="다음"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </RelativeLayout>
+</layout>

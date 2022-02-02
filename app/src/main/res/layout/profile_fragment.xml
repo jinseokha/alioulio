@@ -9,7 +9,7 @@
 
         <variable
             name="viewmodel"
-            type="com.alio.ulio.view.ui.main.ProfileViewModel" />
+            type="com.alio.ulio.view.ui.main.profilemanage.ProfileViewModel" />
 
     </data>
 
@@ -29,7 +29,7 @@
                 android:paddingRight="23dp"
                 android:paddingTop="25dp"
                 android:paddingBottom="25dp"
-                tools:context=".view.ui.main.ProfileFragment">
+                tools:context=".view.ui.main.profilemanage.ProfileFragment">
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/info_profile"
@@ -77,7 +77,7 @@
                         android:layout_width="80dp"
                         android:layout_height="match_parent"
                         android:scaleType="fitXY"
-                        tools:src="@drawable/ic_launcher_foreground"
+                        android:src="@drawable/ic_launcher_foreground"
                         tools:targetApi="LOLLIPOP" />
 
                     <LinearLayout
@@ -94,7 +94,7 @@
                             android:layout_marginBottom="3dp"
                             android:textColor="@color/black_3d3d3d"
                             android:textSize="16sp"
-                            tools:text="profile name"/>
+                            tools:text="profile name" />
 
                         <TextView
                             android:id="@+id/tv_email"
@@ -102,7 +102,7 @@
                             android:layout_height="wrap_content"
                             android:textColor="@color/gray_B2B2B2"
                             android:textSize="16sp"
-                            tools:text="profile email"/>
+                            tools:text="profile email" />
 
                     </LinearLayout>
 

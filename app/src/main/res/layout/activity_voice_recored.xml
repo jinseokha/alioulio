@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.alio.ulio.view.ui.main.alarmsend.VoiceRecoredViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="25dp"
+        tools:context=".view.ui.main.alarmsend.VoiceRecoredActivity">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back"/>
+
+        <TextView
+            android:id="@+id/setting_condition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_below="@id/back_button"
+            android:textColor="@color/black_222222"
+            android:textSize="24sp"
+            android:lineHeight="30dp"
+            android:text="뭐라고 보내면\n좋을까요?"/>
+
+        <View
+            android:id="@+id/line_8"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginBottom="35dp"
+            android:layout_below="@id/setting_condition"
+            android:background="@drawable/line_8" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_next"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/selector_btn_next"
+            android:text="다음"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+</layout>

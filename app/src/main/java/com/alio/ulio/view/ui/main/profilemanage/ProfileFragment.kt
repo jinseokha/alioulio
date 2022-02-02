@@ -1,12 +1,7 @@
-package com.alio.ulio.view.ui.main
+package com.alio.ulio.view.ui.main.profilemanage
 
-import androidx.lifecycle.ViewModelProvider
-import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import com.alio.ulio.R
 import com.alio.ulio.base.BaseFragment
 import com.alio.ulio.binding.MyTransformation
@@ -14,9 +9,6 @@ import com.alio.ulio.databinding.ProfileFragmentBinding
 import com.alio.ulio.db.Preferences
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.kakao.sdk.talk.TalkApiClient
-import com.kakao.sdk.user.UserApi
-import com.kakao.sdk.user.UserApiClient
 
 class ProfileFragment : BaseFragment<ProfileFragmentBinding,
         ProfileViewModel>(R.layout.profile_fragment) {
@@ -64,6 +56,7 @@ class ProfileFragment : BaseFragment<ProfileFragmentBinding,
         Glide.with(requireActivity())
             .load(profileImage)
             .apply(RequestOptions().transform(MyTransformation(requireActivity(), 80, MyTransformation.CornerType.ALL)))
+            .error(R.drawable.background_agree_round)
             .into(binding.imgProfile)
 
         binding.tvProfileName.text = Preferences.profile?.properties?.get("nickname")

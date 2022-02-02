@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewmodel"
-            type="com.alio.ulio.view.ui.main.AlarmListViewModel" />
+            type="com.alio.ulio.view.ui.main.alarmlist.AlarmListViewModel" />
     </data>
 
     <androidx.appcompat.widget.LinearLayoutCompat

@@ -1,4 +1,4 @@
-package com.alio.ulio.view.ui.main
+package com.alio.ulio.view.ui.main.profilemanage
 
 import android.app.Application
 import androidx.lifecycle.ViewModel
