@@ -31,6 +31,7 @@
     <color name="gray_EBECF0">#EBECF0</color>
     <color name="gray_D9DBE0">#D9DBE0</color>
     <color name="gray_E1E2E5">#E1E2E5</color>
+    <color name="gray_D6D6D6">#D6D6D6</color>
 
     <color name="receiver_alarm_color">#FF8A78</color>
     <color name="send_alarm_color">#CDCDCD</color>

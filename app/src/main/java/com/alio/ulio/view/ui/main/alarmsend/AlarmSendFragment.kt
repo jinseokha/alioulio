@@ -8,8 +8,7 @@ class AlarmSendFragment : BaseFragment<AlarmSendFragmentBinding,
         AlarmSendViewModel>(R.layout.alarm_send_fragment) {
 
     override fun AlarmSendFragmentBinding.onCreateView() {
-        viewmodel = ViewModelProvider(this@AlarmSendFragment).get(AlarmSendViewModel::class.java)
-        binding.viewmodel = viewmodel
+
 
     }
 

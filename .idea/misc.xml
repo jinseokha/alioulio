@@ -3,6 +3,29 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/jinseok/Desktop/PROJECT/movie_list/alioulio/app/src/main/res/drawable/background_agree_round.xml" value="0.34074074074074073" />
+        <entry key="..\:/Users/jinseok/Desktop/PROJECT/movie_list/alioulio/app/src/main/res/drawable/bar.xml" value="0.34074074074074073" />
+        <entry key="..\:/Users/jinseok/Desktop/PROJECT/movie_list/alioulio/app/src/main/res/drawable/bottom_alarm_selector.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/jinseok/Desktop/PROJECT/movie_list/alioulio/app/src/main/res/drawable/bottom_nav_tab_background.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/jinseok/Desktop/PROJECT/movie_list/alioulio/app/src/main/res/drawable/bottom_profile_selector.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/jinseok/Desktop/PROJECT/movie_list/alioulio/app/src/main/res/drawable/bottom_send_selector.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/jinseok/Desktop/PROJECT/movie_list/alioulio/app/src/main/res/drawable/dialog_background_round.xml" value="0.34074074074074073" />
+        <entry key="..\:/Users/jinseok/Desktop/PROJECT/movie_list/alioulio/app/src/main/res/drawable/ic_recorde.xml" value="0.38177083333333334" />
+        <entry key="..\:/Users/jinseok/Desktop/PROJECT/movie_list/alioulio/app/src/main/res/drawable/profile_bottom_radius.xml" value="0.3728205128205128" />
+        <entry key="..\:/Users/jinseok/Desktop/PROJECT/movie_list/alioulio/app/src/main/res/drawable/selector_btn_next.xml" value="0.337037037037037" />
+        <entry key="..\:/Users/jinseok/Desktop/PROJECT/movie_list/alioulio/app/src/main/res/drawable/send_layout_background.xml" value="0.34074074074074073" />
+        <entry key="..\:/Users/jinseok/Desktop/PROJECT/movie_list/alioulio/app/src/main/res/drawable/shape_btn_unselected_pm.xml" value="0.337037037037037" />
+        <entry key="..\:/Users/jinseok/Desktop/PROJECT/movie_list/alioulio/app/src/main/res/drawable/shape_oval_button.xml" value="0.38177083333333334" />
+        <entry key="..\:/Users/jinseok/Desktop/PROJECT/movie_list/alioulio/app/src/main/res/layout/activity_main.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/jinseok/Desktop/PROJECT/movie_list/alioulio/app/src/main/res/layout/activity_sign.xml" value="0.2675925925925926" />
+        <entry key="..\:/Users/jinseok/Desktop/PROJECT/movie_list/alioulio/app/src/main/res/layout/activity_splash.xml" value="0.25" />
+        <entry key="..\:/Users/jinseok/Desktop/PROJECT/movie_list/alioulio/app/src/main/res/layout/activity_voice_recored.xml" value="0.365625" />
+        <entry key="..\:/Users/jinseok/Desktop/PROJECT/movie_list/alioulio/app/src/main/res/layout/alarm_list_fragment.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/jinseok/Desktop/PROJECT/movie_list/alioulio/app/src/main/res/layout/alarm_send_fragment.xml" value="0.29814814814814816" />
+        <entry key="..\:/Users/jinseok/Desktop/PROJECT/movie_list/alioulio/app/src/main/res/layout/layout_receive_alarm.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/jinseok/Desktop/PROJECT/movie_list/alioulio/app/src/main/res/layout/layout_send_alarm.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/jinseok/Desktop/PROJECT/movie_list/alioulio/app/src/main/res/layout/profile_fragment.xml" value="0.1" />
+        <entry key="..\:/Users/jinseok/Desktop/PROJECT/movie_list/alioulio/app/src/main/res/menu/tabs.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/seok2/OneDrive/Desktop/android/alioulio/app/src/main/res/drawable/bottom_nav_tab_background.xml" value="0.11574074074074074" />
         <entry key="..\:/Users/seok2/OneDrive/Desktop/android/alioulio/app/src/main/res/drawable/rectangle_2.xml" value="0.21481481481481482" />
         <entry key="..\:/Users/seok2/OneDrive/Desktop/android/alioulio/app/src/main/res/layout/activity_main.xml" value="0.1" />
