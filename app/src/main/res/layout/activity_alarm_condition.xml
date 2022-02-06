@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewmodel"
-            type="com.alio.ulio.view.ui.main.alarmsend.AlarmConditionViewModel" />
+            type="com.alio.ulio.view.ui.main.alarmsend.viewmodel.AlarmConditionViewModel" />
     </data>
 
     <RelativeLayout
@@ -22,7 +22,7 @@
             android:id="@+id/back_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_back"/>
+            android:src="@drawable/ic_btn_icon_arrow"/>
 
         <TextView
             android:id="@+id/setting_condition"
@@ -73,7 +73,7 @@
                 android:layout_width="22dp"
                 android:layout_height="22dp"
                 android:layout_alignParentRight="true"
-                android:src="@drawable/ic_btn_datepickr"/>
+                android:src="@drawable/ic_btn_icon_dtpckr"/>
         </RelativeLayout>
 
         <TextView
@@ -165,6 +165,7 @@
             android:layout_height="55dp"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="16dp"
+            android:onClick="@{() -> viewmodel.onNextEvent()}"
             android:background="@drawable/selector_btn_next"
             android:text="다음"
             android:textColor="@color/white"

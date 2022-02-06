@@ -14,8 +14,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Alioulio">
         <activity
+            android:name=".view.ui.main.alarmsend.WhoSendActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.ui.main.alarmsend.VoiceRecoredActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,9 +30,7 @@
             android:exported="true" />
         <activity
             android:name=".view.ui.sign.SplashActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".view.ui.sign.FirstSignAgreeActivity"
             android:exported="true" />

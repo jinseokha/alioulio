@@ -1,5 +1,6 @@
 package com.alio.ulio.view.ui.main.profilemanage
 
+import android.util.Log
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import com.alio.ulio.R
@@ -9,6 +10,7 @@ import com.alio.ulio.databinding.ProfileFragmentBinding
 import com.alio.ulio.db.Preferences
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.kakao.sdk.talk.TalkApiClient
 
 class ProfileFragment : BaseFragment<ProfileFragmentBinding,
         ProfileViewModel>(R.layout.profile_fragment) {
@@ -23,7 +25,7 @@ class ProfileFragment : BaseFragment<ProfileFragmentBinding,
 
         //Log.d(TAG, "data : ${Preferences.profile.properties.}")
         // 카카오톡 친구 목록 가져오기 (기본)
-       /* TalkApiClient.instance.friends { friends, error ->
+        /*TalkApiClient.instance.friends { friends, error ->
             if (error != null) {
                 Log.e("test", "카카오톡 친구 목록 가져오기 실패", error)
             }
@@ -32,8 +34,11 @@ class ProfileFragment : BaseFragment<ProfileFragmentBinding,
 
                 // 친구의 UUID 로 메시지 보내기 가능
             }
-        }
+        }*/
 
+
+
+        /*
         binding.btnFab.setOnClickListener {
             // 연결끊기
             UserApiClient.instance.unlink { error ->

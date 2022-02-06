@@ -1,4 +1,4 @@
-package com.alio.ulio.view.ui.main.alarmsend
+package com.alio.ulio.view.ui.main.alarmsend.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.ViewModel

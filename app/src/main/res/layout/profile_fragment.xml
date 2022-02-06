@@ -46,7 +46,7 @@
                     android:layout_height="30dp"
                     android:layout_marginRight="20dp"
                     android:layout_toLeftOf="@id/view_fab"
-                    android:src="@drawable/ic_btn_fab" />
+                    android:src="@drawable/ic_btn_icon_faq" />
 
                 <View
                     android:id="@+id/view_fab"
@@ -62,7 +62,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_alignParentRight="true"
-                    android:src="@drawable/ic_btn_agr"/>
+                    android:src="@drawable/ic_btn_icon_agr"/>
 
 
                 <androidx.appcompat.widget.LinearLayoutCompat

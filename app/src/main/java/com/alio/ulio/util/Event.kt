@@ -1,5 +1,9 @@
 package com.alio.ulio.util
 
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.Observer
+
 /**
  * @author Ha Jin Seok
  * @email seok270@dahami.com
@@ -18,4 +22,17 @@ open class Event<out T>(val content: T) {
             content
         }
     }
+}
+
+inline fun <T> LiveData<Event<T>>.eventObserve(
+    owner: LifecycleOwner,
+    crossinline onChanged: (T) -> Unit
+): Observer<Event<T>> {
+    val wrappedObserver = Observer<Event<T>> { t ->
+        t.getContentIfNotHandled()?.let {
+            onChanged.invoke(it)
+        }
+    }
+    observe(owner, wrappedObserver)
+    return wrappedObserver
 }
