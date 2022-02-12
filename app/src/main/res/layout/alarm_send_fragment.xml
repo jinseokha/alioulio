@@ -7,6 +7,9 @@
         <variable
             name="viewmodel"
             type="com.alio.ulio.view.ui.main.alarmsend.viewmodel.AlarmSendViewModel" />
+        <variable
+            name="fragment"
+            type="com.alio.ulio.view.ui.main.alarmsend.AlarmSendFragment" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -40,6 +43,7 @@
             android:background="@drawable/send_layout_background"
             android:layout_centerVertical="true"
             android:layout_marginBottom="28dp"
+            android:onClick="@{fragment::onlyAlarmClick}"
             app:layout_constraintBottom_toTopOf="@+id/layout_couple"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.465"
@@ -67,7 +71,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_marginRight="27dp"
                 android:layout_marginBottom="20dp"
-                android:src="@drawable/ic_some"/>
+                android:src="@drawable/ic_some" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -78,6 +82,7 @@
             android:layout_centerVertical="true"
             android:layout_marginBottom="96dp"
             android:background="@drawable/send_layout_background"
+            android:onClick="@{fragment::alwaysAlarmClick}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.488"

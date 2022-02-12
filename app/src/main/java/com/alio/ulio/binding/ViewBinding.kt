@@ -1,5 +1,7 @@
 package com.alio.ulio.binding
 
+import android.view.View
+import android.view.animation.AlphaAnimation
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
@@ -21,5 +23,37 @@ object ViewBinding {
             .load(url)
             .apply(RequestOptions().transform(MyTransformation(view.context, 300, MyTransformation.CornerType.ALL)))
             .into(view)
+    }
+
+    @JvmStatic
+    @BindingAdapter(value = ["android:visibility", "visibleAnimType", "goneAnimType"], requireAll = true)
+    fun animationBindingMethod(view: View,
+                               visible: Boolean,
+                               visibleAnimType: Int,
+                               goneAnimType: Int) {
+
+        if(visible) {
+            when(visibleAnimType) {
+                1   ->  {
+                    /*val anim = AlphaAnimation(0.0f, 1.0f).apply {
+                        fillAfter = true
+                        duration = 700
+                    }
+                    view.startAnimation(anim)*/
+                    view.visibility = View.VISIBLE
+                }
+            }
+        } else {
+            when(goneAnimType) {
+                2   ->  {
+                    /*val anim = AlphaAnimation(1.0f, 0.0f).apply {
+                        fillAfter = true
+                        duration = 700
+                    }
+                    view.startAnimation(anim)*/
+                    view.visibility = View.GONE
+                }
+            }
+        }
     }
 }

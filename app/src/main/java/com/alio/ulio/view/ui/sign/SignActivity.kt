@@ -3,6 +3,7 @@ package com.alio.ulio.view.ui.sign
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.view.View
 import android.widget.Toast
 import com.alio.ulio.R
 import com.alio.ulio.base.BaseAppCompatActivity
@@ -21,33 +22,35 @@ class SignActivity : BaseAppCompatActivity<ActivitySignBinding, SignViewModel>(R
 
     override fun ActivitySignBinding.onCreate() {
         viewModel = SignViewModel(application)
+        binding.activity = this@SignActivity
         binding.viewmodel = viewModel
 
-        observable()
     }
 
     private fun observable() {
-        viewModel.kakaoLoginClick.observe(this, EventObserver {
-            var dialog = DialogAccessDeniedDialog()
-            dialog.setDialogListener(object : DialogAccessDeniedDialog.DialogClickListener {
-                override fun onAgreeClicked() {
-                    // 동의
-                    // TODO : 권한 체크 창 출력 필요
-                    requestPermissions(requiredPermissions, REQUEST_RECORD_AUDIO_PERMISSION)
-                }
 
-                override fun onNotAgreeClick() {
-                    // 비동의
+    }
 
-                }
-            })
+    fun kakaoClick(view : View) {
+        var dialog = DialogAccessDeniedDialog()
+        dialog.setDialogListener(object : DialogAccessDeniedDialog.DialogClickListener {
+            override fun onAgreeClicked() {
+                // 동의
+                // TODO : 권한 체크 창 출력 필요
+                requestPermissions(requiredPermissions, REQUEST_RECORD_AUDIO_PERMISSION)
+            }
 
-            dialog.show(supportFragmentManager, "testDialog")
+            override fun onNotAgreeClick() {
+                // 비동의
+
+            }
         })
 
-        viewModel.memberInfoRule.observe(this, EventObserver {
+        dialog.show(supportFragmentManager, "testDialog")
+    }
 
-        })
+    fun memberInfoClick(view: View) {
+
     }
 
     override fun onRequestPermissionsResult(

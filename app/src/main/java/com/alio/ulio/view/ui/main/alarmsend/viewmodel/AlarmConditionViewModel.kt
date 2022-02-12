@@ -1,6 +1,7 @@
 package com.alio.ulio.view.ui.main.alarmsend.viewmodel
 
 import android.app.Application
+import androidx.databinding.ObservableField
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.alio.ulio.base.BaseViewModel
@@ -15,6 +16,12 @@ import com.alio.ulio.util.Event
 
 class AlarmConditionViewModel(application: Application) : BaseViewModel(application){
 
+    val calendarVisible = ObservableField<Boolean>(false)
+
+    private val _nextEnable = MutableLiveData<Boolean>(false)
+    val nextEnable : LiveData<Boolean>
+        get() = _nextEnable
+
     private val _nextEvent = MutableLiveData<Event<String>>()
     val nextEvent : LiveData<Event<String>>
         get() = _nextEvent
@@ -22,4 +29,10 @@ class AlarmConditionViewModel(application: Application) : BaseViewModel(applicat
     fun onNextEvent() {
         _nextEvent.value = Event("ddd")
     }
+
+    fun onCalendarClick() {
+        val temp = calendarVisible.get() ?: true
+        calendarVisible.set(!temp)
+    }
+
 }

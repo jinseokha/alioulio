@@ -7,6 +7,9 @@
         <variable
             name="viewmodel"
             type="com.alio.ulio.view.ui.sign.SignViewModel" />
+        <variable
+            name="activity"
+            type="com.alio.ulio.view.ui.sign.SignActivity" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -33,7 +36,7 @@
             android:layout_marginBottom="66dp"
             android:src="@drawable/kakao_login_medium_wide"
             android:background="@android:color/transparent"
-            android:onClick="@{()->viewmodel.kakaoLoginClick()}"
+            android:onClick="@{activity::kakaoClick}"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
@@ -46,7 +49,7 @@
             android:textColor="@color/gray"
             android:textSize="16sp"
             android:text="회원약관 및 개인정보 처리 방침"
-            android:onClick="@{()->viewmodel.memberInfoRuleClick()}"
+            android:onClick="@{activity::memberInfoClick}"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
