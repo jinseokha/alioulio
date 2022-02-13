@@ -36,4 +36,13 @@
     <color name="receiver_alarm_color">#FF8A78</color>
     <color name="send_alarm_color">#CDCDCD</color>
 
+    <color name="daysLabelColor">#8A000000</color>
+    <color name="currentMonthDayColor">#de000000</color>
+    <color name="nextMonthDayColor">#1F000000</color>
+    <color name="disabledDialogButtonColor">#1F000000</color>
+
+    <color name="itemHighlightColor">#1F000000</color>
+    <color name="itemFocusedColor">#1A000000</color>
+
+    <color name="defaultColor">#2962FF</color>
 </resources>
