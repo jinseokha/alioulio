@@ -17,6 +17,12 @@ import com.alio.ulio.util.Event
 class AlarmConditionViewModel(application: Application) : BaseViewModel(application){
 
     val calendarVisible = ObservableField<Boolean>(false)
+    val text_date : ObservableField<String> = ObservableField<String>()
+
+    val hour : ObservableField<String> = ObservableField<String>()
+    val minute : ObservableField<String> = ObservableField<String>()
+
+    val amClick : ObservableField<Boolean> = ObservableField<Boolean>(true)
 
     private val _nextEnable = MutableLiveData<Boolean>(false)
     val nextEnable : LiveData<Boolean>

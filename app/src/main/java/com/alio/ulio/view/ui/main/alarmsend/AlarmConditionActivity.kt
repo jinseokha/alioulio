@@ -1,13 +1,16 @@
 package com.alio.ulio.view.ui.main.alarmsend
 
 import android.content.Intent
-import androidx.recyclerview.widget.OrientationHelper
+import android.widget.Toast
 import com.alio.ulio.R
 import com.alio.ulio.base.BaseAppCompatActivity
+import com.alio.ulio.custom.calendar.EventDay
+import com.alio.ulio.custom.calendar.listeners.OnDayClickListener
 import com.alio.ulio.databinding.ActivityAlarmConditionBinding
 import com.alio.ulio.util.eventObserve
 import com.alio.ulio.view.ui.main.alarmsend.viewmodel.AlarmConditionViewModel
-import com.applikeysolutions.cosmocalendar.utils.SelectionType
+import java.text.SimpleDateFormat
+import java.util.*
 
 // 2-1. 알람 조건 설정 (오직, 그 순간을 위한 모멘트 알림 후속 페이지)
 class AlarmConditionActivity : BaseAppCompatActivity<ActivityAlarmConditionBinding,
@@ -18,14 +21,17 @@ class AlarmConditionActivity : BaseAppCompatActivity<ActivityAlarmConditionBindi
         binding.activity = this@AlarmConditionActivity
         binding.viewmodel = viewModel
 
-        initView()
+        initCalendar()
         initObserve()
     }
 
-    private fun initView() {
-        binding.layoutCalendarview.calendarOrientation = OrientationHelper.HORIZONTAL
-        binding.layoutCalendarview.selectionType = SelectionType.SINGLE
 
+    private fun initCalendar() {
+        binding.layoutCalendarview.setOnDayClickListener(object : OnDayClickListener {
+            override fun onDayClick(eventDay: EventDay) {
+                binding.tvDate.text = convertDate(eventDay.calendar.time)
+            }
+        })
     }
 
     private fun initObserve() {
@@ -35,5 +41,11 @@ class AlarmConditionActivity : BaseAppCompatActivity<ActivityAlarmConditionBindi
             startActivity(intent)
 
         }
+    }
+
+    private fun convertDate(date : Date) : String {
+        var format = SimpleDateFormat("yyyy년 M월 d일")
+        var str = format.format(date)
+        return str
     }
 }

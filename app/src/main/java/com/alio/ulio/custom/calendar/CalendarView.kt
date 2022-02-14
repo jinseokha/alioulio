@@ -58,7 +58,7 @@ class CalendarView @JvmOverloads constructor(
 
     private fun initControl(calendarProperties: CalendarProperties, onUiCreate: () -> Unit) {
         this.calendarProperties = calendarProperties
-        val view = LayoutInflater.from(context).inflate(R.layout.calendar_view, this)
+        LayoutInflater.from(context).inflate(R.layout.calendar_view, this)
         previousButton.setOnClickListener {
             calendarViewPager.currentItem = calendarViewPager.currentItem - 1
         }

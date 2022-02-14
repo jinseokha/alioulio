@@ -23,4 +23,10 @@
     <style name="BottomSheetInActive" >
         <item name="android:textSize">14sp</item>
     </style>
+
+    <style name="button_overlay" >
+        <item name="colorSurface">@color/gray_D6D6D6</item>
+    </style>
+
+    <style name="SelectorTheme" parent="@style/Theme.MaterialComponents"/>
 </resources>
