@@ -24,7 +24,7 @@ class AlarmConditionViewModel(application: Application) : BaseViewModel(applicat
 
     val amClick : ObservableField<Boolean> = ObservableField<Boolean>(true)
 
-    private val _nextEnable = MutableLiveData<Boolean>(false)
+    private val _nextEnable = MutableLiveData<Boolean>(true)
     val nextEnable : LiveData<Boolean>
         get() = _nextEnable
 
