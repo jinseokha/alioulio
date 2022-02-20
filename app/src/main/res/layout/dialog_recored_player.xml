@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_white_round"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingTop="20dp"
+    android:paddingBottom="20dp"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textStyle="bold"
+        android:textColor="@color/black_222222"
+        android:textSize="16dp"
+        android:text="@string/recored_player_title"/>
+
+    <com.alio.ulio.custom.voice.SoundVisualizerView
+        android:id="@+id/soundVisualizer"
+        android:layout_width="match_parent"
+        android:layout_height="128dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="40dp"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/black_222222"
+        android:textSize="16dp"
+        android:text="@string/recored_player_desc"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_next"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@drawable/selector_btn_next_on"
+        android:text="@string/confirm"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+</LinearLayout>

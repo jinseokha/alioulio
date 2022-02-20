@@ -4,6 +4,7 @@ import android.view.View
 import android.view.animation.AlphaAnimation
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.databinding.BindingAdapter
+import com.alio.ulio.custom.calendar.utils.setSelectedDayColors
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
@@ -55,5 +56,11 @@ object ViewBinding {
                 }
             }
         }
+    }
+
+    @JvmStatic
+    @BindingAdapter("selected")
+    fun setSelected(view: View, selected: Boolean) {
+        view.isSelected = selected
     }
 }

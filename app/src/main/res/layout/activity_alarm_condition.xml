@@ -143,12 +143,12 @@
                     android:layout_height="match_parent"
                     android:textIsSelectable="true"
                     android:backgroundTint="@color/background_am_pm_selector"
-                    android:clickable="@{viewmodel.amClick}"
                     android:textSize="14dp"
                     android:text="AM"
                     android:textColor="@color/gray_A3A3A3"
                     android:layout_weight="1"
-                    app:strokeColor="@color/gray_D6D6D6"/>
+                    app:strokeColor="@color/gray_D6D6D6"
+                    selected="@{viewmodel.amClick}"/>
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_pm"
@@ -162,7 +162,8 @@
                     android:textSize="14dp"
                     android:text="PM"
                     android:layout_weight="1"
-                    app:strokeColor="@color/gray_D6D6D6"/>
+                    app:strokeColor="@color/gray_D6D6D6"
+                    selected="@{viewmodel.pmClick}"/>
             </com.google.android.material.button.MaterialButtonToggleGroup>
 
             <RelativeLayout

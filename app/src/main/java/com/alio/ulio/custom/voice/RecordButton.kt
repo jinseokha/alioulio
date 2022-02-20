@@ -29,7 +29,7 @@ class RecordButton(
             }
             // 녹음 중
             State.ON_RECORDING -> {
-                setImageResource(R.drawable.ic_btn_line_b_rcrd_enbabled)
+                setImageResource(R.drawable.ic_btn_line_b_stop_enabled)
             }
             // 다시듣기
             State.AFTER_RECORDING -> {

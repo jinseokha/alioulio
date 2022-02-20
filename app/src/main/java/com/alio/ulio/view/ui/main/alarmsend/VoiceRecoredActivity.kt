@@ -1,16 +1,31 @@
 package com.alio.ulio.view.ui.main.alarmsend
 
+import android.graphics.Color
 import android.graphics.Color.red
 import android.media.MediaPlayer
 import android.media.MediaRecorder
 import android.view.View
 import androidx.core.content.ContextCompat
-import com.alio.ulio.R
+
 import com.alio.ulio.base.BaseAppCompatActivity
 import com.alio.ulio.custom.voice.State
 import com.alio.ulio.databinding.ActivityVoiceRecoredBinding
-import com.alio.ulio.util.eventObserve
+
 import com.alio.ulio.view.ui.main.alarmsend.viewmodel.VoiceRecoredViewModel
+
+import androidx.appcompat.widget.AppCompatButton
+
+import androidx.appcompat.widget.AppCompatEditText
+
+import androidx.appcompat.widget.AppCompatTextView
+
+import android.graphics.drawable.ColorDrawable
+
+import android.view.LayoutInflater
+import androidx.appcompat.app.AlertDialog
+import com.alio.ulio.R
+import com.alio.ulio.custom.voice.SoundVisualizerView
+
 
 // 3. 음성 녹음 페이지 (뭐라고 보내면 좋을까요? 페이지)
 class VoiceRecoredActivity : BaseAppCompatActivity<ActivityVoiceRecoredBinding,
@@ -23,8 +38,7 @@ class VoiceRecoredActivity : BaseAppCompatActivity<ActivityVoiceRecoredBinding,
     private var state = State.BEFORE_RECORDING
         set(value) {
             field = value
-            binding.resetButton.isEnabled = (value == State.AFTER_RECORDING
-                    || value == State.ON_PLAYING)
+            //binding.resetButton.isEnabled = (value == State.AFTER_RECORDING || value == State.ON_PLAYING)
             binding.recordButton.updateIconWithState(value)
         }
 
@@ -58,20 +72,17 @@ class VoiceRecoredActivity : BaseAppCompatActivity<ActivityVoiceRecoredBinding,
                 State.ON_RECORDING -> {
                     stopRecording()
                 }
-                State.AFTER_RECORDING -> {
+                /*State.AFTER_RECORDING -> {
                     startPlaying()
                 }
                 State.ON_PLAYING -> {
                     stopPlaying()
-                }
+                }*/
             }
         }
 
         binding.resetButton.setOnClickListener {
-
-            binding.soundVisualizerView.clearVisualization()
-            binding.recordTimeTextView.clearCountTime()
-            state = State.BEFORE_RECORDING
+            startPlayingDialog()
         }
     }
 
@@ -105,8 +116,12 @@ class VoiceRecoredActivity : BaseAppCompatActivity<ActivityVoiceRecoredBinding,
         binding.soundVisualizerView.stopVisualizing()
         binding.recordTimeTextView.stopCountUp()
         binding.imgDot.visibility = View.GONE
-        binding.recordTimeTextView.setTextColor(ContextCompat.getColor(applicationContext, R.color.black));
-        state = State.AFTER_RECORDING
+        binding.recordTimeTextView.setTextColor(ContextCompat.getColor(applicationContext, R.color.black))
+
+        binding.soundVisualizerView.clearVisualization()
+        binding.recordTimeTextView.clearCountTime()
+
+        state = State.BEFORE_RECORDING
     }
 
     private fun startPlaying() {
@@ -136,5 +151,48 @@ class VoiceRecoredActivity : BaseAppCompatActivity<ActivityVoiceRecoredBinding,
         binding.recordTimeTextView.stopCountUp()
 
         state = State.AFTER_RECORDING
+    }
+
+    private fun startPlayingDialog() {
+        player = MediaPlayer()
+            .apply {
+                setDataSource(recordingFilePath)
+                prepare()
+            }
+
+        val layoutInflater = LayoutInflater.from(this)
+        val view: View = layoutInflater.inflate(R.layout.dialog_recored_player, null)
+
+        val alertDialog: AlertDialog = AlertDialog.Builder(this)
+            .setView(view)
+            .create()
+
+        alertDialog.getWindow()?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+        var soundVisualizerView : SoundVisualizerView = view.findViewById(R.id.soundVisualizer)
+        var btn_next : AppCompatButton = view.findViewById(R.id.btn_next)
+
+        alertDialog.show()
+
+        soundVisualizerView.onRequestCurrentAmplitude = {
+            recorder?.maxAmplitude ?: 0
+        }
+
+        player?.setOnCompletionListener {
+            player?.release()
+            player = null
+            soundVisualizerView.stopVisualizing()
+            //state = State.AFTER_RECORDING
+        }
+
+        player?.start()
+        soundVisualizerView.startVisualizing(true)
+
+        btn_next.setOnClickListener { view ->
+            alertDialog.dismiss()
+        }
+
+        //state = State.ON_PLAYING
+
     }
 }

@@ -8,6 +8,11 @@
     <string name="agree">동의</string>
     <string name="not_agree">비동의</string>
 
+    <string name="confirm">확인</string>
+    <string name="cancel">취소</string>
+
+    <string name="next">취소</string>
+
     <!-- 최초가입_약관동의 -->
     <string name="info_agree">먼저, 이용약관에\n동의해주세요.</string>
     <string name="social_login">소셜 로그인</string>
@@ -46,6 +51,9 @@
 
     <string name="error_leave">회원 탈퇴 실패</string>
     <string name="success_leave">회원 탈퇴 성공</string>
+
+    <string name="recored_player_title">녹음된 알림 미리듣기</string>
+    <string name="recored_player_desc">마음에 들지 않으면, 다시 녹음해보세요.</string>
 
 
     <string name="material_calendar_monday">월</string>
