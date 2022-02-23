@@ -7,6 +7,12 @@ import androidx.databinding.BindingAdapter
 import com.alio.ulio.custom.calendar.utils.setSelectedDayColors
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import android.widget.CompoundButton
+
+import androidx.databinding.InverseBindingListener
+import com.google.android.material.button.MaterialButton
+import com.google.android.material.button.MaterialButtonToggleGroup
+
 
 /**
  * @author Ha Jin Seok
@@ -62,5 +68,19 @@ object ViewBinding {
     @BindingAdapter("selected")
     fun setSelected(view: View, selected: Boolean) {
         view.isSelected = selected
+    }
+
+    @JvmStatic
+    @BindingAdapter("checkedBtnAttrChanged")
+    fun setToggleGroupChangedListener(toggleGroup: MaterialButtonToggleGroup, listener: InverseBindingListener) {
+        toggleGroup.addOnButtonCheckedListener { group, checkedId, isChecked -> listener.onChange() }
+    }
+
+    @BindingAdapter("checkedIndexes")        //custom attribute
+    @JvmStatic
+    fun setChecked(toggleGroup: MaterialButtonToggleGroup, checkedIndexes: List<Int>) {
+        checkedIndexes.forEach {
+            (toggleGroup.getChildAt(it) as MaterialButton).isChecked = true
+        }
     }
 }

@@ -67,7 +67,7 @@ class VoiceRecoredActivity : BaseAppCompatActivity<ActivityVoiceRecoredBinding,
         val layoutInflater = LayoutInflater.from(this)
         val view: View = layoutInflater.inflate(R.layout.dialog_recored_player, null)
 
-        alertDialog= AlertDialog.Builder(this)
+        alertDialog = AlertDialog.Builder(this)
             .setView(view)
             .create()
 
@@ -95,12 +95,6 @@ class VoiceRecoredActivity : BaseAppCompatActivity<ActivityVoiceRecoredBinding,
                 State.ON_RECORDING -> {
                     stopRecording()
                 }
-                /*State.AFTER_RECORDING -> {
-                    startPlaying()
-                }
-                State.ON_PLAYING -> {
-                    stopPlaying()
-                }*/
             }
         }
 
@@ -131,6 +125,7 @@ class VoiceRecoredActivity : BaseAppCompatActivity<ActivityVoiceRecoredBinding,
         binding.recordTimeTextView.startCountUp()
         binding.recordTimeTextView.setTextColor(ContextCompat.getColor(applicationContext, R.color.red))
         binding.imgDot.visibility = View.VISIBLE
+        soundVisualizerView.startVisualizing(false)
         binding.soundVisualizerView.startVisualizing(false)
         state = State.ON_RECORDING
     }
@@ -142,19 +137,19 @@ class VoiceRecoredActivity : BaseAppCompatActivity<ActivityVoiceRecoredBinding,
         }
         recorder = null
         binding.soundVisualizerView.stopVisualizing()
+        soundVisualizerView.stopVisualizing()
         binding.recordTimeTextView.stopCountUp()
         binding.imgDot.visibility = View.GONE
         binding.recordTimeTextView.setTextColor(ContextCompat.getColor(applicationContext, R.color.black))
 
         binding.soundVisualizerView.clearVisualization()
+        soundVisualizerView.clearVisualization()
         binding.recordTimeTextView.clearCountTime()
 
         state = State.BEFORE_RECORDING
     }
 
     private fun startPlayingDialog() {
-        soundVisualizerView.clearVisualization()
-
         alertDialog.show()
 
         player = MediaPlayer()
@@ -175,6 +170,10 @@ class VoiceRecoredActivity : BaseAppCompatActivity<ActivityVoiceRecoredBinding,
         soundVisualizerView.startVisualizing(true)
 
         btn_next.setOnClickListener { view ->
+            player?.release()
+            player = null
+            soundVisualizerView.stopVisualizing()
+
             state = State.BEFORE_RECORDING
 
             alertDialog.dismiss()

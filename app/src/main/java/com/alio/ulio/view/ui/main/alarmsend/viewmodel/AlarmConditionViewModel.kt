@@ -2,6 +2,7 @@ package com.alio.ulio.view.ui.main.alarmsend.viewmodel
 
 import android.app.Application
 import android.text.TextUtils
+import android.text.TextWatcher
 import androidx.databinding.Observable
 import androidx.databinding.ObservableField
 import androidx.lifecycle.LiveData
@@ -9,6 +10,13 @@ import androidx.lifecycle.MutableLiveData
 import com.alio.ulio.base.BaseViewModel
 import com.alio.ulio.util.Event
 import kotlin.math.min
+import android.text.Editable
+import android.util.Log
+import android.widget.CompoundButton
+import androidx.databinding.InverseBindingListener
+import com.google.android.material.button.MaterialButton
+import com.google.android.material.button.MaterialButtonToggleGroup
+
 
 /**
  * @author Ha Jin Seok
@@ -28,56 +36,72 @@ class AlarmConditionViewModel(application: Application) : BaseViewModel(applicat
     val amClick : ObservableField<Boolean> = ObservableField<Boolean>(true)
     val pmClick : ObservableField<Boolean> = ObservableField<Boolean>(false)
 
-    private val _nextEnable = MutableLiveData<Boolean>(true)
-    val nextEnable : LiveData<Boolean>
-        get() = _nextEnable
+    val nextEnable : ObservableField<Boolean> = ObservableField<Boolean>(false)
 
     private val _nextEvent = MutableLiveData<Event<String>>()
     val nextEvent : LiveData<Event<String>>
         get() = _nextEvent
 
-    init {
-        text_date.addOnPropertyChangedCallback(object : Observable.OnPropertyChangedCallback() {
-            override fun onPropertyChanged(sender: Observable?, propertyId: Int) {
-                validation()
+    fun checkAM_PM(position : Int) {
+        when(position) {
+            0 -> {
+                amClick.set(true)
+                pmClick.set(false)
             }
-        })
-
-        amClick.addOnPropertyChangedCallback(object : Observable.OnPropertyChangedCallback() {
-            override fun onPropertyChanged(sender: Observable?, propertyId: Int) {
-                validation()
+            1 -> {
+                amClick.set(false)
+                pmClick.set(true)
             }
-        })
-
-        pmClick.addOnPropertyChangedCallback(object : Observable.OnPropertyChangedCallback() {
-            override fun onPropertyChanged(sender: Observable?, propertyId: Int) {
-                validation()
-            }
-        })
-
-        hour.addOnPropertyChangedCallback(object : Observable.OnPropertyChangedCallback() {
-            override fun onPropertyChanged(sender: Observable?, propertyId: Int) {
-                validation()
-            }
-        })
-
-        minute.addOnPropertyChangedCallback(object : Observable.OnPropertyChangedCallback() {
-            override fun onPropertyChanged(sender: Observable?, propertyId: Int) {
-                validation()
-            }
-        })
-    }
-
-    fun validation() {
-        var isValidDate = !TextUtils.isEmpty(text_date.toString())
+        }
+        var isValidDate = !TextUtils.isEmpty(text_date.get())
         var isValidSelected = amClick.get()!! || pmClick.get()!!
 
-        var isValidHour = !TextUtils.isEmpty(hour.toString())
-        var isValidMinute = !TextUtils.isEmpty(minute.toString())
+        var isValidHour = !TextUtils.isEmpty(hour.get())
+        var isValidMinute = !TextUtils.isEmpty(minute.get())
 
         var isValid = isValidDate && isValidSelected && isValidHour && isValidMinute
+        validation(isValid)
 
-        _nextEnable.value = isValid
+    }
+
+    fun onDateChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+        text_date.set(s.toString())
+        var isValidDate = !TextUtils.isEmpty(text_date.get())
+        var isValidSelected = amClick.get()!! || pmClick.get()!!
+
+        var isValidHour = !TextUtils.isEmpty(hour.get())
+        var isValidMinute = !TextUtils.isEmpty(minute.get())
+
+        var isValid = isValidDate && isValidSelected && isValidHour && isValidMinute
+        validation(isValid)
+    }
+
+    fun onHourChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+        hour.set(s.toString())
+        var isValidDate = !TextUtils.isEmpty(text_date.get())
+        var isValidSelected = amClick.get()!! || pmClick.get()!!
+
+        var isValidHour = !TextUtils.isEmpty(hour.get())
+        var isValidMinute = !TextUtils.isEmpty(minute.get())
+
+        var isValid = isValidDate && isValidSelected && isValidHour && isValidMinute
+        validation(isValid)
+    }
+
+    fun onMinuteChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+        minute.set(s.toString())
+        var isValidDate = !TextUtils.isEmpty(text_date.get())
+        var isValidSelected = amClick.get()!! || pmClick.get()!!
+
+        var isValidHour = !TextUtils.isEmpty(hour.get())
+        var isValidMinute = !TextUtils.isEmpty(minute.get())
+
+        var isValid = isValidDate && isValidSelected && isValidHour && isValidMinute
+        validation(isValid)
+    }
+
+    fun validation(valid : Boolean) {
+        nextEnable.set(valid)
     }
 
     fun onNextEvent() {

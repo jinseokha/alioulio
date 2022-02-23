@@ -2,6 +2,7 @@ package com.alio.ulio.view.ui.main.alarmsend
 
 import android.content.Intent
 import android.text.TextUtils
+import android.util.Log
 import android.widget.Toast
 import androidx.databinding.Observable
 import com.alio.ulio.R
@@ -35,11 +36,20 @@ class AlarmConditionActivity : BaseAppCompatActivity<ActivityAlarmConditionBindi
                 binding.tvDate.text = convertDate(eventDay.calendar.time)
             }
         })
+
+        binding.selectAm.addOnButtonCheckedListener{ group, buttonId, isChecked ->
+            if (isChecked) {
+                val checkedIndex = group.indexOfChild(findViewById(buttonId))
+                Log.d("test", "" + checkedIndex)
+                viewModel.checkAM_PM(checkedIndex)
+            }
+        }
+
     }
 
     private fun initObserve() {
         viewModel.nextEvent.eventObserve(this) { text ->
-           // 녹음 페이지 화면 이동
+            // 녹음 페이지 화면 이동
             val intent = Intent(this, VoiceRecoredActivity::class.java)
             startActivity(intent)
 
