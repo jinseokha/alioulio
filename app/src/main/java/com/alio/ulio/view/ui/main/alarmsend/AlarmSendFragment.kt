@@ -2,7 +2,6 @@ package com.alio.ulio.view.ui.main.alarmsend
 
 import android.content.Intent
 import android.view.View
-import android.widget.Toast
 import com.alio.ulio.R
 import com.alio.ulio.base.BaseFragment
 import com.alio.ulio.databinding.AlarmSendFragmentBinding

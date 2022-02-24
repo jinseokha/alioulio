@@ -1,8 +1,6 @@
 package com.alio.ulio.view.ui.sign
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import com.alio.ulio.R

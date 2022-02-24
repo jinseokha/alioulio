@@ -7,9 +7,7 @@ import android.view.View
 import android.widget.Toast
 import com.alio.ulio.R
 import com.alio.ulio.base.BaseAppCompatActivity
-import com.alio.ulio.databinding.ActivityMainBinding
 import com.alio.ulio.databinding.ActivitySignBinding
-import com.alio.ulio.util.EventObserver
 import com.alio.ulio.view.dialog.DialogAccessDeniedDialog
 import com.alio.ulio.view.ui.main.MainActivity
 import com.kakao.sdk.auth.model.OAuthToken

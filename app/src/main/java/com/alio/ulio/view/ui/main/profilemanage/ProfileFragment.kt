@@ -1,6 +1,5 @@
 package com.alio.ulio.view.ui.main.profilemanage
 
-import android.util.Log
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import com.alio.ulio.R
@@ -10,7 +9,6 @@ import com.alio.ulio.databinding.ProfileFragmentBinding
 import com.alio.ulio.db.Preferences
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.kakao.sdk.talk.TalkApiClient
 
 class ProfileFragment : BaseFragment<ProfileFragmentBinding,
         ProfileViewModel>(R.layout.profile_fragment) {

@@ -1,15 +1,11 @@
 package com.alio.ulio.binding
 
 import android.view.View
-import android.view.animation.AlphaAnimation
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.databinding.BindingAdapter
-import com.alio.ulio.custom.calendar.utils.setSelectedDayColors
+import androidx.databinding.InverseBindingListener
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import android.widget.CompoundButton
-
-import androidx.databinding.InverseBindingListener
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.button.MaterialButtonToggleGroup
 

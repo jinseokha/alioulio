@@ -2,7 +2,6 @@ package com.alio.ulio.view.ui.main
 
 
 import android.util.DisplayMetrics
-import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -12,7 +11,6 @@ import androidx.navigation.ui.setupWithNavController
 import com.alio.ulio.R
 import com.alio.ulio.base.BaseAppCompatActivity
 import com.alio.ulio.databinding.ActivityMainBinding
-import com.kakao.sdk.common.util.Utility
 import kotlin.math.roundToInt
 
 class MainActivity : BaseAppCompatActivity<ActivityMainBinding,

@@ -1,31 +1,22 @@
 package com.alio.ulio.view.ui.main.alarmsend
 
 import android.graphics.Color
-import android.graphics.Color.red
+import android.graphics.drawable.ColorDrawable
 import android.media.MediaPlayer
 import android.media.MediaRecorder
-import android.view.View
-import androidx.core.content.ContextCompat
-
-import com.alio.ulio.base.BaseAppCompatActivity
-import com.alio.ulio.custom.voice.State
-import com.alio.ulio.databinding.ActivityVoiceRecoredBinding
-
-import com.alio.ulio.view.ui.main.alarmsend.viewmodel.VoiceRecoredViewModel
-
-import androidx.appcompat.widget.AppCompatButton
-
-import androidx.appcompat.widget.AppCompatEditText
-
-import androidx.appcompat.widget.AppCompatTextView
-
-import android.graphics.drawable.ColorDrawable
-
 import android.view.LayoutInflater
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.widget.AppCompatButton
+import androidx.core.content.ContextCompat
 import com.alio.ulio.R
+import com.alio.ulio.base.BaseAppCompatActivity
 import com.alio.ulio.custom.voice.SoundVisualizerView
+import com.alio.ulio.custom.voice.State
+import com.alio.ulio.databinding.ActivityVoiceRecoredBinding
+import com.alio.ulio.db.entity.Alarm
+import com.alio.ulio.view.ui.main.alarmsend.viewmodel.VoiceRecoredViewModel
 
 
 // 3. 음성 녹음 페이지 (뭐라고 보내면 좋을까요? 페이지)
@@ -56,6 +47,7 @@ class VoiceRecoredActivity : BaseAppCompatActivity<ActivityVoiceRecoredBinding,
         viewModel = VoiceRecoredViewModel(application)
         binding.viewmodel = viewmodel
 
+        val alarm = intent.getSerializableExtra("Alarm") as Alarm
         initViews()
         bindViews()
         initVariables()

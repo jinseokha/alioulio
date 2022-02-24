@@ -2,20 +2,12 @@ package com.alio.ulio.view.ui.main.alarmsend.viewmodel
 
 import android.app.Application
 import android.text.TextUtils
-import android.text.TextWatcher
-import androidx.databinding.Observable
 import androidx.databinding.ObservableField
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.alio.ulio.base.BaseViewModel
+import com.alio.ulio.db.entity.Alarm
 import com.alio.ulio.util.Event
-import kotlin.math.min
-import android.text.Editable
-import android.util.Log
-import android.widget.CompoundButton
-import androidx.databinding.InverseBindingListener
-import com.google.android.material.button.MaterialButton
-import com.google.android.material.button.MaterialButtonToggleGroup
 
 
 /**
@@ -38,8 +30,8 @@ class AlarmConditionViewModel(application: Application) : BaseViewModel(applicat
 
     val nextEnable : ObservableField<Boolean> = ObservableField<Boolean>(false)
 
-    private val _nextEvent = MutableLiveData<Event<String>>()
-    val nextEvent : LiveData<Event<String>>
+    private val _nextEvent = MutableLiveData<Event<Alarm>>()
+    val nextEvent : LiveData<Event<Alarm>>
         get() = _nextEvent
 
     fun checkAM_PM(position : Int) {
@@ -105,7 +97,7 @@ class AlarmConditionViewModel(application: Application) : BaseViewModel(applicat
     }
 
     fun onNextEvent() {
-        _nextEvent.value = Event("ddd")
+        _nextEvent.value = Event(Alarm(hour.get(), minute.get()))
     }
 
     fun onCalendarClick() {

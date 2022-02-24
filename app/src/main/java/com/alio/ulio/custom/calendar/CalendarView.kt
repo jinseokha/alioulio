@@ -17,9 +17,6 @@ import com.alio.ulio.custom.calendar.listeners.OnCalendarPageChangeListener
 import com.alio.ulio.custom.calendar.listeners.OnDayClickListener
 import com.alio.ulio.custom.calendar.listeners.OnDayLongClickListener
 import com.alio.ulio.custom.calendar.utils.*
-import com.alio.ulio.custom.calendar.utils.setHeaderColor
-import com.alio.ulio.custom.calendar.utils.setHeaderTypeface
-import com.alio.ulio.custom.calendar.utils.setHeaderVisibility
 import kotlinx.android.synthetic.main.calendar_view.view.*
 import java.util.*
 

@@ -1,10 +1,7 @@
 package com.alio.ulio.view.ui.main.alarmsend
 
 import android.content.Intent
-import android.text.TextUtils
 import android.util.Log
-import android.widget.Toast
-import androidx.databinding.Observable
 import com.alio.ulio.R
 import com.alio.ulio.base.BaseAppCompatActivity
 import com.alio.ulio.custom.calendar.EventDay
@@ -29,7 +26,6 @@ class AlarmConditionActivity : BaseAppCompatActivity<ActivityAlarmConditionBindi
         initObserve()
     }
 
-    // android mvvm button Validation
     private fun initCalendar() {
         binding.layoutCalendarview.setOnDayClickListener(object : OnDayClickListener {
             override fun onDayClick(eventDay: EventDay) {
@@ -48,9 +44,10 @@ class AlarmConditionActivity : BaseAppCompatActivity<ActivityAlarmConditionBindi
     }
 
     private fun initObserve() {
-        viewModel.nextEvent.eventObserve(this) { text ->
+        viewModel.nextEvent.eventObserve(this) { alarm ->
             // 녹음 페이지 화면 이동
             val intent = Intent(this, VoiceRecoredActivity::class.java)
+            intent.putExtra("Alarm", alarm)
             startActivity(intent)
 
         }

@@ -1,7 +1,6 @@
 package com.alio.ulio.db
 
 import android.app.Activity
-import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.SharedPreferences
 import com.google.gson.Gson
