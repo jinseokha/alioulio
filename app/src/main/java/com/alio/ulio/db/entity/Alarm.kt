@@ -10,6 +10,7 @@ import java.io.Serializable
  */
 data class Alarm(
     var hour: String?,
-    var minute:String?) : Serializable {
+    var minute:String?,
+    var isExpanded: Boolean = false) : Serializable {
 
 }
