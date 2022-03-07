@@ -14,13 +14,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Alioulio">
         <activity
+            android:name=".view.ui.main.profilemanage.AlarmOptionActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.ui.main.alarmsend.WhoSendActivity"
             android:exported="false" />
         <activity
             android:name=".view.ui.main.alarmsend.VoiceRecoredActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".view.ui.main.alarmsend.AlarmConditionActivity"
             android:exported="true" />
@@ -28,6 +29,7 @@
             android:name=".view.ui.sign.SplashActivity"
             android:exported="true">
             <intent-filter>
+                R
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -41,7 +43,7 @@
             android:exported="true" />
         <activity
             android:name=".view.ui.main.MainActivity"
-            android:exported="true" />
+            android:exported="true"></activity>
         <activity
             android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
             android:exported="true">
