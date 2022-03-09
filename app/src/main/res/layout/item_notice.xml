@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="65dp"
+    android:background="@drawable/background_notice_round"
+    android:orientation="horizontal">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textView_notice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="14dp"
+        android:text="[가이드] 첫번째 알람을 보내라!"
+        android:textColor="@color/black_4D4D4D"
+        android:textSize="16sp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+
+        android:layout_width="50dp"
+        android:layout_height="24dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/background_new_round"
+        android:gravity="center"
+        android:text="NEW"
+        android:textColor="@color/white" />
+
+</RelativeLayout>

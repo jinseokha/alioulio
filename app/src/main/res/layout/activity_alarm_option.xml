@@ -20,20 +20,20 @@
         android:paddingRight="20dp"
         tools:context=".view.ui.main.profilemanage.AlarmOptionActivity">
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/back_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_btn_icon_arrow" />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_btn_icon_arrow" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:textStyle="bold"
-                android:textColor="@color/black_222222"
-                android:textSize="16sp"
-                android:text="알림 센터"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"
+            android:textColor="@color/black_222222"
+            android:textSize="16sp"
+            android:text="알림 센터"/>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/textView_notice"
@@ -46,39 +46,21 @@
             android:textColor="@color/black_222222"
             android:text="공지사항"/>
 
-        <LinearLayout
-            android:id="@+id/layout_notice"
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview_notice"
             android:layout_width="match_parent"
             android:layout_height="65dp"
-            android:background="@drawable/background_notice_round"
-            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
             android:layout_below="@id/textView_notice"
-            android:orientation="horizontal">
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="14dp"
-                android:layout_gravity="center_vertical"
-                android:textColor="@color/black_4D4D4D"
-                android:textSize="16sp"
-                android:text="[가이드] 첫번째 알람을 보내라!"/>
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="50dp"
-                android:layout_height="24dp"
-                android:layout_gravity="center|right"
-                android:gravity="center"
-                android:textColor="@color/white"
-                android:background="@drawable/background_new_round"
-                android:text="NEW"/>
-        </LinearLayout>
+            android:layout_marginTop="10dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/textView_question"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/layout_notice"
+            android:layout_below="@id/recyclerview_notice"
             android:layout_marginTop="25dp"
             android:textStyle="bold"
             android:textColor="@color/black_222222"

@@ -1,5 +1,6 @@
 package com.alio.ulio.view.ui.main.profilemanage
 
+import android.content.Intent
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import com.alio.ulio.R
@@ -7,6 +8,7 @@ import com.alio.ulio.base.BaseFragment
 import com.alio.ulio.binding.MyTransformation
 import com.alio.ulio.databinding.ProfileFragmentBinding
 import com.alio.ulio.db.Preferences
+import com.alio.ulio.view.ui.sign.SignActivity
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
@@ -70,5 +72,10 @@ class ProfileFragment : BaseFragment<ProfileFragmentBinding,
             binding.tvEmail.visibility = View.VISIBLE
             binding.tvEmail.text = Preferences?.profile?.kakaoAccount?.email
         }
+    }
+
+    fun goAlarmCenter() {
+        val intent = Intent(requireContext(), AlarmOptionActivity::class.java)
+        startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
     }
 }
