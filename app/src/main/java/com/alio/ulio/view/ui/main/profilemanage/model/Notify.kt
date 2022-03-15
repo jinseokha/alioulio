@@ -11,5 +11,6 @@ import java.io.Serializable
 
 data class Notify(
     var title :String?,
+    var content : String?,
     var isExpanded: Boolean = false) : Serializable {
 }

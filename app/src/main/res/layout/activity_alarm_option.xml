@@ -30,10 +30,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:textStyle="bold"
+            android:text="알림 센터"
             android:textColor="@color/black_222222"
             android:textSize="16sp"
-            android:text="알림 센터"/>
+            android:textStyle="bold" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/textView_notice"
@@ -51,10 +51,10 @@
             android:id="@+id/recyclerview_notice"
             android:layout_width="match_parent"
             android:layout_height="65dp"
-            android:orientation="horizontal"
             android:layout_below="@id/textView_notice"
             android:layout_marginTop="10dp"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/textView_question"
@@ -71,10 +71,11 @@
             android:id="@+id/expendableList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_below="@id/textView_question"
+            android:layout_marginTop="25dp"
             android:divider="@color/gray_C4C4C4"
             android:dividerHeight="0.5dp"
-            android:layout_below="@id/textView_question"/>
+            android:groupIndicator="@null"/>
 
     </RelativeLayout>
 </layout>

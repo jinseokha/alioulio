@@ -3,11 +3,13 @@ package com.alio.ulio.view.ui.sign
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import com.alio.ulio.R
 import com.alio.ulio.base.BaseAppCompatActivity
 import com.alio.ulio.databinding.ActivitySignBinding
+import com.alio.ulio.db.Preferences
 import com.alio.ulio.view.dialog.DialogAccessDeniedDialog
 import com.alio.ulio.view.ui.main.MainActivity
 import com.kakao.sdk.auth.model.OAuthToken
@@ -108,9 +110,17 @@ class SignActivity : BaseAppCompatActivity<ActivitySignBinding, SignViewModel>(R
             }
         } else if (token != null) {
             toast(getString(R.string.success_login))
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-            finish()
+
+            UserApiClient.instance.me { user, error ->
+                Log.d("test", "닉네임 : ${user?.kakaoAccount?.profile?.nickname}")
+
+                Preferences.profile = user!!
+
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                finish()
+            }
+
         }
     }
 

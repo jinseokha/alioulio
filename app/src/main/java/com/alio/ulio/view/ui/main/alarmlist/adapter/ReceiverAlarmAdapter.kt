@@ -50,16 +50,16 @@ class ReceiverAlarmAdapter(context : Context) : RecyclerView.Adapter<ReceiverAla
     }
 
     override fun onBindViewHolder(holder: SampleHolder, position: Int) {
-        holder.setViewData(items[position])
+        holder.setViewData(items[position], position)
     }
 
     override fun getItemCount(): Int = items.size
 
     inner class SampleHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        fun setViewData(alarmData: Alarm) {
+        fun setViewData(alarmData: Alarm, position : Int) {
             itemView.swipeContainer.setOnClickListener{
-                Toast.makeText(it.context, "test", Toast.LENGTH_LONG).show()
+                Toast.makeText(it.context, "알림 수정", Toast.LENGTH_LONG).show()
             }
 
             itemView.swipeContainer.setOnSwipeListener(object : OnSwipeListener {
@@ -67,9 +67,21 @@ class ReceiverAlarmAdapter(context : Context) : RecyclerView.Adapter<ReceiverAla
                     alarmData.isExpanded = isExpanded
                 }
             })
-            /*itemView.titleText.text = alarmData.hour
-            itemView.descriptionText.text = alarmData.minute*/
+
+            itemView.layout_alarmOff.setOnClickListener {
+                Toast.makeText(it.context, "알림 오프", Toast.LENGTH_LONG).show()
+            }
+
+            itemView.layout_delete.setOnClickListener {
+                notifyItemRemoved(position)
+            }
+
+            itemView.layout_siren.setOnClickListener {
+                Toast.makeText(it.context, "알림 신고", Toast.LENGTH_LONG).show()
+            }
+
             itemView.swipeContainer.apply(alarmData.isExpanded)
+
         }
     }
 }

@@ -1,12 +1,12 @@
 package com.alio.ulio.view.ui.main.profilemanage.adapter
 
 import android.content.Context
-import android.graphics.Typeface
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseExpandableListAdapter
 import android.widget.TextView
+import androidx.appcompat.widget.AppCompatImageView
 import com.alio.ulio.R
 
 class QuestionExpandableListAdapter internal constructor(
@@ -48,24 +48,33 @@ class QuestionExpandableListAdapter internal constructor(
         if (convertView == null) {
             val layoutInflater =
                 this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-            convertView = layoutInflater.inflate(R.layout.item_question_list, null)
+            convertView = layoutInflater.inflate(R.layout.item_question_title, null)
         }
 
-        /*val listTitleTextView = convertView!!.findViewById<TextView>()
-        listTitleTextView.setTypeface(null, Typeface.BOLD)*/
+        val expandableTitleTextView = convertView!!.findViewById<TextView>(R.id.textView_title)
+        expandableTitleTextView.text = listTitle
+
+        val expandableImage = convertView!!.findViewById<AppCompatImageView>(R.id.imageView_updown)
+
+        if (isExpanded) {
+            expandableImage.setImageResource(R.drawable.ic_btn__icon_close)
+        } else {
+            expandableImage.setImageResource(R.drawable.ic_btn__icon_open)
+        }
 
         return convertView!!
     }
 
     override fun getChildView(listPosition: Int, expandedListPosition: Int, isLastChild: Boolean, convertView: View?, parent: ViewGroup?): View {
         var convertView = convertView
-        val expandedListText = getChild(listPosition, expandedListPosition) as String
+        val listContent = getChild(listPosition, expandedListPosition) as String
         if (convertView == null) {
             val layoutInflater = this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-            convertView = layoutInflater.inflate(R.layout.item_question_list, null)
+            convertView = layoutInflater.inflate(R.layout.item_question_content, null)
         }
 
-        /*val expandedListTextView = convertView!!.findViewById<TextView>()*/
+        val expandableContentTextView = convertView!!.findViewById<TextView>(R.id.textView_content)
+        expandableContentTextView.text = listContent
 
         return convertView!!
     }
