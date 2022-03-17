@@ -49,6 +49,7 @@ class AlarmConditionActivity : BaseAppCompatActivity<ActivityAlarmConditionBindi
             val intent = Intent(this, VoiceRecoredActivity::class.java)
             intent.putExtra("Alarm", alarm)
             startActivity(intent)
+            overridePendingTransition(R.anim.anim_slide_in_left, R.anim.anim_slide_out_left)
 
         }
     }

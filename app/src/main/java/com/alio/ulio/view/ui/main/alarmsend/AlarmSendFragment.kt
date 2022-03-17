@@ -19,6 +19,7 @@ class AlarmSendFragment : BaseFragment<AlarmSendFragmentBinding,
     fun onlyAlarmClick(view : View) {
         val intent = Intent(requireActivity(), AlarmConditionActivity::class.java)
         startActivity(intent)
+        requireActivity().overridePendingTransition(R.anim.anim_slide_in_left, R.anim.anim_slide_out_left)
     }
 
     fun alwaysAlarmClick(view : View) {

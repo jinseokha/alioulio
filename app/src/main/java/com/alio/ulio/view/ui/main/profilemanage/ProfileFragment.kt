@@ -27,11 +27,13 @@ class ProfileFragment : BaseFragment<ProfileFragmentBinding,
         binding.btnFab.setOnClickListener {
             val intent = Intent(requireContext(), AlarmOptionActivity::class.java)
             startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+            requireActivity().overridePendingTransition(R.anim.anim_slide_in_left, R.anim.anim_slide_out_left)
         }
 
         binding.btnAgr.setOnClickListener {
             val intent = Intent(requireContext(), PersonalInfoActivity::class.java)
             startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+            requireActivity().overridePendingTransition(R.anim.anim_slide_in_left, R.anim.anim_slide_out_left)
         }
 
         //Log.d(TAG, "data : ${Preferences.profile.properties.}")
