@@ -54,4 +54,7 @@
     <color name="itemFocusedColor">#1A000000</color>
 
     <color name="defaultColor">#2962FF</color>
+
+    <color name="start">#ff6e7f</color>
+    <color name="end">#000000</color>
 </resources>

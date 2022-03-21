@@ -27,6 +27,11 @@ class AlarmOptionActivity : BaseAppCompatActivity<ActivityAlarmOptionBinding,
         initNotifyView()
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_right)
+    }
+
     private fun initExpandableView() {
         val listData = data
         titleList = ArrayList(listData.keys)

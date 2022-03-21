@@ -29,6 +29,11 @@ class PersonalInfoActivity : BaseAppCompatActivity<ActivityPersonalInfoBinding,
 
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_right)
+    }
+
     private inner class SlidePagerAdapter(fa : FragmentActivity) : FragmentStateAdapter(fa) {
         private val NUM_PAGES = 2
 

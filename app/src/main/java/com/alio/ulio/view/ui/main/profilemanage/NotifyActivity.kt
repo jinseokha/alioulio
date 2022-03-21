@@ -23,5 +23,9 @@ class NotifyActivity : BaseAppCompatActivity<ActivityNotifyBinding,
         binding.content.text = notifyData.content
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_right)
+    }
 
 }

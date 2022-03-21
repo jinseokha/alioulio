@@ -59,4 +59,9 @@ class AlarmConditionActivity : BaseAppCompatActivity<ActivityAlarmConditionBindi
         var str = format.format(date)
         return str
     }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_right)
+    }
 }

@@ -11,4 +11,8 @@ class FirstSignAgreeActivity : BaseAppCompatActivity<ActivityFirstSignAgreeBindi
         binding.viewmodel = viewModel
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_right)
+    }
 }
