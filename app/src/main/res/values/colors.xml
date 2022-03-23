@@ -8,6 +8,8 @@
 
     <color name="red">#F85D79</color>
 
+    <color name="background_blue">#EBF0FF</color>
+
     <color name="icons_gray">#C7C7C7</color>
     <color name="colorAccent">#FF9F09</color>
 
@@ -43,7 +45,8 @@
     <color name="ff998A">#FF998A</color>
 
     <color name="receiver_alarm_color">#FF8A78</color>
-    <color name="send_alarm_color">#CDCDCD</color>
+    <color name="send_alarm_color">#759CFF</color>
+    <color name="not_alarm_color">#CDCDCD</color>
 
     <color name="daysLabelColor">#8A000000</color>
     <color name="currentMonthDayColor">#de000000</color>

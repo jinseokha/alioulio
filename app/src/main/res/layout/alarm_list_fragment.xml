@@ -9,10 +9,11 @@
     </data>
 
     <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/layout_background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/gray_F7F7F7"
-        android:layout_marginTop="15dp"
+        android:paddingTop="15dp"
         android:orientation="vertical">
 
 
@@ -31,24 +32,29 @@
                 android:orientation="vertical">
 
                 <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textview_receiver"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
                     android:lineHeight="30dp"
+                    android:textColor="@color/selector_receiver_list_textview"
+                    android:textStyle="bold"
                     android:text="받은 알림"/>
 
                 <View
+                    android:id="@+id/view_receiver"
                     android:layout_width="12dp"
                     android:layout_height="3dp"
-                    android:background="@drawable/bar" />
+                    android:background="@drawable/receiver_bar" />
             </LinearLayout>
 
             <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageView_logo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_gravity="center_vertical"
-                android:src="@drawable/ic_top_image"/>
+                android:src="@drawable/ic_top_receiver_img"/>
 
             <LinearLayout
                 android:id="@+id/layout_sender"
@@ -59,16 +65,20 @@
                 android:orientation="vertical">
 
                 <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textview_send"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
                     android:lineHeight="30dp"
+                    android:textColor="@color/selector_send_list_textview"
+                    android:textStyle="bold"
                     android:text="보낸 알림"/>
 
                 <View
+                    android:id="@+id/view_send"
                     android:layout_width="12dp"
                     android:layout_height="3dp"
-                    android:background="@drawable/bar" />
+                    android:background="@drawable/send_bar" />
             </LinearLayout>
         </androidx.appcompat.widget.LinearLayoutCompat>
 

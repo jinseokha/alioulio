@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Alioulio">
         <activity
+            android:name=".view.ui.main.alarmsend.AlarmAlwaysActivity"
+            android:exported="true" />
+        <activity
             android:name=".view.ui.main.profilemanage.personalinfo.PersonalInfoActivity"
             android:exported="true" />
         <activity
