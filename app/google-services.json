@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "460864437600",
+    "project_id": "alioulio",
+    "storage_bucket": "alioulio.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:460864437600:android:d7602a89960153f0867205",
+        "android_client_info": {
+          "package_name": "com.alio.ulio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "460864437600-imo66no7es9riku518r57h5gtf8kdt71.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.alio.ulio",
+            "certificate_hash": "11fe8cc14c11f669efda042a96d1e15704630535"
+          }
+        },
+        {
+          "client_id": "460864437600-ku5blni95do93d715qq0eir8amvs4rkh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQ3IkOxL8JTDo1U9U-hsreUWEXxMO6zB0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "460864437600-ku5blni95do93d715qq0eir8amvs4rkh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
