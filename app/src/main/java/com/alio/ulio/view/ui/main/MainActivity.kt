@@ -1,18 +1,27 @@
 package com.alio.ulio.view.ui.main
 
 
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
+import android.os.Process
 import android.util.DisplayMetrics
 import android.util.Log
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.widget.AppCompatButton
+import androidx.appcompat.widget.AppCompatTextView
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.ui.setupWithNavController
 import com.alio.ulio.R
 import com.alio.ulio.base.BaseAppCompatActivity
 import com.alio.ulio.databinding.ActivityMainBinding
+import com.alio.ulio.view.dialog.ExitDialog
 import com.kakao.sdk.common.util.Utility
+import kotlinx.android.synthetic.main.item_question_content.*
 import kotlin.math.roundToInt
 
 class MainActivity : BaseAppCompatActivity<ActivityMainBinding,
@@ -27,6 +36,30 @@ class MainActivity : BaseAppCompatActivity<ActivityMainBinding,
         Log.d("Hash", keyHash)*/
 
         initViews()
+    }
+
+    override fun onBackPressed() {
+        val layoutInflater = LayoutInflater.from(this)
+        val view: View = layoutInflater.inflate(R.layout.dialog_exit, null)
+
+        val alertDialog = AlertDialog.Builder(this)
+            .setView(view)
+            .create()
+
+        alertDialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+        val buttonCancel = view.findViewById<View>(R.id.cancel) as AppCompatButton
+        val buttonConfirm = view.findViewById<View>(R.id.ok) as AppCompatButton
+
+        alertDialog.show()
+
+        buttonCancel.setOnClickListener { alertDialog.dismiss() }
+
+        buttonConfirm.setOnClickListener {
+            alertDialog.dismiss()
+            // 프로세스 종료.
+            finish()
+        }
     }
 
     private fun initViews() {

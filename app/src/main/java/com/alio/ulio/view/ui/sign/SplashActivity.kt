@@ -40,7 +40,7 @@ class SplashActivity : BaseAppCompatActivity<ActivitySplashBinding, SplashViewMo
                 }
             } else {
                 // 자동로그인 실패
-                toast(getString(R.string.error_auto_login))
+                //toast(getString(R.string.error_auto_login))
 
                 val intent = Intent(this, SignActivity::class.java)
                 startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))

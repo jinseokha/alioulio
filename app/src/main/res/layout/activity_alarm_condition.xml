@@ -58,10 +58,10 @@
             android:layout_below="@id/line_8"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
+            android:text="언제 울리는 알림인가요?"
             android:textColor="@color/black_222222"
             android:textSize="16sp"
-            android:textStyle="bold"
-            android:text="언제 울리는 알림인가요?"/>
+            android:textStyle="bold" />
 
         <RelativeLayout
             android:id="@+id/layout_select_day"

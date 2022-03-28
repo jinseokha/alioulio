@@ -46,7 +46,7 @@ class SendAlarmAdapter(context : Context) : RecyclerView.Adapter<SendAlarmAdapte
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SampleHolder {
-        return SampleHolder(inflater.inflate(R.layout.item_main, parent, false))
+        return SampleHolder(inflater.inflate(R.layout.item_send_main, parent, false))
     }
 
     override fun onBindViewHolder(holder: SampleHolder, position: Int) {

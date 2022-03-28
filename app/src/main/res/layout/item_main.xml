@@ -73,25 +73,26 @@
             android:orientation="horizontal">
 
             <LinearLayout
-                android:layout_width="70dp"
+                android:layout_width="60dp"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:layout_width="46dp"
                     android:layout_height="46dp"
-                    android:src="@drawable/ic_top_receiver_img" />
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_receiver_sample_image" />
 
             </LinearLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:paddingLeft="8dp">
             <RelativeLayout
                 android:id="@+id/layout_who"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingLeft="8dp"
                 android:orientation="vertical"
                 android:layout_weight="1">
                 <TextView
