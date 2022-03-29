@@ -4,6 +4,8 @@ import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
+import android.os.Handler
+import android.os.Looper
 import android.util.AttributeSet
 import android.view.View
 
@@ -54,6 +56,8 @@ class SoundVisualizerView(
 
             invalidate()
 
+            //Handler(Looper.getMainLooper()).postDelayed(this, ACTION_INTERVAL)
+
             handler?.postDelayed(this, ACTION_INTERVAL)
         }
     }
@@ -61,10 +65,13 @@ class SoundVisualizerView(
     fun startVisualizing(isReplaying : Boolean) {
         this.isReplaying = isReplaying
         handler?.post(visualizeRepeatAction)
+
+        //Handler(Looper.getMainLooper()).post(visualizeRepeatAction)
     }
 
     fun stopVisualizing() {
         replayingPosition = 0
+        //Handler(Looper.getMainLooper()).removeCallbacks(visualizeRepeatAction)
         handler?.removeCallbacks(visualizeRepeatAction)
     }
 

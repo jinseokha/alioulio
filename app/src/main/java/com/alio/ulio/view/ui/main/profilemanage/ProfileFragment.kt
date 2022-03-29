@@ -4,11 +4,14 @@ import android.content.Intent
 import android.util.Log
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.alio.ulio.R
 import com.alio.ulio.base.BaseFragment
 import com.alio.ulio.binding.MyTransformation
 import com.alio.ulio.databinding.ProfileFragmentBinding
 import com.alio.ulio.db.Preferences
+import com.alio.ulio.view.ui.main.profilemanage.adapter.FriendListAdapter
 import com.alio.ulio.view.ui.main.profilemanage.personalinfo.PersonalInfoActivity
 import com.alio.ulio.view.ui.sign.SignActivity
 import com.bumptech.glide.Glide
@@ -17,6 +20,9 @@ import com.kakao.sdk.talk.TalkApiClient
 
 class ProfileFragment : BaseFragment<ProfileFragmentBinding,
         ProfileViewModel>(R.layout.profile_fragment) {
+
+    private lateinit var friendListAdapter : FriendListAdapter
+    private lateinit var friendListManager : RecyclerView.LayoutManager
 
     override fun ProfileFragmentBinding.onCreateView() {
         viewModel = ViewModelProvider(this@ProfileFragment).get(ProfileViewModel::class.java)
@@ -48,6 +54,8 @@ class ProfileFragment : BaseFragment<ProfileFragmentBinding,
                 // 친구의 UUID 로 메시지 보내기 가능
             }
         }
+
+        initFriendList()
     }
 
     private fun profileImageLoad() {
@@ -68,5 +76,13 @@ class ProfileFragment : BaseFragment<ProfileFragmentBinding,
             binding.tvEmail.visibility = View.VISIBLE
             binding.tvEmail.text = Preferences?.profile?.kakaoAccount?.email
         }
+    }
+
+    private fun initFriendList() {
+        friendListAdapter = FriendListAdapter(requireContext())
+        friendListManager = LinearLayoutManager(requireContext())
+
+        binding.recyclerView.layoutManager = friendListManager
+        binding.recyclerView.adapter = friendListAdapter
     }
 }

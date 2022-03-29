@@ -59,7 +59,7 @@ class ReceiverAlarmAdapter(context : Context) : RecyclerView.Adapter<ReceiverAla
 
         fun setViewData(alarmData: Alarm, position : Int) {
             itemView.swipeContainer.setOnClickListener{
-                Toast.makeText(it.context, "알림 수정", Toast.LENGTH_LONG).show()
+                Toast.makeText(it.context, "알림 수정", Toast.LENGTH_SHORT).show()
             }
 
             itemView.swipeContainer.setOnSwipeListener(object : OnSwipeListener {
@@ -69,7 +69,7 @@ class ReceiverAlarmAdapter(context : Context) : RecyclerView.Adapter<ReceiverAla
             })
 
             itemView.layout_alarmOff.setOnClickListener {
-                Toast.makeText(it.context, "알림 오프", Toast.LENGTH_LONG).show()
+                Toast.makeText(it.context, "알림 오프", Toast.LENGTH_SHORT).show()
             }
 
             itemView.layout_delete.setOnClickListener {
@@ -77,7 +77,7 @@ class ReceiverAlarmAdapter(context : Context) : RecyclerView.Adapter<ReceiverAla
             }
 
             itemView.layout_siren.setOnClickListener {
-                Toast.makeText(it.context, "알림 신고", Toast.LENGTH_LONG).show()
+                Toast.makeText(it.context, "알림 신고", Toast.LENGTH_SHORT).show()
             }
 
             itemView.swipeContainer.apply(alarmData.isExpanded)

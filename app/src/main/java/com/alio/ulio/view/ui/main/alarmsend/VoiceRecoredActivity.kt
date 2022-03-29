@@ -47,7 +47,7 @@ class VoiceRecoredActivity : BaseAppCompatActivity<ActivityVoiceRecoredBinding,
         viewModel = VoiceRecoredViewModel(application)
         binding.viewmodel = viewmodel
 
-        val alarm = intent.getSerializableExtra("Alarm") as Alarm
+//        val alarm = intent.getSerializableExtra("Alarm") as Alarm
         initViews()
         bindViews()
         initVariables()
@@ -91,6 +91,12 @@ class VoiceRecoredActivity : BaseAppCompatActivity<ActivityVoiceRecoredBinding,
                 }
                 State.ON_RECORDING -> {
                     stopRecording()
+                }
+                State.AFTER_RECORDING -> {
+                    binding.soundVisualizerView.clearVisualization()
+                    binding.recordTimeTextView.clearCountTime()
+
+                    startRecoding()
                 }
             }
         }
@@ -147,8 +153,6 @@ class VoiceRecoredActivity : BaseAppCompatActivity<ActivityVoiceRecoredBinding,
     }
 
     private fun startPlayingDialog() {
-        alertDialog.show()
-
         player = MediaPlayer()
             .apply {
                 setDataSource(recordingFilePath)
@@ -156,10 +160,7 @@ class VoiceRecoredActivity : BaseAppCompatActivity<ActivityVoiceRecoredBinding,
             }
 
         player?.setOnCompletionListener {
-            player?.release()
-            player = null
-            soundVisualizerView.stopVisualizing()
-            state = State.AFTER_RECORDING
+            stopPlaying()
             Toast.makeText(this, "끝", Toast.LENGTH_LONG).show()
         }
 
@@ -167,15 +168,20 @@ class VoiceRecoredActivity : BaseAppCompatActivity<ActivityVoiceRecoredBinding,
         soundVisualizerView.startVisualizing(true)
 
         btn_next.setOnClickListener { view ->
-            player?.release()
-            player = null
-            soundVisualizerView.stopVisualizing()
-
-            state = State.BEFORE_RECORDING
+            stopPlaying()
 
             alertDialog.dismiss()
         }
         state = State.ON_PLAYING
 
+        alertDialog.show()
+    }
+
+    private fun stopPlaying() {
+        player?.release()
+        player = null
+        soundVisualizerView.stopVisualizing()
+
+        state = State.AFTER_RECORDING
     }
 }

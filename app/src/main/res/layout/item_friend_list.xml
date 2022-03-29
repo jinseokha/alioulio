@@ -8,7 +8,8 @@
         android:id="@+id/imageView_thumbnail"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_centerVertical="true"/>
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_receiver_sample_image"/>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textView_name"
@@ -26,6 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
         android:orientation="horizontal">
 
         <androidx.appcompat.widget.AppCompatImageView
@@ -37,8 +39,8 @@
         <View
             android:layout_width="1dp"
             android:layout_height="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
             android:layout_gravity="center_vertical"
             android:layout_below="@id/setting_condition"
             android:background="@color/gray_D8D8D8" />
