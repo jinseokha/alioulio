@@ -4,13 +4,10 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.alio.ulio.R
-import com.alio.ulio.custom.recyclerLayout.OnSwipeListener
 import com.alio.ulio.db.entity.Alarm
 import kotlinx.android.synthetic.main.item_listener_main.view.*
-import kotlinx.android.synthetic.main.item_main.view.*
 import kotlinx.android.synthetic.main.item_main.view.titleText
 import java.util.*
 

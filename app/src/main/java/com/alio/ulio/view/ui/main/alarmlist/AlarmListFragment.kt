@@ -12,7 +12,6 @@ import com.alio.ulio.databinding.AlarmListFragmentBinding
 import com.alio.ulio.view.ui.main.alarmlist.adapter.HorizontalViewAdapter
 import com.alio.ulio.view.ui.main.alarmlist.adapter.ReceiverAlarmAdapter
 import com.alio.ulio.view.ui.main.alarmlist.adapter.SendAlarmAdapter
-import kotlinx.android.synthetic.main.layout_receive_alarm.view.*
 
 class AlarmListFragment : BaseFragment<AlarmListFragmentBinding,
         AlarmListViewModel>(R.layout.alarm_list_fragment) {
@@ -91,18 +90,18 @@ class AlarmListFragment : BaseFragment<AlarmListFragmentBinding,
         binding.includeReceive.recyclerView.layoutManager = receiverManager
         binding.includeReceive.recyclerView.adapter = receiverAdapter
 
-        binding.includeReceive.horizontal_recyclerView.adapter = horizontalAdapter
+        binding.includeReceive.horizontalRecyclerView.adapter = horizontalAdapter
     }
 
     private fun selectLayout() {
         if (binding.layoutReceiver.isSelected) {
-            binding.includeSend.visibility = View.GONE
-            binding.includeReceive.visibility = View.VISIBLE
+            binding.includeSend.root.visibility = View.GONE
+            binding.includeReceive.root.visibility = View.VISIBLE
         }
 
         if (binding.layoutSender.isSelected) {
-            binding.includeSend.visibility = View.VISIBLE
-            binding.includeReceive.visibility = View.GONE
+            binding.includeSend.root.visibility = View.VISIBLE
+            binding.includeReceive.root.visibility = View.GONE
         }
     }
 }

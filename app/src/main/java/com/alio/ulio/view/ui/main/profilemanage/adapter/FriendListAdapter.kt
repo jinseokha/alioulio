@@ -7,10 +7,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.alio.ulio.R
-import com.alio.ulio.db.entity.Alarm
 import com.alio.ulio.db.entity.Friend
 import kotlinx.android.synthetic.main.item_friend_list.view.*
-import java.util.*
 
 /**
  * @author Ha Jin Seok

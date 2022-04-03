@@ -2,12 +2,10 @@ package com.alio.ulio.view.ui.main.alarmsend.adapter
 
 import android.content.Context
 import android.graphics.Typeface
-import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
-
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView

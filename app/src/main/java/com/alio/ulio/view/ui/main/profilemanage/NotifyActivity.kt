@@ -1,7 +1,5 @@
 package com.alio.ulio.view.ui.main.profilemanage
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import com.alio.ulio.R
 import com.alio.ulio.base.BaseAppCompatActivity
 import com.alio.ulio.databinding.ActivityNotifyBinding

@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.alio.ulio.R
-import com.alio.ulio.db.entity.Alarm
 import com.alio.ulio.view.ui.main.profilemanage.NotifyActivity
 import com.alio.ulio.view.ui.main.profilemanage.model.Notify
 import kotlinx.android.synthetic.main.item_notice.view.*

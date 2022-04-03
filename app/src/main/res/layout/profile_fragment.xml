@@ -4,8 +4,6 @@
 
     <data>
 
-        <import type="com.alio.ulio.api.Api"/>
-
         <variable
             name="viewmodel"
             type="com.alio.ulio.view.ui.main.profilemanage.ProfileViewModel" />

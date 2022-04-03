@@ -7,16 +7,18 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.alio.ulio.R
+import com.alio.ulio.api.AlioUlioClient
 import com.alio.ulio.base.BaseFragment
 import com.alio.ulio.binding.MyTransformation
 import com.alio.ulio.databinding.ProfileFragmentBinding
 import com.alio.ulio.db.Preferences
 import com.alio.ulio.view.ui.main.profilemanage.adapter.FriendListAdapter
 import com.alio.ulio.view.ui.main.profilemanage.personalinfo.PersonalInfoActivity
-import com.alio.ulio.view.ui.sign.SignActivity
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.kakao.sdk.talk.TalkApiClient
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.schedulers.Schedulers
 
 class ProfileFragment : BaseFragment<ProfileFragmentBinding,
         ProfileViewModel>(R.layout.profile_fragment) {
@@ -54,6 +56,18 @@ class ProfileFragment : BaseFragment<ProfileFragmentBinding,
                 // 친구의 UUID 로 메시지 보내기 가능
             }
         }
+
+        // API TEST
+        /*AlioUlioClient.getApi().insertFriend("12345", "test", "testtest")
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({ result ->
+                var res = result.string()
+                Log.d("test", "" + res)
+            }, { throwable ->
+                Log.d("test", "" + throwable.message)
+            })*/
+
 
         initFriendList()
     }

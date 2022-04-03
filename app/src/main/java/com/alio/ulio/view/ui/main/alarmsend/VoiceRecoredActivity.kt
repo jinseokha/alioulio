@@ -15,7 +15,6 @@ import com.alio.ulio.base.BaseAppCompatActivity
 import com.alio.ulio.custom.voice.SoundVisualizerView
 import com.alio.ulio.custom.voice.State
 import com.alio.ulio.databinding.ActivityVoiceRecoredBinding
-import com.alio.ulio.db.entity.Alarm
 import com.alio.ulio.view.ui.main.alarmsend.viewmodel.VoiceRecoredViewModel
 
 
