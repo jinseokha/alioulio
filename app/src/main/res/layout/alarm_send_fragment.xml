@@ -71,7 +71,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_marginRight="27dp"
                 android:layout_marginBottom="20dp"
-                android:src="@drawable/ic_some" />
+                android:src="@drawable/ic_icn_momt" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -110,7 +110,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_marginRight="27dp"
                 android:layout_marginBottom="20dp"
-                android:src="@drawable/ic_couple"/>
+                android:src="@drawable/ic_icn_reg"/>
 
         </RelativeLayout>
 
