@@ -8,7 +8,7 @@ buildscript {
     ext {
         // sdk and toolscompileSdkVersion
         compileSdkVersion = 31
-        minSdkVersion = 23
+        minSdkVersion = 26
         targetSdkVersion = 31
 
         ktxVersion = '1.7.0'

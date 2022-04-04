@@ -105,12 +105,13 @@
 
                 <TextView
                     android:id="@+id/descriptionText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/titleText"
                     android:text="minminiminchul"
                     android:textColor="@color/gray_A3A3A3"
-                    android:textSize="16sp"
-                    android:layout_below="@id/titleText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:textStyle="normal"
+                    android:textSize="16sp" />
 
             </RelativeLayout>
 
