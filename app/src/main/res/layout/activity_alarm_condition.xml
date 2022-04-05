@@ -167,7 +167,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
                 android:layout_marginLeft="10dp"
-                android:background="@drawable/selector_btn_clock"
+                android:background="@drawable/ic_cmp_txtfield_default"
                 android:gravity="center_vertical"
                 android:layout_toRightOf="@id/select_am">
 

@@ -53,15 +53,15 @@
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/line_8"
-            android:layout_above="@id/btn_next">
+            android:layout_above="@id/btn_next"
+            android:layout_below="@id/line_8">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:orientation="vertical"
                 android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:orientation="vertical">
+                android:paddingRight="20dp">
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
@@ -69,17 +69,17 @@
                     android:text="알람 제목"
                     android:textColor="@color/black_222222"
                     android:textSize="16sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
                 <androidx.appcompat.widget.AppCompatEditText
                     android:layout_width="match_parent"
                     android:layout_height="54dp"
                     android:layout_marginTop="10dp"
-                    android:paddingLeft="10dp"
-                    android:text="@{viewmodel.text_title}"
+                    android:background="@drawable/ic_cmp_txtfield_default"
                     android:hint="알람 제목을 입력해주세요."
                     android:onTextChanged="@{viewmodel::onTitleChanged}"
-                    android:background="@drawable/selector_btn_clock"/>
+                    android:paddingLeft="10dp"
+                    android:text="@{viewmodel.text_title}" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
@@ -88,7 +88,7 @@
                     android:text="알람 시간"
                     android:textColor="@color/black_222222"
                     android:textSize="16sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -101,20 +101,20 @@
                         android:layout_width="120dp"
                         android:layout_height="match_parent"
                         android:theme="@style/SelectorTheme"
-                        app:singleSelection="true"
-                        app:selectionRequired="true"
+                        app:checkedButton="@id/btn_am"
                         app:materialThemeOverlay="@style/button_overlay"
-                        app:checkedButton="@id/btn_am">
+                        app:selectionRequired="true"
+                        app:singleSelection="true">
 
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/btn_am"
                             style="?attr/materialButtonOutlinedStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:textSize="14dp"
+                            android:layout_weight="1"
                             android:text="AM"
                             android:textColor="@color/gray_A3A3A3"
-                            android:layout_weight="1"
+                            android:textSize="14dp"
                             app:strokeColor="@color/gray_D6D6D6" />
 
                         <com.google.android.material.button.MaterialButton
@@ -123,10 +123,10 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_toRightOf="@id/btn_am"
+                            android:layout_weight="1"
+                            android:text="PM"
                             android:textColor="@color/gray_A3A3A3"
                             android:textSize="14dp"
-                            android:text="PM"
-                            android:layout_weight="1"
                             app:strokeColor="@color/gray_D6D6D6" />
                     </com.google.android.material.button.MaterialButtonToggleGroup>
 
@@ -135,9 +135,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="54dp"
                         android:layout_marginLeft="10dp"
-                        android:background="@drawable/selector_btn_clock"
-                        android:gravity="center_vertical"
-                        android:layout_toRightOf="@id/select_am">
+                        android:layout_toRightOf="@id/select_am"
+                        android:background="@drawable/ic_cmp_txtfield_default"
+                        android:gravity="center_vertical">
 
                         <EditText
                             android:id="@+id/edit_hour"
@@ -147,32 +147,32 @@
                             android:hint="00"
                             android:inputType="time"
                             android:maxLength="2"
+                            android:onTextChanged="@{viewmodel::onHourChanged}"
                             android:paddingLeft="12dp"
                             android:text="@{viewmodel.hour}"
-                            android:textSize="16sp"
-                            android:onTextChanged="@{viewmodel::onHourChanged}"/>
+                            android:textSize="16sp" />
 
                         <TextView
                             android:id="@+id/tv_hour"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
-                            android:textSize="16sp"
-                            android:text="시 / "/>
+                            android:text="시 / "
+                            android:textSize="16sp" />
 
                         <EditText
                             android:id="@+id/edit_minute"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:background="@android:color/transparent"
-                            android:layout_toLeftOf="@id/tv_minute"
                             android:layout_marginRight="50dp"
-                            android:text="@{viewmodel.minute}"
-                            android:textSize="16sp"
-                            android:maxLength="2"
+                            android:layout_toLeftOf="@id/tv_minute"
+                            android:background="@android:color/transparent"
+                            android:hint="00"
                             android:inputType="time"
+                            android:maxLength="2"
                             android:onTextChanged="@{viewmodel::onMinuteChanged}"
-                            android:hint="00" />
+                            android:text="@{viewmodel.minute}"
+                            android:textSize="16sp" />
 
                         <TextView
                             android:id="@+id/tv_minute"
@@ -180,8 +180,8 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
                             android:paddingRight="12dp"
-                            android:textSize="16sp"
-                            android:text="분"/>
+                            android:text="분"
+                            android:textSize="16sp" />
                     </RelativeLayout>
                 </LinearLayout>
 
@@ -192,7 +192,7 @@
                     android:text="반복주기"
                     android:textColor="@color/black_222222"
                     android:textSize="16sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/textView_day"
@@ -209,7 +209,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:overScrollMode="never"/>
+                    android:overScrollMode="never" />
 
 
             </LinearLayout>
