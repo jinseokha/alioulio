@@ -2,6 +2,7 @@ package com.alio.ulio.view.ui.main.alarmsend
 
 import android.content.Intent
 import android.util.Log
+import android.view.animation.TranslateAnimation
 import com.alio.ulio.R
 import com.alio.ulio.base.BaseAppCompatActivity
 import com.alio.ulio.custom.calendar.EventDay
@@ -27,6 +28,8 @@ class AlarmConditionActivity : BaseAppCompatActivity<ActivityAlarmConditionBindi
     }
 
     private fun initCalendar() {
+
+
         binding.layoutCalendarview.setOnDayClickListener(object : OnDayClickListener {
             override fun onDayClick(eventDay: EventDay) {
                 binding.tvDate.text = convertDate(eventDay.calendar.time)

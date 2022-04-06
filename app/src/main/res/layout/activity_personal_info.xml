@@ -19,6 +19,7 @@
             android:id="@+id/back_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="22dp"
             android:src="@drawable/ic_btn_icon_arrow" />
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -30,15 +31,24 @@
             android:textSize="16sp"
             android:textStyle="bold" />
 
+        <View
+            android:id="@+id/line_8"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@id/back_button"
+            android:layout_marginTop="15dp"
+            android:background="@color/gray_F5F5F5" />
+
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabLayout_menu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/back_button"
             android:layout_marginTop="20dp"
-            app:tabTextColor="@color/black_454A57"
-            app:tabSelectedTextColor="@color/black_454A57"
+            android:textSize="16dp"
             app:tabIndicatorColor="@color/black_454A57"
-            android:layout_below="@id/back_button">
+            app:tabSelectedTextColor="@color/black_454A57"
+            app:tabTextColor="@color/black_454A57">
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"

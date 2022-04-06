@@ -2,6 +2,7 @@ package com.alio.ulio.view.ui.main.alarmsend.viewmodel
 
 import android.app.Application
 import android.text.TextUtils
+import android.view.animation.TranslateAnimation
 import androidx.databinding.ObservableField
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -102,6 +103,7 @@ class AlarmConditionViewModel(application: Application) : BaseViewModel(applicat
 
     fun onCalendarClick() {
         val temp = calendarVisible.get() ?: true
+
         calendarVisible.set(!temp)
     }
 

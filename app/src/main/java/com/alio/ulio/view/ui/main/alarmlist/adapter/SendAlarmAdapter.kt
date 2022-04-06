@@ -10,6 +10,10 @@ import com.alio.ulio.R
 import com.alio.ulio.custom.recyclerLayout.OnSwipeListener
 import com.alio.ulio.db.entity.Alarm
 import kotlinx.android.synthetic.main.item_main.view.*
+import kotlinx.android.synthetic.main.item_main.view.layout_alarmOff
+import kotlinx.android.synthetic.main.item_main.view.layout_delete
+import kotlinx.android.synthetic.main.item_main.view.swipeContainer
+import kotlinx.android.synthetic.main.item_send_main.view.*
 import java.util.*
 
 /**
@@ -74,10 +78,6 @@ class SendAlarmAdapter(context : Context) : RecyclerView.Adapter<SendAlarmAdapte
 
             itemView.layout_delete.setOnClickListener {
                 notifyItemRemoved(position)
-            }
-
-            itemView.layout_siren.setOnClickListener {
-                Toast.makeText(it.context, "알림 신고", Toast.LENGTH_LONG).show()
             }
 
             itemView.swipeContainer.apply(alarmData.isExpanded)

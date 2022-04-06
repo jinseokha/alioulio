@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="202dp"
+    android:layout_width="175dp"
     android:layout_height="wrap_content"
     android:background="@drawable/main_item_layout_background"
     android:paddingTop="7dp"
@@ -17,7 +17,7 @@
         android:src="@drawable/ic_receiver_sample_image" />
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:layout_marginLeft="6dp"
@@ -30,6 +30,7 @@
             android:textStyle="bold"
             android:textColor="@color/ff998A"
             android:textSize="14sp"
+            android:maxLength="8"
             android:text="모먼트"/>
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -38,7 +39,8 @@
             android:layout_height="wrap_content"
             android:textColor="@color/ff998A"
             android:textSize="14sp"
-            android:text="mincuhduchucmin"/>
+            android:maxLength="8"
+            android:text="mincuhd"/>
     </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatImageView

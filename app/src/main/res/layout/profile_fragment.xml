@@ -45,7 +45,7 @@
                     android:id="@+id/btn_fab"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_marginRight="20dp"
+                    android:layout_marginRight="15dp"
                     android:layout_toLeftOf="@id/view_fab"
                     android:src="@drawable/ic_btn_icon_faq" />
 
@@ -54,7 +54,7 @@
                     android:layout_width="1dp"
                     android:layout_height="15dp"
                     android:layout_marginTop="7dp"
-                    android:layout_marginRight="20dp"
+                    android:layout_marginRight="15dp"
                     android:layout_toLeftOf="@id/btn_agr"
                     android:background="@drawable/view_bar" />
 

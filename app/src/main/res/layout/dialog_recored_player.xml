@@ -51,7 +51,6 @@
         android:id="@+id/btn_next"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-
         android:background="@drawable/selector_btn_next_on"
         android:text="@string/confirm"
         android:textColor="@color/white"

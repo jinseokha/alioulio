@@ -43,20 +43,6 @@
 
         </FrameLayout>
 
-        <FrameLayout
-            android:id="@+id/layout_siren"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-
-            <ImageView
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_btn_icn_reprt"/>
-
-        </FrameLayout>
-
     </LinearLayout>
 
     <LinearLayout
@@ -64,7 +50,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/main_item_layout_background"
-        android:padding="10dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="6dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
         android:orientation="vertical">
 
         <LinearLayout
@@ -73,9 +62,8 @@
             android:orientation="horizontal">
 
             <LinearLayout
-                android:layout_width="40dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-
                 android:orientation="vertical">
 
                 <androidx.appcompat.widget.AppCompatImageView
@@ -88,7 +76,8 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp">
                 <RelativeLayout
                     android:id="@+id/layout_who"
                     android:layout_width="wrap_content"
@@ -225,9 +214,6 @@
 
         </LinearLayout>
 
-
-
     </LinearLayout>
-
 
 </com.alio.ulio.custom.recyclerLayout.SwipeMenuLayout>
