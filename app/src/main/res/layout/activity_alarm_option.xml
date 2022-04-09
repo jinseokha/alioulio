@@ -73,9 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/textView_question"
             android:layout_marginTop="25dp"
-            android:divider="@color/gray_C4C4C4"
-            android:dividerHeight="0.5dp"
-            android:groupIndicator="@null"/>
+            android:groupIndicator="@null" />
 
     </RelativeLayout>
 </layout>

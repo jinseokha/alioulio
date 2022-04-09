@@ -23,4 +23,10 @@
     <style name="BottomSheetInActive" >
         <item name="android:textSize">11sp</item>
     </style>
+
+    <style name="TabLayoutTextAppearance" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:lineSpacingMultiplier">0.8</item>
+    </style>
 </resources>

@@ -10,6 +10,9 @@ import com.alio.ulio.custom.calendar.listeners.OnDayClickListener
 import com.alio.ulio.databinding.ActivityAlarmConditionBinding
 import com.alio.ulio.util.eventObserve
 import com.alio.ulio.view.ui.main.alarmsend.viewmodel.AlarmConditionViewModel
+import com.google.android.material.timepicker.MaterialTimePicker
+import com.google.android.material.timepicker.MaterialTimePicker.INPUT_MODE_KEYBOARD
+import com.google.android.material.timepicker.TimeFormat
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -47,13 +50,77 @@ class AlarmConditionActivity : BaseAppCompatActivity<ActivityAlarmConditionBindi
     }
 
     private fun initObserve() {
-        viewModel.nextEvent.eventObserve(this) { alarm ->
-            // 녹음 페이지 화면 이동
-            val intent = Intent(this, VoiceRecoredActivity::class.java)
-            intent.putExtra("Alarm", alarm)
-            startActivity(intent)
-            overridePendingTransition(R.anim.anim_slide_in_left, R.anim.anim_slide_out_left)
 
+        binding.layoutClock.setOnClickListener {
+            val materialTimePicker: MaterialTimePicker = MaterialTimePicker.Builder()
+                // set the title for the alert dialog
+                .setTitleText("SELECT YOUR TIMING")
+                .setInputMode(INPUT_MODE_KEYBOARD)
+                // set the default hour for the
+                // dialog when the dialog opens
+                //.setHour(12)
+                // set the default minute for the
+                // dialog when the dialog opens
+                //.setMinute(10)
+                // set the time format
+                // according to the region
+                .setTimeFormat(TimeFormat.CLOCK_12H)
+                .build()
+
+            materialTimePicker.show(supportFragmentManager, "MainActivity")
+
+            // on clicking the positive button of the time picker
+            // dialog update the TextView accordingly
+            materialTimePicker.addOnPositiveButtonClickListener {
+
+                val pickedHour: Int = materialTimePicker.hour
+                val pickedMinute: Int = materialTimePicker.minute
+
+                // check for single digit hour hour and minute
+                // and update TextView accordingly
+                val formattedTime: String = when {
+                    pickedHour > 12 -> {
+                        if (pickedMinute < 10) {
+                            "${materialTimePicker.hour - 12}:0${materialTimePicker.minute} pm"
+                        } else {
+                            "${materialTimePicker.hour - 12}:${materialTimePicker.minute} pm"
+                        }
+                    }
+                    pickedHour == 12 -> {
+                        if (pickedMinute < 10) {
+                            "${materialTimePicker.hour}:0${materialTimePicker.minute} pm"
+                        } else {
+                            "${materialTimePicker.hour}:${materialTimePicker.minute} pm"
+                        }
+                    }
+                    pickedHour == 0 -> {
+                        if (pickedMinute < 10) {
+                            "${materialTimePicker.hour + 12}:0${materialTimePicker.minute} am"
+                        } else {
+                            "${materialTimePicker.hour + 12}:${materialTimePicker.minute} am"
+                        }
+                    }
+                    else -> {
+                        if (pickedMinute < 10) {
+                            "${materialTimePicker.hour}:0${materialTimePicker.minute} am"
+                        } else {
+                            "${materialTimePicker.hour}:${materialTimePicker.minute} am"
+                        }
+                    }
+                }
+
+                // then update the preview TextView
+                //previewPickedTimeTextView.text = formattedTime
+            }
+
+            viewModel.nextEvent.eventObserve(this) { alarm ->
+                // 녹음 페이지 화면 이동
+                val intent = Intent(this, VoiceRecoredActivity::class.java)
+                intent.putExtra("Alarm", alarm)
+                startActivity(intent)
+                overridePendingTransition(R.anim.anim_slide_in_left, R.anim.anim_slide_out_left)
+
+            }
         }
     }
 

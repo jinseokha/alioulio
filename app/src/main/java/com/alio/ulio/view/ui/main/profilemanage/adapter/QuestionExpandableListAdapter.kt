@@ -1,6 +1,7 @@
 package com.alio.ulio.view.ui.main.profilemanage.adapter
 
 import android.content.Context
+import android.graphics.Typeface
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -57,8 +58,10 @@ class QuestionExpandableListAdapter internal constructor(
         val expandableImage = convertView!!.findViewById<AppCompatImageView>(R.id.imageView_updown)
 
         if (isExpanded) {
+            expandableTitleTextView.typeface = Typeface.DEFAULT_BOLD
             expandableImage.setImageResource(R.drawable.ic_btn__icon_close)
         } else {
+            expandableTitleTextView.typeface = Typeface.DEFAULT
             expandableImage.setImageResource(R.drawable.ic_btn__icon_open)
         }
 

@@ -33,11 +33,11 @@ class RecordButton(
             }
             // 다시듣기
             State.AFTER_RECORDING -> {
-                setImageResource(R.drawable.ic_play)
+                //setImageResource(R.drawable.ic_play)
             }
             // 듣기 도중 바뀌는 아이콘
             State.ON_PLAYING -> {
-                setImageResource(R.drawable.ic_stop)
+                //setImageResource(R.drawable.ic_stop)
             }
         }
     }

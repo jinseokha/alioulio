@@ -101,8 +101,10 @@ dependencies {
 
     implementation platform('com.google.firebase:firebase-bom:29.2.1')
 
+    // firebase
     implementation 'com.google.gms:google-services:4.3.10'
     implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-messaging-ktx'
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

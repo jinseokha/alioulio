@@ -124,6 +124,8 @@ class VoiceRecoredActivity : BaseAppCompatActivity<ActivityVoiceRecoredBinding,
                 prepare()
             }
         recorder?.start()
+
+        binding.resetButton.setTextColor(ContextCompat.getColor(applicationContext, R.color.gray_D6D6D6))
         binding.recordTimeTextView.startCountUp()
         binding.recordTimeTextView.setTextColor(ContextCompat.getColor(applicationContext, R.color.red))
         binding.imgDot.visibility = View.VISIBLE
@@ -144,6 +146,7 @@ class VoiceRecoredActivity : BaseAppCompatActivity<ActivityVoiceRecoredBinding,
         binding.imgDot.visibility = View.GONE
         binding.recordTimeTextView.setTextColor(ContextCompat.getColor(applicationContext, R.color.black))
 
+        binding.resetButton.setTextColor(ContextCompat.getColor(applicationContext, R.color.black_454A57))
         binding.soundVisualizerView.clearVisualization()
         soundVisualizerView.clearVisualization()
         binding.recordTimeTextView.clearCountTime()
