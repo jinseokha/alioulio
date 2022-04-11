@@ -49,28 +49,23 @@
             android:layout_below="@id/text_social_login"
             android:orientation="horizontal">
 
-            <CheckBox
+            <androidx.appcompat.widget.AppCompatCheckBox
                 android:id="@+id/check_social"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:button="@drawable/ic_comp_chkbox" />
 
             <TextView
                 android:id="@+id/text_social"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
                 android:layout_toRightOf="@id/check_social"
                 android:text="@string/info_social_login"
                 android:textColor="@color/gray_666666"
                 android:textSize="16sp" />
 
-            <ImageView
-                android:id="@+id/img_social"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:background="@drawable/ic_right" />
         </RelativeLayout>
 
         <View
@@ -100,19 +95,22 @@
             android:layout_below="@id/text_social_1"
             android:orientation="horizontal">
 
-            <CheckBox
+            <androidx.appcompat.widget.AppCompatCheckBox
                 android:id="@+id/check_service"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:button="@drawable/ic_comp_chkbox" />
+
             <TextView
                 android:id="@+id/text_service"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/check_service"
+                android:layout_marginLeft="5dp"
                 android:layout_centerVertical="true"
-                android:textSize="16sp"
+                android:layout_toRightOf="@id/check_service"
+                android:text="@string/info_service"
                 android:textColor="@color/gray_666666"
-                android:text="@string/info_service"/>
+                android:textSize="16sp" />
 
             <ImageView
                 android:id="@+id/img_service"
@@ -120,7 +118,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:background="@drawable/ic_right" />
+                android:background="@drawable/ic_btn_right" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -130,19 +128,23 @@
             android:layout_marginTop="5dp"
             android:layout_below="@id/layout_service"
             android:orientation="horizontal">
-            <CheckBox
+
+            <androidx.appcompat.widget.AppCompatCheckBox
                 android:id="@+id/check_personal_service"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:button="@drawable/ic_comp_chkbox" />
+
             <TextView
                 android:id="@+id/text_personal_service"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/check_personal_service"
+                android:layout_marginLeft="5dp"
                 android:layout_centerVertical="true"
-                android:textSize="16sp"
+                android:layout_toRightOf="@id/check_personal_service"
+                android:text="@string/info_personal_service"
                 android:textColor="@color/gray_666666"
-                android:text="@string/info_personal_service"/>
+                android:textSize="16sp" />
 
             <ImageView
                 android:id="@+id/img_personal_service"
@@ -150,7 +152,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:background="@drawable/ic_right" />
+                android:background="@drawable/ic_btn_right" />
         </RelativeLayout>
 
         <View
@@ -179,34 +181,37 @@
             android:layout_below="@id/text_age"
             android:orientation="horizontal">
 
-            <CheckBox
+            <androidx.appcompat.widget.AppCompatCheckBox
                 android:id="@+id/check_join_age"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:button="@drawable/ic_comp_chkbox" />
+
             <TextView
                 android:id="@+id/text_join_age"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/check_join_age"
+                android:layout_marginLeft="5dp"
                 android:layout_centerVertical="true"
-                android:textSize="16sp"
+                android:layout_toRightOf="@id/check_join_age"
+                android:text="@string/info_join_age"
                 android:textColor="@color/gray_666666"
-                android:text="@string/info_join_age"/>
+                android:textSize="16sp" />
 
         </RelativeLayout>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_centerInParent="true"
             android:layout_above="@id/btn_agree"
+            android:layout_centerInParent="true"
             android:layout_marginBottom="24dp"
+            android:gravity="center"
             android:lineHeight="22dp"
-            android:textStyle="bold"
-            android:textSize="16sp"
+            android:text="@string/info_check_agree"
             android:textColor="@color/gray_A3A3A3"
-            android:text="@string/info_check_agree"/>
+            android:textSize="16sp"
+            />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_agree"
@@ -218,8 +223,7 @@
             android:onClick="@{() -> viewmodel.onNextEvent()}"
             android:text="@string/info_check"
             android:textColor="@color/white"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textSize="16sp" />
 
 
     </RelativeLayout>

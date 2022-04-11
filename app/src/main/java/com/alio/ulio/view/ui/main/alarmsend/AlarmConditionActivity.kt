@@ -2,6 +2,7 @@ package com.alio.ulio.view.ui.main.alarmsend
 
 import android.content.Intent
 import android.util.Log
+import android.view.View
 import android.view.animation.TranslateAnimation
 import com.alio.ulio.R
 import com.alio.ulio.base.BaseAppCompatActivity
@@ -39,19 +40,27 @@ class AlarmConditionActivity : BaseAppCompatActivity<ActivityAlarmConditionBindi
             }
         })
 
-        binding.selectAm.addOnButtonCheckedListener{ group, buttonId, isChecked ->
-            if (isChecked) {
-                val checkedIndex = group.indexOfChild(findViewById(buttonId))
-                Log.d("test", "" + checkedIndex)
-                viewModel.checkAM_PM(checkedIndex)
-            }
-        }
+        binding.buttonAm.isSelected = true
+        binding.buttonPm.isSelected = false
 
+        binding.buttonAm.setOnClickListener(buttonAMPMListener)
+        binding.buttonPm.setOnClickListener(buttonAMPMListener)
+
+    }
+
+    var buttonAMPMListener = View.OnClickListener { it ->
+        if (it.id == R.id.button_am) {
+            binding.buttonAm.isSelected = true
+            binding.buttonPm.isSelected = false
+        } else {
+            binding.buttonAm.isSelected = false
+            binding.buttonPm.isSelected = true
+        }
     }
 
     private fun initObserve() {
 
-        binding.layoutClock.setOnClickListener {
+        /*binding.layoutClock.setOnClickListener {
             val materialTimePicker: MaterialTimePicker = MaterialTimePicker.Builder()
                 // set the title for the alert dialog
                 .setTitleText("SELECT YOUR TIMING")
@@ -112,15 +121,15 @@ class AlarmConditionActivity : BaseAppCompatActivity<ActivityAlarmConditionBindi
                 // then update the preview TextView
                 //previewPickedTimeTextView.text = formattedTime
             }
+        }*/
 
-            viewModel.nextEvent.eventObserve(this) { alarm ->
-                // 녹음 페이지 화면 이동
-                val intent = Intent(this, VoiceRecoredActivity::class.java)
-                intent.putExtra("Alarm", alarm)
-                startActivity(intent)
-                overridePendingTransition(R.anim.anim_slide_in_left, R.anim.anim_slide_out_left)
+        viewModel.nextEvent.eventObserve(this) { alarm ->
+            // 녹음 페이지 화면 이동
+            val intent = Intent(this, VoiceRecoredActivity::class.java)
+            intent.putExtra("Alarm", alarm)
+            startActivity(intent)
+            overridePendingTransition(R.anim.anim_slide_in_left, R.anim.anim_slide_out_left)
 
-            }
         }
     }
 

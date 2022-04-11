@@ -2,13 +2,17 @@ package com.alio.ulio.view.ui.main.alarmsend.viewmodel
 
 import android.app.Application
 import android.text.TextUtils
+import android.view.View
 import android.view.animation.TranslateAnimation
 import androidx.databinding.ObservableField
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.alio.ulio.R
 import com.alio.ulio.base.BaseViewModel
 import com.alio.ulio.db.entity.Alarm
 import com.alio.ulio.util.Event
+import com.alio.ulio.view.dialog.DialogAccessDeniedDialog
+import com.alio.ulio.view.ui.sign.SignActivity
 
 
 /**

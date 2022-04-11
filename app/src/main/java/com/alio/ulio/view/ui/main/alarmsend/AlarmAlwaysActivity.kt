@@ -2,6 +2,7 @@ package com.alio.ulio.view.ui.main.alarmsend
 
 import android.content.Intent
 import android.util.Log
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.alio.ulio.R
 import com.alio.ulio.base.BaseAppCompatActivity
@@ -63,6 +64,16 @@ class AlarmAlwaysActivity : BaseAppCompatActivity<ActivityAlarmAlwaysBinding,
         overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_right)
     }
 
+    var buttonAMPMListener = View.OnClickListener { it ->
+        if (it.id == R.id.button_am) {
+            binding.buttonAm.isSelected = true
+            binding.buttonPm.isSelected = false
+        } else {
+            binding.buttonAm.isSelected = false
+            binding.buttonPm.isSelected = true
+        }
+    }
+
     private fun loadFakeData() {
         repeatPeriodData = ArrayList()
         repeatPeriodData.clear()
@@ -77,6 +88,13 @@ class AlarmAlwaysActivity : BaseAppCompatActivity<ActivityAlarmAlwaysBinding,
     }
 
     private fun initObserve() {
+
+        binding.buttonAm.isSelected = true
+        binding.buttonPm.isSelected = false
+
+        binding.buttonAm.setOnClickListener(buttonAMPMListener)
+        binding.buttonPm.setOnClickListener(buttonAMPMListener)
+
         viewModel.nextEvent.eventObserve(this) { alarm ->
             // 녹음 페이지 화면 이동
             val intent = Intent(this, VoiceRecoredActivity::class.java)

@@ -12,6 +12,7 @@ import com.alio.ulio.databinding.ActivitySignBinding
 import com.alio.ulio.db.Preferences
 import com.alio.ulio.view.dialog.DialogAccessDeniedDialog
 import com.alio.ulio.view.ui.main.MainActivity
+import com.alio.ulio.view.ui.sign.service.PersonalActivity
 import com.kakao.sdk.auth.model.OAuthToken
 import com.kakao.sdk.common.model.AuthErrorCause
 import com.kakao.sdk.user.UserApiClient
@@ -25,10 +26,15 @@ class SignActivity : BaseAppCompatActivity<ActivitySignBinding, SignViewModel>(R
         binding.activity = this@SignActivity
         binding.viewmodel = viewModel
 
+        observable()
     }
 
     private fun observable() {
-
+        binding.personal.setOnClickListener {
+            val intent = Intent(this, PersonalActivity::class.java)
+            startActivity(intent)
+            overridePendingTransition(R.anim.anim_slide_in_left, R.anim.anim_slide_out_left)
+        }
     }
 
     fun kakaoClick(view : View) {

@@ -10,6 +10,7 @@ import com.alio.ulio.R
 import com.alio.ulio.api.AlioUlioClient
 import com.alio.ulio.base.BaseFragment
 import com.alio.ulio.binding.MyTransformation
+import com.alio.ulio.custom.roundAll
 import com.alio.ulio.databinding.ProfileFragmentBinding
 import com.alio.ulio.db.Preferences
 import com.alio.ulio.view.ui.main.profilemanage.adapter.FriendListAdapter
@@ -78,9 +79,11 @@ class ProfileFragment : BaseFragment<ProfileFragmentBinding,
 
         Glide.with(requireActivity())
             .load(profileImage)
-            .apply(RequestOptions().transform(MyTransformation(requireActivity(), 80, MyTransformation.CornerType.ALL)))
+            .apply(RequestOptions().transform(MyTransformation(requireActivity(), 300, MyTransformation.CornerType.ALL)))
             .error(R.drawable.background_agree_round)
             .into(binding.imgProfile)
+
+        //roundAll(binding.imgProfile, 10f)
 
         binding.tvProfileName.text = Preferences.profile?.properties?.get("nickname")
 

@@ -49,16 +49,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="4dp"
-                android:background="@drawable/ic_btn_consnt_popup"
-                android:layout_weight="1" />
+                android:background="@drawable/ic_btn_small_enabled_un"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:text="@string/not_agree"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_agree"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="4dp"
-                android:background="@drawable/ic_btn_consnt_agree_popup"
-                android:layout_weight="1" />
+                android:background="@drawable/ic_btn_small_enabled"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:text="@string/agree"/>
 
             <!--<androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_agree"
