@@ -5,6 +5,7 @@
     android:layout_height="wrap_content"
     android:paddingTop="16dp"
     android:paddingBottom="16dp"
+    android:paddingLeft="17dp"
     android:layout_marginLeft="10dp"
     android:layout_marginRight="20dp">
 

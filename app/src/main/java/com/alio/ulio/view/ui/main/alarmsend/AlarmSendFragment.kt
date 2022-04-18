@@ -1,6 +1,7 @@
 package com.alio.ulio.view.ui.main.alarmsend
 
 import android.content.Intent
+import android.text.Html
 import android.view.View
 import com.alio.ulio.R
 import com.alio.ulio.base.BaseFragment
@@ -14,6 +15,12 @@ class AlarmSendFragment : BaseFragment<AlarmSendFragmentBinding,
     override fun AlarmSendFragmentBinding.onCreateView() {
         binding.fragment = this@AlarmSendFragment
 
+
+        var someText : String = "오직,<b><br>그 순간을 위한<br>모멘트</b> 알림"
+        binding.someId.text = Html.fromHtml(someText)
+
+        var coupleText : String = "<b>항상,<br>곁에서 챙겨주는<br></b>일상 알림"
+        binding.coupleId.text = Html.fromHtml(coupleText)
     }
 
     fun onlyAlarmClick(view : View) {

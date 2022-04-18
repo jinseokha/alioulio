@@ -22,12 +22,18 @@
             android:layout_weight="1">
 
             <androidx.constraintlayout.utils.widget.ImageFilterView
-                android:layout_width="32dp"
-                android:layout_height="32dp"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
                 android:layout_gravity="center"
                 android:src="@drawable/ic_btn_icn_mute"/>
 
         </FrameLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_height_bar"/>
 
         <FrameLayout
             android:id="@+id/layout_delete"
@@ -36,12 +42,18 @@
             android:layout_weight="1">
 
             <androidx.constraintlayout.utils.widget.ImageFilterView
-                android:layout_width="32dp"
-                android:layout_height="32dp"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
                 android:layout_gravity="center"
                 android:src="@drawable/ic_btn_icn_bin"/>
 
         </FrameLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_height_bar"/>
 
         <FrameLayout
             android:id="@+id/layout_siren"
@@ -50,8 +62,8 @@
             android:layout_weight="1">
 
             <ImageView
-                android:layout_width="32dp"
-                android:layout_height="32dp"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
                 android:layout_gravity="center"
                 android:src="@drawable/ic_btn_icn_reprt"/>
 

@@ -58,6 +58,7 @@ class MainActivity : BaseAppCompatActivity<ActivityMainBinding,
 
     private fun initViews() {
         navigationImagesMargin(binding.alarmBottomNavigation)
+        binding.alarmBottomNavigation.itemIconTintList = null
         binding.alarmBottomNavigation.setOnNavigationItemSelectedListener { it ->
             binding.alarmBottomNavigation.post {
                 navigationImagesMargin(binding.alarmBottomNavigation)

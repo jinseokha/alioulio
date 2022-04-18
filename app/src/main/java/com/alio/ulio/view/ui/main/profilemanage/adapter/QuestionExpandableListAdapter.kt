@@ -61,7 +61,7 @@ class QuestionExpandableListAdapter internal constructor(
             expandableTitleTextView.typeface = Typeface.DEFAULT_BOLD
             expandableImage.setImageResource(R.drawable.ic_btn__icon_close)
         } else {
-            expandableTitleTextView.typeface = Typeface.DEFAULT
+            expandableTitleTextView.typeface = Typeface.DEFAULT_BOLD
             expandableImage.setImageResource(R.drawable.ic_btn__icon_open)
         }
 

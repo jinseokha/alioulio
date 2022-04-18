@@ -16,14 +16,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingTop="25dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
         tools:context=".view.ui.main.profilemanage.AlarmOptionActivity">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/back_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="17dp"
             android:src="@drawable/ic_btn_icon_arrow" />
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -40,6 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/back_button"
+            android:layout_marginLeft="17dp"
             android:layout_marginTop="30dp"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -52,7 +52,9 @@
             android:layout_width="match_parent"
             android:layout_height="65dp"
             android:layout_below="@id/textView_notice"
+            android:layout_marginLeft="17dp"
             android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
@@ -62,10 +64,12 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/recyclerview_notice"
             android:layout_marginTop="25dp"
-            android:textStyle="bold"
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="20dp"
+            android:text="자주 묻는 질문"
             android:textColor="@color/black_222222"
             android:textSize="16sp"
-            android:text="자주 묻는 질문"/>
+            android:textStyle="bold" />
 
         <ExpandableListView
             android:id="@+id/expendableList"
@@ -73,7 +77,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/textView_question"
             android:layout_marginTop="25dp"
-            android:groupIndicator="@null" />
+            android:groupIndicator="@null"
+            android:paddingRight="20dp" />
 
     </RelativeLayout>
 </layout>

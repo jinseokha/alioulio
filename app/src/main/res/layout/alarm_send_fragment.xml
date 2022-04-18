@@ -27,6 +27,7 @@
             android:layout_height="wrap_content"
             android:lineHeight="30dp"
             android:text="어떤 알람을\n보내실건가요?"
+            android:textStyle="normal"
             android:textColor="@color/black_222222"
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/layout_some"
@@ -53,14 +54,13 @@
                 android:id="@+id/some_id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
                 android:gravity="top"
                 android:lineSpacingExtra="2sp"
-                android:text="오직,\n그 순간을 위한\n모멘트 알림"
-                android:textColor="@color/black"
+                android:textColor="@color/black_222222"
                 android:textSize="20sp"
                 android:translationY="-1sp" />
 
@@ -98,8 +98,7 @@
                 android:layout_marginTop="20dp"
                 android:gravity="top"
                 android:lineSpacingExtra="2sp"
-                android:text="항상,\n곁에서 챙겨주는\n일상 알림"
-                android:textColor="@color/black"
+                android:textColor="@color/black_222222"
                 android:textSize="20sp"
                 android:translationY="-1sp" />
 

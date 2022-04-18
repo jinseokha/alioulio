@@ -79,8 +79,8 @@ class ProfileFragment : BaseFragment<ProfileFragmentBinding,
 
         Glide.with(requireActivity())
             .load(profileImage)
-            .apply(RequestOptions().transform(MyTransformation(requireActivity(), 300, MyTransformation.CornerType.ALL)))
-            .error(R.drawable.background_agree_round)
+            .apply(RequestOptions().transform(MyTransformation(requireActivity(), 78, MyTransformation.CornerType.ALL)))
+            .error(R.drawable.ic_error_profile)
             .into(binding.imgProfile)
 
         //roundAll(binding.imgProfile, 10f)
