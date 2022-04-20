@@ -39,28 +39,6 @@ class AlarmConditionViewModel(application: Application) : BaseViewModel(applicat
     val nextEvent : LiveData<Event<Alarm>>
         get() = _nextEvent
 
-    fun checkAM_PM(position : Int) {
-        when(position) {
-            0 -> {
-                amClick.set(true)
-                pmClick.set(false)
-            }
-            1 -> {
-                amClick.set(false)
-                pmClick.set(true)
-            }
-        }
-        var isValidDate = !TextUtils.isEmpty(text_date.get())
-        var isValidSelected = amClick.get()!! || pmClick.get()!!
-
-        var isValidHour = !TextUtils.isEmpty(hour.get())
-        var isValidMinute = !TextUtils.isEmpty(minute.get())
-
-        var isValid = isValidDate && isValidSelected && isValidHour && isValidMinute
-        validation(isValid)
-
-    }
-
     fun onDateChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
         text_date.set(s.toString())
         var isValidDate = !TextUtils.isEmpty(text_date.get())

@@ -17,9 +17,11 @@ import com.alio.ulio.view.ui.main.profilemanage.adapter.FriendListAdapter
 import com.alio.ulio.view.ui.main.profilemanage.personalinfo.PersonalInfoActivity
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.google.android.material.appbar.AppBarLayout
 import com.kakao.sdk.talk.TalkApiClient
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.schedulers.Schedulers
+import java.lang.Math.abs
 
 class ProfileFragment : BaseFragment<ProfileFragmentBinding,
         ProfileViewModel>(R.layout.profile_fragment) {
@@ -69,8 +71,18 @@ class ProfileFragment : BaseFragment<ProfileFragmentBinding,
                 Log.d("test", "" + throwable.message)
             })*/
 
-
+        initView()
         initFriendList()
+    }
+
+    private fun initView() {
+        binding.appBarLayout.addOnOffsetChangedListener(AppBarLayout.OnOffsetChangedListener { appBarLayout, verticalOffset ->
+            if (abs(verticalOffset) - appBarLayout.totalScrollRange == 0) { // 접혔을때
+                binding.title.visibility = View.VISIBLE
+            } else {// 펴졌을때
+                binding.title.visibility = View.GONE
+            }
+        })
     }
 
     private fun profileImageLoad() {

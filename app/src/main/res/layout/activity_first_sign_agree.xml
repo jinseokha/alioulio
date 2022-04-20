@@ -53,7 +53,9 @@
                 android:id="@+id/check_social"
                 android:layout_width="26dp"
                 android:layout_height="26dp"
-                android:button="@drawable/ic_comp_chkbox" />
+                android:button="@drawable/ic_comp_chkbox"
+                android:checked="@{viewmodel.kakaoCheck}"
+                android:onCheckedChanged="@{viewmodel::onKakaoInfoChanged}"/>
 
             <TextView
                 android:id="@+id/text_social"
@@ -99,7 +101,9 @@
                 android:id="@+id/check_service"
                 android:layout_width="26dp"
                 android:layout_height="26dp"
-                android:button="@drawable/ic_comp_chkbox" />
+                android:button="@drawable/ic_comp_chkbox"
+                android:checked="@{viewmodel.serviceCheck}"
+                android:onCheckedChanged="@{viewmodel::onServiceChanged}"/>
 
             <TextView
                 android:id="@+id/text_service"
@@ -133,7 +137,9 @@
                 android:id="@+id/check_personal_service"
                 android:layout_width="26dp"
                 android:layout_height="26dp"
-                android:button="@drawable/ic_comp_chkbox" />
+                android:button="@drawable/ic_comp_chkbox"
+                android:checked="@{viewmodel.personalInfoCheck}"
+                android:onCheckedChanged="@{viewmodel::onPersonalChanged}"/>
 
             <TextView
                 android:id="@+id/text_personal_service"
@@ -185,7 +191,9 @@
                 android:id="@+id/check_join_age"
                 android:layout_width="26dp"
                 android:layout_height="26dp"
-                android:button="@drawable/ic_comp_chkbox" />
+                android:button="@drawable/ic_comp_chkbox"
+                android:checked="@{viewmodel.ageCheck}"
+                android:onCheckedChanged="@{viewmodel::onAgeChanged}"/>
 
             <TextView
                 android:id="@+id/text_join_age"

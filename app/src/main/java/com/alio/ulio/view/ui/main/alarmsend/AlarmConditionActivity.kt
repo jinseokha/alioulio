@@ -3,6 +3,8 @@ package com.alio.ulio.view.ui.main.alarmsend
 import android.content.Intent
 import android.util.Log
 import android.view.View
+import android.view.animation.AccelerateInterpolator
+import android.view.animation.AlphaAnimation
 import android.view.animation.TranslateAnimation
 import com.alio.ulio.R
 import com.alio.ulio.base.BaseAppCompatActivity
@@ -32,6 +34,26 @@ class AlarmConditionActivity : BaseAppCompatActivity<ActivityAlarmConditionBindi
     }
 
     private fun initCalendar() {
+
+        binding.imgCalendar.setOnClickListener {
+            if (binding.layoutCalendarview.visibility == View.VISIBLE) {
+                val errorFadeOut = AlphaAnimation(1f, 0f)
+                errorFadeOut.interpolator = AccelerateInterpolator()
+                errorFadeOut.duration = 700
+
+                binding.layoutCalendarview.animation = errorFadeOut
+                binding.layoutCalendarview.visibility = View.GONE
+
+            } else {
+                val errorFadeOut = AlphaAnimation(0f, 1f)
+                errorFadeOut.interpolator = AccelerateInterpolator()
+                errorFadeOut.duration = 700
+
+                binding.layoutCalendarview.animation = errorFadeOut
+                binding.layoutCalendarview.visibility = View.VISIBLE
+
+            }
+        }
 
 
         binding.layoutCalendarview.setOnDayClickListener(object : OnDayClickListener {
