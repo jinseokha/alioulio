@@ -17,7 +17,8 @@ import kotlinx.android.synthetic.main.item_friend_list.view.*
  * @desc
  */
 
-class FriendListAdapter(context : Context) : RecyclerView.Adapter<FriendListAdapter.ViewHolder>() {
+class FriendListAdapter(context : Context) :
+    RecyclerView.Adapter<FriendListAdapter.ViewHolder>() {
 
     private val inflater = LayoutInflater.from(context)
     private val items = mutableListOf<Friend>()

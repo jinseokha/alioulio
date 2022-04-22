@@ -46,6 +46,11 @@ class AlarmOptionActivity : BaseAppCompatActivity<ActivityAlarmOptionBinding,
         binding.expendableList.setOnChildClickListener { _, _, groupPosition, childPosition, _ ->
             false
         }
+
+        binding.backButton.setOnClickListener {
+            finish()
+            overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_right)
+        }
     }
 
     private fun initNotifyView() {

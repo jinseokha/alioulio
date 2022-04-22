@@ -39,7 +39,7 @@
             android:textColor="@color/black_222222"
             android:textSize="24sp" />
 
-        <View
+        <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/line_8"
             android:layout_width="match_parent"
             android:layout_height="2dp"
@@ -48,7 +48,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_below="@id/setting_condition"
-            android:background="@drawable/line_8" />
+            android:background="@drawable/ic_view_bar" />
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"

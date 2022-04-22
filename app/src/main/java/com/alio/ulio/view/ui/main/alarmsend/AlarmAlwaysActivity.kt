@@ -25,6 +25,11 @@ class AlarmAlwaysActivity : BaseAppCompatActivity<ActivityAlarmAlwaysBinding,
 
         loadFakeData()
 
+        binding.backButton.setOnClickListener {
+            finish()
+            overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_right)
+        }
+
         binding.recyclerview.apply {
             setHasFixedSize(true)
             layoutManager = LinearLayoutManager(this@AlarmAlwaysActivity)

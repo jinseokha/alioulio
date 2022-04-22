@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 /**
  * @author Ha Jin Seok
- * @email seok270@dahami.com
+ * @email seok270@gmail.com
  * @created 2022-01-26
  * @desc
  */

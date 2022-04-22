@@ -37,9 +37,10 @@
                 app:expandedTitleTextAppearance="@android:color/transparent"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
+                <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:orientation="vertical"
                     android:layout_marginTop="38dp"
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
@@ -50,6 +51,7 @@
                         android:id="@+id/info_profile"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="35dp"
                         android:lineHeight="30dp"
                         android:text="나, 그리고\n순간을 함께하는\n나의 사람들"
                         android:textColor="@color/black_3d3d3d"
@@ -57,7 +59,51 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"/>
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/info_profile"
+                        android:layout_marginBottom="20dp"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/img_profile"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/ic_launcher_foreground"
+                            tools:targetApi="LOLLIPOP"
+                            app:layout_collapseMode="pin"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical"
+                            app:layout_collapseMode="pin">
+
+                            <TextView
+                                android:id="@+id/tv_profile_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="3dp"
+                                android:textColor="@color/black_3d3d3d"
+                                android:textSize="16sp"
+                                tools:text="profile name" />
+
+                            <TextView
+                                android:id="@+id/tv_email"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/gray_B2B2B2"
+                                android:textSize="16sp"
+                                tools:text="profile email" />
+
+                        </LinearLayout>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
 
                 <androidx.appcompat.widget.Toolbar
                     android:id="@+id/toolbar"
@@ -89,18 +135,18 @@
 
                         <androidx.appcompat.widget.AppCompatImageView
                             android:id="@+id/btn_fab"
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
                             android:layout_marginRight="15dp"
                             android:layout_toLeftOf="@id/view_fab"
                             android:src="@drawable/ic_btn_icon_faq"
-                            app:layout_collapseMode="pin"/>
+                            app:layout_collapseMode="pin" />
 
                         <View
                             android:id="@+id/view_fab"
                             android:layout_width="1dp"
                             android:layout_height="15dp"
-                            android:layout_marginTop="7dp"
+                            android:layout_marginTop="3dp"
                             android:layout_marginRight="15dp"
                             android:layout_toLeftOf="@id/btn_agr"
                             android:background="@drawable/view_bar"
@@ -108,8 +154,8 @@
 
                         <androidx.appcompat.widget.AppCompatImageView
                             android:id="@+id/btn_agr"
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
                             android:layout_alignParentRight="true"
                             android:src="@drawable/ic_btn_icon_agr"
                             app:layout_collapseMode="pin"/>
@@ -119,8 +165,10 @@
             </com.google.android.material.appbar.CollapsingToolbarLayout>
 
             <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/layout_small"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="gone"
                 android:layout_below="@id/info_profile"
                 android:layout_marginBottom="30dp"
                 android:paddingLeft="20dp"
@@ -128,9 +176,9 @@
                 android:orientation="horizontal">
 
                 <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/img_profile"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
+                    android:id="@+id/img_small_profile"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:src="@drawable/ic_launcher_foreground"
                     tools:targetApi="LOLLIPOP"
                     app:layout_collapseMode="pin"/>
@@ -144,7 +192,7 @@
                     app:layout_collapseMode="pin">
 
                     <TextView
-                        android:id="@+id/tv_profile_name"
+                        android:id="@+id/tv_small_profile_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="3dp"
@@ -153,7 +201,7 @@
                         tools:text="profile name" />
 
                     <TextView
-                        android:id="@+id/tv_email"
+                        android:id="@+id/tv_small_email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/gray_B2B2B2"

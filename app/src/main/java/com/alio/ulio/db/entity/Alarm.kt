@@ -4,7 +4,7 @@ import java.io.Serializable
 
 /**
  * @author Ha Jin Seok
- * @email seok270@dahami.com
+ * @email seok270@gmail.com
  * @created 2022-02-24
  * @desc
  */

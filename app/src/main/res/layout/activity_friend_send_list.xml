@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.alio.ulio.view.ui.main.alarmsend.viewmodel.FriendSendListViewModel" />
+        <variable
+            name="activity"
+            type="com.alio.ulio.view.ui.main.alarmsend.FriendSendListActivity" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="25dp"
+        tools:context=".view.ui.main.alarmsend.FriendSendListActivity">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/ic_btn_icon_arrow" />
+
+        <TextView
+            android:id="@+id/setting_condition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/back_button"
+            android:layout_marginTop="15dp"
+            android:lineHeight="30dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="누구에게\n전하실 건가요?"
+            android:textColor="@color/black_222222"
+            android:textSize="24sp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/line_8"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@id/setting_condition"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="35dp"
+            android:background="@drawable/ic_view_bar" />
+
+        <LinearLayout
+            android:id="@+id/layout_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:layout_marginTop="38dp"
+            android:layout_below="@id/line_8"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="@color/black_222222"
+                android:text="이름 순"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_btn_check"/>
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/view_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="42dp"
+            android:layout_toRightOf="@id/layout_id"
+            android:layout_below="@id/line_8"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_height_bar"/>
+
+        <LinearLayout
+            android:id="@+id/layout_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/view_bar"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="38dp"
+            android:layout_below="@id/line_8"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="@color/black_222222"
+                android:text="등록 순"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_btn_check"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/line_8"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="38dp"
+            android:paddingRight="20dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:text="전체"
+                android:textColor="@color/black_222222"
+                android:textSize="15sp" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/check_all"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:button="@drawable/ic_comp_chkbox" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_below="@id/layout_id"
+            android:layout_above="@id/btn_next"
+            android:layout_marginTop="10dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_next"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/btn_next_states"
+            android:text="@string/next"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </RelativeLayout>
+</layout>

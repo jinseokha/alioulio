@@ -32,6 +32,11 @@ class PersonalInfoActivity : BaseAppCompatActivity<ActivityPersonalInfoBinding,
     override fun ActivityPersonalInfoBinding.onCreate() {
         viewModel = PersonalInfoViewModel(application)
 
+        binding.backButton.setOnClickListener {
+            finish()
+            overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_right)
+        }
+
         binding.viewPager.adapter = PagerAdapter(supportFragmentManager)
         binding.viewPager.currentItem = 0
 

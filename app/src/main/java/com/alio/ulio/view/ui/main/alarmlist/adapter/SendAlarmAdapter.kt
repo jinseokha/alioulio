@@ -18,7 +18,7 @@ import java.util.*
 
 /**
  * @author Ha Jin Seok
- * @email seok270@dahami.com
+ * @email seok270@gmail.com
  * @created 2022-03-03
  * @desc
  */

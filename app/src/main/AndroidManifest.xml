@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Alioulio"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".view.ui.main.alarmsend.FriendSendListActivity"
+            android:exported="true" />
+        <activity
             android:name=".view.ui.main.alarmsend.AlarmAlwaysActivity"
             android:exported="true" />
         <activity
@@ -31,16 +34,16 @@
             android:exported="true" />
         <activity
             android:name=".view.ui.main.alarmsend.VoiceRecoredActivity"
-            android:exported="true" />
+            android:exported="true"></activity>
         <activity
             android:name=".view.ui.main.alarmsend.AlarmConditionActivity"
             android:exported="true" />
-
-        <activity android:name=".view.ui.sign.service.PersonalActivity"
-            android:exported="true"/>
-
-        <activity android:name=".view.ui.sign.service.ServiceActivity"
-            android:exported="true"/>
+        <activity
+            android:name=".view.ui.sign.service.PersonalActivity"
+            android:exported="true" />
+        <activity
+            android:name=".view.ui.sign.service.ServiceActivity"
+            android:exported="true" />
         <activity
             android:name=".view.ui.sign.SplashActivity"
             android:exported="true">
@@ -52,10 +55,7 @@
         </activity>
         <activity
             android:name=".view.ui.sign.FirstSignAgreeActivity"
-            android:exported="true" >
-
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".view.ui.sign.SignActivity"
             android:exported="true" />

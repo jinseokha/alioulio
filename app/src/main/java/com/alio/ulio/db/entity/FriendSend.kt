@@ -5,8 +5,10 @@ import java.io.Serializable
 /**
  * @author Ha Jin Seok
  * @email seok270@gmail.com
- * @created 2022-03-29
+ * @created 2022-04-21
  * @desc
  */
-data class Friend(
-    var title: String?) : Serializable
+data class FriendSend(
+    var thumbnail : String?,
+    var name : String?
+) : Serializable

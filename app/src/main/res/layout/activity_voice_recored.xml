@@ -44,13 +44,13 @@
             app:layout_constraintHorizontal_bias="0.003"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <View
+        <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/line_8"
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:layout_below="@id/setting_condition"
             android:layout_marginBottom="76dp"
-            android:background="@drawable/line_8"
+            android:background="@drawable/ic_view_bar"
             app:layout_constraintBottom_toTopOf="@+id/soundVisualizerView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

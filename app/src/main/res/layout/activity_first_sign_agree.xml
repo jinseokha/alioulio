@@ -55,7 +55,7 @@
                 android:layout_height="26dp"
                 android:button="@drawable/ic_comp_chkbox"
                 android:checked="@{viewmodel.kakaoCheck}"
-                android:onCheckedChanged="@{viewmodel::onKakaoInfoChanged}"/>
+                android:onCheckedChanged="@{viewmodel::onKakaoInfoChanged}" />
 
             <TextView
                 android:id="@+id/text_social"

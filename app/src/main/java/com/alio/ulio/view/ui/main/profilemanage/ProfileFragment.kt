@@ -78,8 +78,10 @@ class ProfileFragment : BaseFragment<ProfileFragmentBinding,
     private fun initView() {
         binding.appBarLayout.addOnOffsetChangedListener(AppBarLayout.OnOffsetChangedListener { appBarLayout, verticalOffset ->
             if (abs(verticalOffset) - appBarLayout.totalScrollRange == 0) { // 접혔을때
+                binding.layoutSmall.visibility = View.VISIBLE
                 binding.title.visibility = View.VISIBLE
             } else {// 펴졌을때
+                binding.layoutSmall.visibility = View.GONE
                 binding.title.visibility = View.GONE
             }
         })
@@ -95,15 +97,26 @@ class ProfileFragment : BaseFragment<ProfileFragmentBinding,
             .error(R.drawable.ic_error_profile)
             .into(binding.imgProfile)
 
+        Glide.with(requireActivity())
+            .load(profileImage)
+            .apply(RequestOptions().transform(MyTransformation(requireActivity(), 50, MyTransformation.CornerType.ALL)))
+            .error(R.drawable.ic_error_profile)
+            .into(binding.imgSmallProfile)
+
         //roundAll(binding.imgProfile, 10f)
 
         binding.tvProfileName.text = Preferences.profile?.properties?.get("nickname")
+        binding.tvSmallProfileName.text = Preferences.profile?.properties?.get("nickname")
 
         if (Preferences?.profile?.kakaoAccount?.email == null) {
             binding.tvEmail.visibility = View.GONE
+            binding.tvSmallEmail.visibility = View.GONE
         } else {
             binding.tvEmail.visibility = View.VISIBLE
             binding.tvEmail.text = Preferences?.profile?.kakaoAccount?.email
+
+            binding.tvSmallEmail.visibility = View.VISIBLE
+            binding.tvSmallEmail.text = Preferences?.profile?.kakaoAccount?.email
         }
     }
 

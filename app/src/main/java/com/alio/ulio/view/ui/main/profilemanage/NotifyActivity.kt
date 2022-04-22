@@ -19,6 +19,11 @@ class NotifyActivity : BaseAppCompatActivity<ActivityNotifyBinding,
         val notifyData = intent.getSerializableExtra("notify") as Notify
         binding.title.text = notifyData.title
         binding.content.text = notifyData.content
+
+        binding.backButton.setOnClickListener {
+            finish()
+            overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_right)
+        }
     }
 
     override fun onBackPressed() {
