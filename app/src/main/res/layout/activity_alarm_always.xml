@@ -43,11 +43,10 @@
             android:id="@+id/line_8"
             android:layout_width="match_parent"
             android:layout_height="2dp"
+            android:layout_below="@id/setting_condition"
+            android:layout_marginLeft="20dp"
             android:layout_marginTop="22dp"
             android:layout_marginBottom="35dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_below="@id/setting_condition"
             android:background="@drawable/ic_view_bar" />
 
         <androidx.core.widget.NestedScrollView

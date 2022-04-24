@@ -24,7 +24,7 @@
 
     <style name="BottomSheetActive" >
         <item name="android:textSize">14sp</item>
-        <item name="android:textStyle">bold</item>
+        <item name="android:textStyle">normal</item>
     </style>
 
     <style name="BottomSheetInActive" >

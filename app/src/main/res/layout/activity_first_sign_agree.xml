@@ -103,7 +103,7 @@
                 android:layout_height="26dp"
                 android:button="@drawable/ic_comp_chkbox"
                 android:checked="@{viewmodel.serviceCheck}"
-                android:onCheckedChanged="@{viewmodel::onServiceChanged}"/>
+                android:onCheckedChanged="@{viewmodel::onServiceChanged}" />
 
             <TextView
                 android:id="@+id/text_service"
@@ -129,7 +129,7 @@
             android:id="@+id/layout_personal_service"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="20dp"
             android:layout_below="@id/layout_service"
             android:orientation="horizontal">
 
@@ -145,7 +145,7 @@
                 android:id="@+id/text_personal_service"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="6dp"
                 android:layout_centerVertical="true"
                 android:layout_toRightOf="@id/check_personal_service"
                 android:text="@string/info_personal_service"

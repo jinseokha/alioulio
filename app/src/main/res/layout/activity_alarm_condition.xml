@@ -44,11 +44,10 @@
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:layout_below="@id/setting_condition"
+            android:layout_marginLeft="20dp"
             android:layout_marginTop="22dp"
             android:layout_marginBottom="35dp"
-            android:background="@drawable/ic_view_bar"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp" />
+            android:background="@drawable/ic_view_bar" />
 
         <TextView
             android:id="@+id/tv_alarm"
@@ -70,7 +69,7 @@
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="36dp">
+            android:layout_marginBottom="16dp">
 
             <TextView
                 android:id="@+id/tv_date"
@@ -84,8 +83,8 @@
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/img_calendar"
-                android:layout_width="22dp"
-                android:layout_height="22dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:src="@drawable/ic_btn_icon_dtpckr" />
         </RelativeLayout>
@@ -95,7 +94,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/layout_select_day"
-            android:layout_marginTop="10dp"
             android:layout_marginBottom="20dp"
             android:animateLayoutChanges="true"
             android:visibility="gone"
@@ -109,6 +107,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/layout_calendarview"
+            android:layout_marginTop="10dp"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:textColor="@color/black_222222"

@@ -34,7 +34,7 @@ class AlarmListFragment : BaseFragment<AlarmListFragmentBinding,
             binding.layoutReceiver.isSelected = true
             binding.layoutSender.isSelected = false
             binding.viewReceiver.visibility = View.VISIBLE
-            binding.viewSend.visibility = View.GONE
+            binding.viewSend.visibility = View.INVISIBLE
             binding.imageViewLogo.setImageResource(R.drawable.ic_top_receiver_img)
             binding.layoutBackground.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.gray_F7F7F7))
 
@@ -48,7 +48,7 @@ class AlarmListFragment : BaseFragment<AlarmListFragmentBinding,
         binding.layoutSender.setOnClickListener {
             binding.layoutSender.isSelected = true
             binding.layoutReceiver.isSelected = false
-            binding.viewReceiver.visibility = View.GONE
+            binding.viewReceiver.visibility = View.INVISIBLE
             binding.viewSend.visibility = View.VISIBLE
             binding.imageViewLogo.setImageResource(R.drawable.ic_top_send_img)
             binding.layoutBackground.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.background_blue))
