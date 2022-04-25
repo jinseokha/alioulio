@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_listener"
     android:layout_width="175dp"
     android:layout_height="wrap_content"
     android:background="@drawable/main_item_layout_background"
@@ -8,7 +9,7 @@
     android:paddingBottom="7dp"
     android:paddingLeft="7dp"
     android:paddingRight="7dp"
-    android:layout_marginRight="10dp"
+    android:layout_marginLeft="20dp"
     android:orientation="horizontal">
 
     <androidx.appcompat.widget.AppCompatImageView

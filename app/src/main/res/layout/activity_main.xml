@@ -9,7 +9,7 @@
             type="com.alio.ulio.view.ui.main.MainViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".view.ui.main.MainActivity">
@@ -17,7 +17,7 @@
         <include
             layout="@layout/content_main"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="match_parent"
             app:layout_constraintBottom_toTopOf="@+id/alarm_bottom_navigation"
             app:layout_constraintTop_toTopOf="parent"/>
 
@@ -25,7 +25,8 @@
             android:id="@+id/alarm_bottom_navigation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
+            android:background="@drawable/background_main_round"
+            android:layout_gravity="bottom"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -39,5 +40,5 @@
             app:itemTextAppearanceInactive="@style/BottomSheetInActive"
             android:paddingBottom="5dp"/>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
 </layout>

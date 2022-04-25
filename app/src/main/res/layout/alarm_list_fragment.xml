@@ -85,7 +85,7 @@
         <include
             android:id="@+id/include_receive"
             layout="@layout/layout_receive_alarm"
-            android:visibility="visible"/>
+            android:visibility="visible" />
 
         <include
             android:id="@+id/include_send"

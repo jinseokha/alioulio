@@ -1,6 +1,7 @@
 package com.alio.ulio.view.ui.main.alarmlist.adapter
 
 import android.content.Context
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -46,16 +47,39 @@ class HorizontalViewAdapter(context : Context) : RecyclerView.Adapter<Horizontal
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.setViewData(items[position])
+
+        holder.setViewData(items, position)
     }
 
     override fun getItemCount(): Int = items.size
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        fun setViewData(alarmData: Alarm) {
-            itemView.titleText.text = alarmData.hour
-            itemView.contentText.text = alarmData.minute
+        fun setViewData(alarmData: MutableList<Alarm>, position : Int) {
+
+            var size = alarmData.size - 1
+            if (position == size) {
+                itemView.layout_listener.margin(right = 20F)
+            }
+
+            itemView.titleText.text = alarmData[position].hour
+            itemView.contentText.text = alarmData[position].minute
         }
+
+        fun View.margin(left: Float? = null, top: Float? = null, right: Float? = null, bottom: Float? = null) {
+            layoutParams<ViewGroup.MarginLayoutParams> {
+                left?.run { leftMargin = dpToPx(this) }
+                top?.run { topMargin = dpToPx(this) }
+                right?.run { rightMargin = dpToPx(this) }
+                bottom?.run { bottomMargin = dpToPx(this) }
+            }
+        }
+
+        inline fun <reified T : ViewGroup.LayoutParams> View.layoutParams(block: T.() -> Unit) {
+            if (layoutParams is T) block(layoutParams as T)
+        }
+
+        fun View.dpToPx(dp: Float): Int = context.dpToPx(dp)
+        fun Context.dpToPx(dp: Float): Int = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, resources.displayMetrics).toInt()
     }
 }

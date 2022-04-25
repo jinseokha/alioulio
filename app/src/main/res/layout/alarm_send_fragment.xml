@@ -19,6 +19,7 @@
         android:paddingRight="23dp"
         android:paddingTop="25dp"
         android:paddingBottom="25dp"
+        android:layout_marginBottom="80dp"
         tools:context=".view.ui.main.alarmsend.AlarmSendFragment">
 
         <androidx.appcompat.widget.AppCompatTextView
