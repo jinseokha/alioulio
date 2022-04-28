@@ -25,23 +25,23 @@
 
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:src="@drawable/ic_btn_icon_arrow" />
+            android:src="@drawable/ic_exit" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:textStyle="bold"
+            android:text="알림 센터"
             android:textColor="@color/black_222222"
             android:textSize="16sp"
-            android:text="알림 센터"/>
+            android:textStyle="bold" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/line_8"
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="14dp"
             android:layout_below="@id/title"
             android:background="@drawable/line_8" />
 

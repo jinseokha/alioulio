@@ -53,16 +53,22 @@ class RepeatPeriodAdapter(context : Context) : ListAdapter<RepeatPeriod, RepeatP
             selectedExpense.remove(expense)
             binding.txt_title.typeface = Typeface.DEFAULT
             changeBackground(binding, R.drawable.selector_btn_clock)
+            changeCheckBox(binding, R.drawable.ic_img_check)
         } else {
             selectedExpense.add(expense)
             binding.txt_title.typeface = Typeface.DEFAULT_BOLD
             changeBackground(binding, R.drawable.select_btn_click_clock)
+            changeCheckBox(binding, R.drawable.ic_img_check2)
         }
     }
 
     private fun changeBackground(binding: View, resId: Int) {
         //binding.layout_container.setBackgroundResource(ContextCompat.getColor(binding.context, resId))
         binding.layout_container.background = ContextCompat.getDrawable(binding.context, resId)
+    }
+
+    private fun changeCheckBox(binding: View, resId: Int) {
+        binding.check_title.background = ContextCompat.getDrawable(binding.context, resId)
     }
 
     fun getSelectedExpense() : List<RepeatPeriod> {

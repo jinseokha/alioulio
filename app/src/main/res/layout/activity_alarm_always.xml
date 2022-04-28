@@ -47,7 +47,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="22dp"
             android:layout_marginBottom="35dp"
-            android:background="@drawable/ic_view_bar" />
+            android:background="@drawable/ic_img_progrs_000" />
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
