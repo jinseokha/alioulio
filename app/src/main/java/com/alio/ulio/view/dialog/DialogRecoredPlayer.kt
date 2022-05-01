@@ -49,12 +49,6 @@ class DialogRecoredPlayer(filePath : String) : DialogFragment() {
         mediaPlayer = MediaPlayer.create(requireContext(), Uri.parse(path))
             .apply { isLooping = true }
 
-        /*mediaPlayer = MediaPlayer()
-            .apply {
-                setDataSource(path)
-                prepare()
-                isLooping = true
-            }*/
         isCancelable = false
     }
 
@@ -64,6 +58,7 @@ class DialogRecoredPlayer(filePath : String) : DialogFragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = DialogRecoredPlayerBinding.inflate(inflater, container, false)
+        dialog?.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
         dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         dialog?.window?.requestFeature(Window.FEATURE_NO_TITLE)
 

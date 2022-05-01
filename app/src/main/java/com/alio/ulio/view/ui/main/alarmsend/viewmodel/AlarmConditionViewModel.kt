@@ -57,9 +57,8 @@ class AlarmConditionViewModel(application: Application) : BaseViewModel(applicat
         var isValidSelected = amClick.get()!! || pmClick.get()!!
 
         var isValidHour = !TextUtils.isEmpty(hour.get())
-        var isValidMinute = !TextUtils.isEmpty(minute.get())
 
-        var isValid = isValidDate && isValidSelected && isValidHour && isValidMinute
+        var isValid = isValidDate && isValidSelected && isValidHour
         validation(isValid)
     }
 
@@ -71,7 +70,7 @@ class AlarmConditionViewModel(application: Application) : BaseViewModel(applicat
         var isValidHour = !TextUtils.isEmpty(hour.get())
         var isValidMinute = !TextUtils.isEmpty(minute.get())
 
-        var isValid = isValidDate && isValidSelected && isValidHour && isValidMinute
+        var isValid = isValidDate && isValidSelected && isValidHour
         validation(isValid)
     }
 
@@ -80,6 +79,8 @@ class AlarmConditionViewModel(application: Application) : BaseViewModel(applicat
     }
 
     fun onNextEvent() {
+        if (minute.get() == null)
+            minute.set("00")
         _nextEvent.value = Event(Alarm(hour.get(), minute.get()))
     }
 

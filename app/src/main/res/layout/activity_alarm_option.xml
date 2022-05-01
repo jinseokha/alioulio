@@ -77,8 +77,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/textView_question"
             android:layout_marginTop="25dp"
-            android:groupIndicator="@null"
-            android:paddingRight="20dp" />
+            android:divider="@null"
+            android:groupIndicator="@null" />
 
     </RelativeLayout>
 </layout>

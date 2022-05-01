@@ -74,7 +74,7 @@ class AlarmListFragment : BaseFragment<AlarmListFragmentBinding,
         sendAdapter = SendAlarmAdapter(requireContext())
         sendManager = LinearLayoutManager(requireContext())
 
-        horizontalAdapter = HorizontalViewAdapter(requireContext())
+        horizontalAdapter = HorizontalViewAdapter(requireContext(), requireActivity().supportFragmentManager)
 
         binding.layoutReceiver.isSelected = true
         binding.layoutSender.isSelected = false

@@ -69,7 +69,8 @@ class AudioVisualizer(context: Context, attrs: AttributeSet) : View(context, att
     }
 
     fun link(mediaPlayer: MediaPlayer?) {
-        if (visualizer != null) return
+        if (visualizer != null)
+            return
         visualizer = Visualizer(mediaPlayer!!.audioSessionId)
             .apply {
                 captureSize = Visualizer.getCaptureSizeRange()[1]
@@ -82,7 +83,9 @@ class AudioVisualizer(context: Context, attrs: AttributeSet) : View(context, att
                 enabled = true
             }
 
-        mediaPlayer.setOnCompletionListener { visualizer?.enabled = false }
+        mediaPlayer.setOnCompletionListener {
+            visualizer?.enabled = false
+        }
     }
 
     fun visualizeData() {

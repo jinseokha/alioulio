@@ -93,13 +93,13 @@ class ProfileFragment : BaseFragment<ProfileFragmentBinding,
 
         Glide.with(requireActivity())
             .load(profileImage)
-            .apply(RequestOptions().transform(MyTransformation(requireActivity(), 78, MyTransformation.CornerType.ALL)))
+            .apply(RequestOptions().transform(MyTransformation(requireActivity(), 76, MyTransformation.CornerType.ALL)))
             .error(R.drawable.ic_error_profile)
             .into(binding.imgProfile)
 
         Glide.with(requireActivity())
             .load(profileImage)
-            .apply(RequestOptions().transform(MyTransformation(requireActivity(), 50, MyTransformation.CornerType.ALL)))
+            .apply(RequestOptions().transform(MyTransformation(requireActivity(), 45, MyTransformation.CornerType.ALL)))
             .error(R.drawable.ic_error_profile)
             .into(binding.imgSmallProfile)
 

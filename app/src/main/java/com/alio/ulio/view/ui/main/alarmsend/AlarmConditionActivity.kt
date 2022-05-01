@@ -6,6 +6,7 @@ import android.view.View
 import android.view.animation.AccelerateInterpolator
 import android.view.animation.AlphaAnimation
 import android.view.animation.TranslateAnimation
+import android.widget.Toast
 import com.alio.ulio.R
 import com.alio.ulio.base.BaseAppCompatActivity
 import com.alio.ulio.custom.calendar.EventDay
@@ -89,11 +90,15 @@ class AlarmConditionActivity : BaseAppCompatActivity<ActivityAlarmConditionBindi
 
         viewModel.nextEvent.eventObserve(this) { alarm ->
             // 녹음 페이지 화면 이동
-            val intent = Intent(this, VoiceRecoredActivity::class.java)
-            intent.putExtra("Alarm", alarm)
-            startActivity(intent)
-            overridePendingTransition(R.anim.anim_slide_in_left, R.anim.anim_slide_out_left)
 
+            if (Integer.valueOf(alarm.hour) > 12 || Integer.valueOf(alarm.minute) > 60) {
+                Toast.makeText(this, "시간을 확인해주세요.", Toast.LENGTH_SHORT).show()
+            } else {
+                val intent = Intent(this, VoiceRecoredActivity::class.java)
+                intent.putExtra("Alarm", alarm)
+                startActivity(intent)
+                overridePendingTransition(R.anim.anim_slide_in_left, R.anim.anim_slide_out_left)
+            }
         }
     }
 

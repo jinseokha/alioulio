@@ -5,9 +5,11 @@ import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.alio.ulio.R
 import com.alio.ulio.db.entity.Alarm
+import com.alio.ulio.view.dialog.AlarmListeningDialog
 import kotlinx.android.synthetic.main.item_listener_main.view.*
 import kotlinx.android.synthetic.main.item_main.view.titleText
 import java.util.*
@@ -18,8 +20,12 @@ import java.util.*
  * @created 2022-03-04
  * @desc
  */
-class HorizontalViewAdapter(context : Context) : RecyclerView.Adapter<HorizontalViewAdapter.ViewHolder>() {
+class HorizontalViewAdapter(context : Context, fragmentManager : FragmentManager) : RecyclerView.Adapter<HorizontalViewAdapter.ViewHolder>() {
+    private var mFragmentManager : FragmentManager
 
+    init {
+        mFragmentManager = fragmentManager
+    }
     private val inflater = LayoutInflater.from(context)
     private val items = mutableListOf<Alarm>()
 
@@ -48,14 +54,18 @@ class HorizontalViewAdapter(context : Context) : RecyclerView.Adapter<Horizontal
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        holder.setViewData(items, position)
+        holder.setViewData(items, position, mFragmentManager)
     }
 
     override fun getItemCount(): Int = items.size
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        fun setViewData(alarmData: MutableList<Alarm>, position : Int) {
+        private val alarmListeningDialog : AlarmListeningDialog by lazy {
+            AlarmListeningDialog(R.layout.dialog_alarm_listening)
+        }
+
+        fun setViewData(alarmData: MutableList<Alarm>, position : Int, fragmentManager: FragmentManager) {
 
             var size = alarmData.size - 1
             if (position == size) {
@@ -64,6 +74,10 @@ class HorizontalViewAdapter(context : Context) : RecyclerView.Adapter<Horizontal
 
             itemView.titleText.text = alarmData[position].hour
             itemView.contentText.text = alarmData[position].minute
+
+            itemView.layout_listener.setOnClickListener {
+                alarmListeningDialog.show(fragmentManager, null)
+            }
         }
 
         fun View.margin(left: Float? = null, top: Float? = null, right: Float? = null, bottom: Float? = null) {
